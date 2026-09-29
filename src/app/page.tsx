@@ -1,3 +1,5 @@
+import Link from "next/link";
+import Image from "next/image";
 import { team, expertises, projects, process, whyUs, faqs } from "@/data/site";
 import { Marquee, CarouselShell, Faq, ContactForm } from "@/components/ui";
 import ParallaxHero from "@/components/ParallaxHero";
