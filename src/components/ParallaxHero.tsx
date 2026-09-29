@@ -50,7 +50,7 @@ export default function ParallaxHero() {
     <section id="hero" ref={sectionRef} className="pt-24 sm:pt-28 relative overflow-hidden min-h-[105vh]">
       <div className="absolute top-24 -right-32 w-[480px] h-[480px] rounded-full bg-[#4FEA73]/10 blur-[120px]" />
       {/* giant background word — drifts down slower */}
-      <div ref={wordRef} aria-hidden className="font-display text-[38vw] sm:text-[30vw] leading-[0.8] text-center select-none text-gradient-bright opacity-60 -mb-[6vw] sm:-mb-[4vw] will-change-transform">
+      <div ref={wordRef} aria-hidden className="font-display text-[38vw] sm:text-[30vw] leading-[0.8] text-center select-none text-gradient-bright opacity-85 -mb-[6vw] sm:-mb-[4vw] will-change-transform">
         SPRYB
       </div>
 
