@@ -83,7 +83,7 @@ export default function ParallaxHero() {
       <div ref={headRef} className="mx-auto max-w-[1440px] px-6 sm:px-10 pb-10 mt-16 sm:mt-24 will-change-transform">
         <p className="section-label">Full-stack growth agency</p>
         <h1 className="font-display text-[17vw] sm:text-[110px] leading-[0.85] mt-2">
-          <span className="text-gradient">HUMAN</span>
+          <span className="text-[#121130]">HUMAN</span>
           <br />
           <span className="text-stroke">SOCIAL CLUB</span>
         </h1>
