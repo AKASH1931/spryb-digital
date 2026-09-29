@@ -3,6 +3,7 @@ import { Anton, Inter } from "next/font/google";
 import "./globals.css";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
+import SmoothScroll from "@/components/SmoothScroll";
 
 const anton = Anton({
   weight: "400",
@@ -27,6 +28,7 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
   return (
     <html lang="en" className={`${anton.variable} ${inter.variable} h-full`}>
       <body className="min-h-full flex flex-col bg-white text-[#121130] antialiased">
+        <SmoothScroll />
         <Navbar />
         <main className="flex-1">{children}</main>
         <Footer />

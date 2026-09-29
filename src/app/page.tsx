@@ -1,72 +1,11 @@
-import Link from "next/link";
-import Image from "next/image";
 import { team, expertises, projects, process, whyUs, faqs } from "@/data/site";
 import { Marquee, CarouselShell, Faq, ContactForm } from "@/components/ui";
+import ParallaxHero from "@/components/ParallaxHero";
 
 export default function Home() {
   return (
     <div>
-      {/* ── HERO — Foudre signature: giant word + overlapping tilted photo cards ── */}
-      <section id="hero" className="pt-24 sm:pt-28 relative overflow-hidden min-h-[105vh]">
-        <div className="absolute top-24 -right-32 w-[480px] h-[480px] rounded-full bg-[#4FEA73]/10 blur-[120px]" />
-        {/* giant background word */}
-        <div aria-hidden className="font-display text-[38vw] sm:text-[30vw] leading-[0.8] text-center select-none animate-gradient-flow opacity-60 -mb-[6vw] sm:-mb-[4vw]">
-          SPRYB
-        </div>
-
-        {/* overlapping tilted photo cards */}
-        <div className="relative mx-auto max-w-[1100px] h-[440px] sm:h-[520px] -mt-[10vw] sm:-mt-[6vw]">
-          <div className="absolute left-[2%] top-10 w-[42%] sm:w-[36%] aspect-[3/4] rounded-[20px] overflow-hidden -rotate-6 shadow-[0_24px_70px_rgba(0,0,0,0.45)] border border-white/10 hover:rotate-0 hover:scale-[1.03] transition-transform duration-300 group">
-            <Image src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=600&q=80" alt="Meta Ads" fill className="object-cover group-hover:scale-110 transition-transform duration-500" />
-            <span className="absolute bottom-3 left-3 text-[11px] bg-[#121130]/85 px-3 py-1.5 rounded-full text-white/70">Meta Ads</span>
-            <span className="absolute top-[38%] -right-2 bg-[#1A1940] border border-white/15 rounded-2xl px-3 py-2 text-lg rotate-3">🖥️⚡️🎧</span>
-          </div>
-          <div className="absolute left-1/2 -translate-x-1/2 top-0 w-[46%] sm:w-[38%] aspect-[3/4] rounded-[20px] overflow-hidden z-10 shadow-[0_30px_80px_rgba(0,0,0,0.5)] border border-white/10 hover:scale-[1.03] transition-transform duration-300 group">
-            <Image src="https://images.unsplash.com/photo-1487412720507-e7ab37603c6f?auto=format&fit=crop&w=600&q=80" alt="Influencer Marketing" fill className="object-cover group-hover:scale-110 transition-transform duration-500" />
-            <span className="absolute bottom-3 left-3 text-[11px] bg-[#121130]/85 px-3 py-1.5 rounded-full text-white/70">Influencer Marketing</span>
-            <span className="absolute top-8 left-6 bg-[#1A1940] border border-white/15 rounded-2xl px-3 py-2 text-lg -rotate-3">⚡</span>
-          </div>
-          <div className="absolute right-[2%] top-10 w-[42%] sm:w-[36%] aspect-[3/4] rounded-[20px] overflow-hidden rotate-6 shadow-[0_24px_70px_rgba(0,0,0,0.45)] border border-white/10 hover:rotate-0 hover:scale-[1.03] transition-transform duration-300 group">
-            <Image src="https://images.unsplash.com/photo-1477959858617-67f85cf4f1df?auto=format&fit=crop&w=600&q=80" alt="Hyperlocal" fill className="object-cover group-hover:scale-110 transition-transform duration-500" />
-            <span className="absolute bottom-3 left-3 text-[11px] bg-[#121130]/85 px-3 py-1.5 rounded-full text-white/70">Hyperlocal</span>
-            <span className="absolute top-[42%] -left-2 bg-[#1A1940] border border-white/15 rounded-2xl px-3 py-2 text-lg -rotate-3">📽️⚡🤛</span>
-          </div>
-        </div>
-
-        {/* bottom-left stacked headline */}
-        <div className="mx-auto max-w-[1440px] px-6 sm:px-10 pb-10 mt-16 sm:mt-24">
-          <p className="section-label">Full-stack growth agency</p>
-          <h1 className="font-display text-[17vw] sm:text-[110px] leading-[0.85] mt-2">
-            <span className="text-gradient">HUMAN</span>
-            <br />
-            <span className="text-stroke">SOCIAL CLUB</span>
-          </h1>
-          <p className="text-[#121130]/70 text-[16px] max-w-[52ch] mt-5">We are the current, you are the story. Strategy, content, ads, SEO, ORM & hyperlocal — one team.</p>
-          <div className="mt-6 flex flex-wrap gap-3">
-            <Link href="/contact" className="btn-gradient">Get free teardown →</Link>
-            <Link href="/work" className="btn-ghost">See proof</Link>
-          </div>
-        </div>
-
-        {/* Case of the month — peeking card like Foudre */}
-        <div className="mx-auto max-w-[1440px] px-6 sm:px-10 pb-14">
-          <Link href="/work" className="card-dark overflow-hidden flex flex-col sm:flex-row items-stretch gap-0 !p-0 group">
-            <div className="sm:w-[280px] min-h-[180px] relative overflow-hidden">
-              <Image src="https://picsum.photos/seed/spryb-coffee/560/360" alt="Urban Brew Co." fill className="object-cover group-hover:scale-110 transition-transform duration-500" />
-            </div>
-            <div className="p-6 sm:p-8 flex-1">
-              <p className="text-[11px] tracking-[0.25em] uppercase text-[#4FEA73]">Case of the month</p>
-              <h3 className="font-display text-3xl sm:text-4xl mt-2 group-hover:text-[#D8F23F] transition">URBAN BREW CO.</h3>
-              <div className="flex flex-wrap gap-1.5 mt-3">
-                <span className="pill-tag">Content</span>
-                <span className="pill-tag">Social Strategy</span>
-                <span className="pill-tag">+212% revenue</span>
-              </div>
-              <span className="tlink text-[14px] inline-block mt-4">View the case →</span>
-            </div>
-          </Link>
-        </div>
-      </section>
+      <ParallaxHero />
 
       <div className="mt-14">
         <Marquee items={["SOCIAL MEDIA STRATEGY", "CONTENT CREATION", "COMMUNITY MANAGEMENT", "SEO & SEARCH", "PERFORMANCE ADS", "WEB & BRANDING", "ORM & REPUTATION", "HYPERLOCAL MARKETING"]} />
