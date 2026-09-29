@@ -1,202 +1,219 @@
 import Link from "next/link";
-import Image from "next/image";
-import { services, projects, process, faqs, team } from "@/data/site";
-import { Marquee, Faq, ContactForm } from "@/components/ui";
+import { team, expertises, projects, process, whyUs, faqs } from "@/data/site";
+import { Marquee, CarouselShell, Faq, ContactForm } from "@/components/ui";
 
 export default function Home() {
   return (
-    <div className="relative">
-      {/* HERO — Foudre style massive display, Spryb dark */}
-      <section className="relative noise overflow-hidden pt-32 sm:pt-40 pb-10 px-6 sm:px-10">
-        <div className="absolute -top-32 -right-32 w-[480px] h-[480px] rounded-full bg-[#4FEA73]/12 blur-[120px]" />
-        <div className="absolute top-40 -left-40 w-[420px] h-[420px] rounded-full bg-[#D8F23F]/10 blur-[120px]" />
+    <div>
+      {/* ── HERO — Foudre flow: poetic lines + giant display + image slabs ── */}
+      <section id="hero" className="pt-32 sm:pt-40 px-6 sm:px-10 relative overflow-hidden">
+        <div className="absolute -top-32 -right-32 w-[480px] h-[480px] rounded-full bg-[#4FEA73]/10 blur-[120px]" />
         <div className="mx-auto max-w-[1440px] relative">
-          <div className="flex flex-wrap items-center gap-2 mb-6">
-            <span className="pill-tag">● Full-stack growth agency</span>
-            <span className="pill-tag">Social · SEO · Ads · ORM · Hyperlocal</span>
-          </div>
-          <p className="text-[12px] tracking-[0.3em] uppercase text-white/50 mb-4">
-            Spryb Digital — Human Social Club, Indian edition
+          <p className="text-white/70 text-[17px] sm:text-[22px] leading-[1.5] max-w-[46ch]">
+            Get heard, without making noise.
+            <br />Get noticed, without showing off.
+            <br />And step out of the shadows, <em className="text-gradient not-italic font-bold">to take the light.</em>
           </p>
-          <h1 className="font-display leading-[0.85] text-[15.5vw] sm:text-[110px] lg:text-[150px]">
-            WE MAKE
-            <br />
-            BRANDS <span className="text-gradient">IMPOSSIBLE</span>
-            <br />
-            <span className="text-stroke">TO IGNORE.</span>
-          </h1>
-          <div className="mt-8 grid lg:grid-cols-[1.1fr_0.9fr] gap-10 items-end">
-            <p className="text-white/70 text-[17px] sm:text-[20px] leading-[1.35] max-w-[58ch]">
-              We&apos;re the current, you&apos;re the story. Strategy, scroll-stopping content, ads, SEO, ORM and hyperlocal — one team turning attention into revenue.
-            </p>
-            <div className="flex flex-wrap gap-3">
-              <Link href="/contact" className="btn-gradient px-8 py-4 text-[15px]">Get free teardown →</Link>
-              <Link href="/work" className="btn-ghost px-8 py-4 text-[15px]">See proof</Link>
-            </div>
-          </div>
 
-          {/* stats */}
-          <div className="mt-12 grid grid-cols-2 md:grid-cols-4 gap-3">
+          <div className="grid sm:grid-cols-3 gap-4 mt-10">
             {[
-              ["120+", "brands scaled"],
-              ["4.9★", "avg. rating lift"],
-              ["3.2x", "avg. ROAS"],
-              ["48hr", "kickoff speed"],
-            ].map(([n, l]) => (
-              <div key={l} className="card-dark p-5">
-                <div className="font-display text-3xl sm:text-4xl text-gradient">{n}</div>
-                <div className="text-white/55 text-[13px] mt-1">{l}</div>
+              { e: "⚡", t: "Team energy" },
+              { e: "🖥️⚡️🎧", t: "Studio mode" },
+              { e: "📽️⚡🤛", t: "Shoot days" },
+            ].map((c) => (
+              <div key={c.t} className="card-dark h-52 sm:h-64 grid place-items-center relative overflow-hidden">
+                <span className="text-6xl animate-float">{c.e}</span>
+                <span className="absolute bottom-4 text-[12px] text-white/45">{c.t}</span>
               </div>
             ))}
           </div>
 
-          {/* logo card */}
-          <div className="mt-6 card-dark p-6 sm:p-8 flex flex-col sm:flex-row items-center gap-6">
-            <Image src="/spryb-logo.png" alt="Spryb Digital logo" width={220} height={120} className="rounded-xl bg-white p-3" />
-            <p className="text-white/60 text-[14px] leading-relaxed">
-              The arrow in our <b className="text-white">b</b> only points one way — up. Same energy we bring to your search rankings, ratings, reach and revenue.
-            </p>
-            <div className="ml-auto hidden sm:block w-20 h-20 rounded-full bg-gradient-spryb animate-float grid place-items-center text-3xl text-[#121130] font-black">↗</div>
+          <p className="section-label mt-14">Spryb Digital — Full-stack agency</p>
+          <h1 className="font-display text-[16vw] sm:text-[120px] lg:text-[160px] mt-3">
+            HUMAN
+            <br />
+            <span className="text-gradient">SOCIAL CLUB</span>
+          </h1>
+          <p className="font-display text-[9vw] sm:text-[54px] mt-6 text-white">
+            WE ARE THE CURRENT, <span className="text-stroke">YOU ARE THE STORY.</span>
+          </p>
+          <div className="mt-8 flex flex-wrap gap-3">
+            <Link href="/contact" className="btn-gradient">Get free teardown →</Link>
+            <Link href="/work" className="btn-ghost">See proof</Link>
+          </div>
+          <div className="mt-8 flex flex-wrap gap-2">
+            <span className="pill-tag">📱⚡️😜 Social-first</span>
+            <span className="pill-tag">SEO + Ads + ORM + Hyperlocal</span>
           </div>
         </div>
       </section>
 
-      <Marquee items={team.map(t => `${t.emoji} ${t.name} · ${t.role}`)} />
+      <div className="mt-14">
+        <Marquee items={team.map((t) => `${t.emoji} ${t.name}`)} />
+      </div>
 
-      {/* ABOUT TEASER */}
-      <section className="px-6 sm:px-10 py-20 sm:py-[120px]">
+      {/* ── TEAM CAROUSEL — "Nous électrisons vos réseaux" ── */}
+      <section id="agence" className="px-6 sm:px-10 py-20 sm:py-[120px]">
         <div className="mx-auto max-w-[1440px]">
-          <p className="text-[12px] tracking-[0.3em] uppercase text-[#4FEA73]">Agency</p>
-          <h2 className="font-display text-[11vw] sm:text-[80px] lg:text-[110px] mt-3">
-            WE ELECTRIFY <br /><span className="text-gradient">YOUR FEED,</span>
+          <p className="section-label">Agency</p>
+          <h2 className="font-display text-[12vw] sm:text-[90px] lg:text-[120px] mt-3">
+            WE ELECTRIFY
+            <br />
+            <span className="text-gradient">YOUR NETWORKS,</span>
           </h2>
-          <div className="grid lg:grid-cols-2 gap-10 mt-8">
-            <p className="text-white/70 text-[17px] leading-relaxed max-w-[60ch]">
-              Publishing a few posts isn&apos;t a strategy. We build the story, the system and the distribution — then run it daily so your brand stays top-of-mind and top-of-search. Human first, metrics always.
-            </p>
-            <div className="flex flex-wrap gap-2 content-start">
-              {team.map(m => (
-                <div key={m.name} className="card-dark px-5 py-4 flex items-center gap-3">
-                  <span className="text-2xl">{m.emoji}</span>
-                  <div><div className="font-bold text-[14px]">{m.name}</div><div className="text-white/50 text-[12px]">{m.role} — {m.vibe}</div></div>
-                </div>
+          <p className="text-white/65 text-[16px] sm:text-[20px] leading-[1.4] max-w-[60ch] mt-6">
+            At Spryb, we believe digital communication isn&apos;t a few posts on Instagram. It&apos;s a story to tell, a strategy to build, an image to embody. Our mission: turn your networks into visibility and growth — keeping what matters most: humans at the heart.
+          </p>
+          <div className="mt-10">
+            <CarouselShell id="team-carousel">
+              {team.map((m) => (
+                <article key={m.name} className="card-dark w-[300px] sm:w-[340px] p-6">
+                  <div className="h-44 rounded-[14px] bg-gradient-spryb grid place-items-center text-7xl text-[#121130] font-black">
+                    {m.emoji}
+                  </div>
+                  <p className="text-[11px] tracking-[0.25em] uppercase text-[#4FEA73] mt-5">{m.role}</p>
+                  <h3 className="font-display text-3xl mt-1">{m.name}</h3>
+                  <p className="text-white/60 text-[14px] mt-3 leading-relaxed">{m.bio}</p>
+                </article>
               ))}
-            </div>
+            </CarouselShell>
           </div>
-          <Link href="/about" className="inline-block mt-8 text-[#D8F23F] font-medium underline underline-offset-8">Meet the crew →</Link>
         </div>
       </section>
 
-      {/* WORK */}
+      {/* ── PROJECTS CAROUSEL — "NOUS LES RENDONS, SOCIAUX" ── */}
       <section className="px-6 sm:px-10 pb-20">
         <div className="mx-auto max-w-[1440px]">
-          <div className="flex items-end justify-between gap-6 flex-wrap">
-            <h2 className="font-display text-[11vw] sm:text-[80px]">WE MAKE THEM <span className="text-stroke-lime">SOCIAL.</span></h2>
-            <Link href="/work" className="btn-ghost px-6 py-3 text-sm">All work →</Link>
-          </div>
-          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4 mt-10">
-            {projects.slice(0, 6).map(p => (
-              <Link key={p.slug} href="/work" className="card-dark overflow-hidden group">
-                <div className={`h-44 bg-gradient-to-br ${p.gradient} relative p-5 flex flex-col justify-between`}>
-                  <span className="text-5xl">{p.emoji}</span>
-                  <span className="inline-block self-start bg-[#121130] text-white text-[11px] font-bold px-3 py-1.5 rounded-full">{p.result}</span>
-                </div>
-                <div className="p-6">
-                  <div className="flex flex-wrap gap-1.5 mb-3">{p.tags.map(t => <span key={t} className="pill-tag">{t}</span>)}</div>
-                  <h3 className="font-display text-2xl group-hover:text-[#D8F23F] transition">{p.brand}</h3>
-                  <p className="text-white/55 text-[13px] mt-1">{p.category}</p>
-                  <p className="text-white/65 text-[14px] mt-3">{p.desc}</p>
+          <p className="section-label">📱💖😎 Work</p>
+          <h2 className="font-display text-[12vw] sm:text-[90px] lg:text-[120px] mt-3">
+            WE MAKE THEM,
+            <br />
+            <span className="text-stroke-lime">SOCIAL.</span>
+          </h2>
+          <div className="mt-10">
+            <CarouselShell id="work-carousel">
+              {projects.map((p) => (
+                <article key={p.slug} className="card-dark w-[300px] sm:w-[360px] overflow-hidden">
+                  <div className={`h-48 bg-gradient-to-br ${p.gradient} p-5 flex flex-col justify-between`}>
+                    <span className="text-5xl">{p.emoji}</span>
+                    <span className="self-start bg-[#121130] text-white text-[11px] font-bold px-3 py-1.5 rounded-full">{p.result}</span>
+                  </div>
+                  <div className="p-6">
+                    <div className="flex flex-wrap gap-1.5 mb-3">
+                      {p.tags.map((t) => <span key={t} className="pill-tag">{t}</span>)}
+                    </div>
+                    <h3 className="font-display text-2xl">{p.brand}</h3>
+                    <p className="text-white/45 text-[12px] mt-1">{p.category}</p>
+                    <p className="text-white/60 text-[14px] mt-3">{p.desc}</p>
+                    <Link href="/work" className="tlink text-[14px] inline-block mt-4">View the case →</Link>
+                  </div>
+                </article>
+              ))}
+              <Link href="/work" className="card-dark w-[300px] sm:w-[340px] p-8 grid place-items-center text-center border-dashed">
+                <div>
+                  <h3 className="font-display text-3xl">MORE PROJECTS?</h3>
+                  <span className="btn-gradient mt-5 inline-block !py-3 !px-6 text-sm">Explore →</span>
                 </div>
               </Link>
-            ))}
+            </CarouselShell>
           </div>
         </div>
       </section>
 
-      {/* IMPACT */}
-      <section className="px-6 sm:px-10 py-20 text-center relative overflow-hidden">
-        <p className="text-white/50 text-[15px]">It&apos;s the impact of showing up right.</p>
-        <p className="text-white/50 text-[15px]">It&apos;s aiming true and</p>
-        <h2 className="font-display text-[18vw] sm:text-[150px] leading-[0.85] mt-2">HITTING <span className="text-gradient">HARD.</span></h2>
-        <div className="mx-auto mt-6 w-16 h-16 rounded-full bg-gradient-spryb grid place-items-center text-2xl text-[#121130] font-black animate-float">⚡</div>
+      {/* ── IMPACT — "FRAPPER FORT" ── */}
+      <section className="px-6 sm:px-10 py-20 text-left sm:text-center relative overflow-hidden">
+        <div className="mx-auto max-w-[1440px]">
+          <p className="text-white/55 text-[15px]">It&apos;s the impact of your sincerity.</p>
+          <p className="text-white/55 text-[15px]">It&apos;s aiming right and</p>
+          <h2 className="font-display text-[20vw] sm:text-[150px] mt-2">
+            HITTING <span className="text-gradient">HARD.</span>
+          </h2>
+        </div>
       </section>
 
-      {/* EXPERTISE */}
+      {/* ── EXPERTISES — "Raisonner pour mieux résonner" ── */}
       <section id="expertises" className="px-6 sm:px-10 pb-20">
         <div className="mx-auto max-w-[1440px]">
-          <p className="text-[12px] tracking-[0.3em] uppercase text-[#4FEA73]">👀📱📊 What we do</p>
-          <h2 className="font-display text-[11vw] sm:text-[80px] mt-2">THINK DEEP <br/>TO <span className="text-gradient">RESONATE.</span></h2>
-          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-4 mt-10">
-            {services.map(s => (
-              <div key={s.slug} className="card-dark p-6 hover:border-[#D8F23F]/50 transition group">
-                <div className="text-[11px] text-[#4FEA73] font-bold tracking-widest">{s.index} — {s.icon}</div>
-                <h3 className="font-display text-[22px] mt-2 leading-[1] group-hover:text-[#D8F23F] transition">{s.title}</h3>
-                <p className="text-[#D8F23F]/80 text-[12px] mt-1 italic">{s.tagline}</p>
-                <p className="text-white/60 text-[13.5px] mt-3">{s.desc}</p>
-                <ul className="mt-4 space-y-1.5 text-[13px] text-white/70">
-                  {s.points.map(pt => <li key={pt} className="flex gap-2"><span className="text-[#4FEA73]">→</span>{pt}</li>)}
+          <p className="section-label">👀📱📊 Expertise</p>
+          <h2 className="font-display text-[12vw] sm:text-[90px] lg:text-[120px] mt-3">
+            THINK DEEP
+            <br />
+            TO <span className="text-gradient">RESONATE.</span>
+          </h2>
+          <p className="text-white/60 text-[16px] max-w-[60ch] mt-5">Spryb runs on strong expertises — strategy, content, community… plus search, paid, web, reputation and hyperlocal.</p>
+          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-x-8 gap-y-10 mt-12">
+            {expertises.map((e, i) => (
+              <div key={e.title} className="border-t border-white/15 pt-5">
+                <p className="text-[11px] font-bold tracking-[0.25em] text-[#4FEA73]">0{i + 1}</p>
+                <h3 className="font-display text-2xl mt-2">{e.title}</h3>
+                <ul className="mt-4 space-y-2 text-[14px] text-white/65">
+                  {e.points.map((pt) => <li key={pt}>— {pt}</li>)}
                 </ul>
               </div>
             ))}
           </div>
-          <Link href="/services" className="btn-gradient inline-block mt-8 px-8 py-4 text-[15px]">Explore all services →</Link>
         </div>
       </section>
 
       <Marquee slow items={["SEO", "PERFORMANCE ADS", "SOCIAL MEDIA", "CONTENT", "ORM", "HYPERLOCAL", "WEB", "BRANDING"]} />
 
-      {/* PROCESS */}
+      {/* ── PROCESS — "Nous préfèrerons cet ordre. Toujours." ── */}
       <section className="px-6 sm:px-10 py-20 sm:py-[120px]">
         <div className="mx-auto max-w-[1440px]">
-          <p className="text-[12px] tracking-[0.3em] uppercase text-[#4FEA73]">🫡⚡️🧠 How we work</p>
-          <h2 className="font-display text-[11vw] sm:text-[80px]">WE LIKE THIS ORDER. <span className="text-gradient">ALWAYS.</span></h2>
-          <div className="grid md:grid-cols-5 gap-3 mt-10">
-            {process.map(p => (
-              <div key={p.n} className="card-dark p-6 relative overflow-hidden">
-                <div className="font-display text-5xl text-stroke">{p.n}</div>
-                <h3 className="font-display text-xl mt-3 text-[#D8F23F]">{p.title}</h3>
-                <p className="text-white/60 text-[13.5px] mt-2">{p.desc}</p>
+          <p className="section-label">🫡⚡️🧠 Method</p>
+          <h2 className="font-display text-[12vw] sm:text-[90px] lg:text-[120px] mt-3">
+            WE PREFER
+            <br />
+            THIS ORDER. <span className="text-gradient">ALWAYS.</span>
+          </h2>
+          <p className="text-white/60 text-[16px] max-w-[60ch] mt-5">At Spryb, every project follows a clear process. Effective communication isn&apos;t improvised — our method blends strategy, creativity and rigour for concrete results.</p>
+          <div className="mt-10 space-y-0">
+            {process.map((p) => (
+              <div key={p.n} className="grid grid-cols-[64px_1fr] sm:grid-cols-[120px_1fr_1fr] gap-4 items-baseline border-t border-white/15 py-7">
+                <span className="font-display text-4xl sm:text-6xl text-stroke">{p.n}</span>
+                <h3 className="font-display text-3xl sm:text-5xl text-[#D8F23F]">{p.title}</h3>
+                <p className="text-white/60 text-[15px] col-start-2 sm:col-start-3">{p.desc}</p>
               </div>
             ))}
-          </div>
-          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-4 mt-12">
-            {[
-              ["Social-first experts", "10+ yrs combined across feeds, search and ads. This is all we do."],
-              ["Premium & custom", "No copy-paste packs. Every retainer is scoped to your city, category and goal."],
-              ["A real method", "SOPs, calendars, dashboards. Creative with the discipline of a media house."],
-              ["Humans first", "Founders on calls, faces on shoots. Your customers buy from people, so do we."],
-            ].map(([t, d]) => (
-              <div key={t} className="border border-white/10 rounded-[20px] p-6 bg-white/[0.02]">
-                <h4 className="font-bold text-[15px] text-white">{t}</h4>
-                <p className="text-white/60 text-[13.5px] mt-2">{d}</p>
-              </div>
-            ))}
+            <div className="border-t border-white/15" />
           </div>
         </div>
       </section>
 
-      {/* FAQ */}
+      {/* ── WHY — "POURQUOI CHOISIR FOUDRE" ── */}
       <section className="px-6 sm:px-10 pb-20">
-        <div className="mx-auto max-w-[1100px]">
-          <p className="text-[12px] tracking-[0.3em] uppercase text-[#4FEA73]">⛑️👐📣 FAQ</p>
-          <h2 className="font-display text-[11vw] sm:text-[70px]">SMALL QUESTIONS, <span className="text-gradient">BIG ANSWERS.</span></h2>
-          <div className="grid gap-3 mt-8">
-            {faqs.map(f => <Faq key={f.q} q={f.q} a={f.a} />)}
+        <div className="mx-auto max-w-[1440px]">
+          <h2 className="font-display text-[12vw] sm:text-[80px]">WHY CHOOSE <span className="text-gradient">SPRYB</span></h2>
+          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-4 mt-10">
+            {whyUs.map((w) => (
+              <div key={w.title} className="card-dark p-6">
+                <h3 className="font-display text-xl text-[#D8F23F]">{w.title}</h3>
+                <p className="text-white/60 text-[14px] mt-3 leading-relaxed">{w.desc}</p>
+              </div>
+            ))}
           </div>
         </div>
       </section>
 
-      {/* CONTACT */}
+      {/* ── FAQ — "Petites questions, grandes réponses" ── */}
+      <section id="faq" className="px-6 sm:px-10 pb-20">
+        <div className="mx-auto max-w-[1100px]">
+          <p className="section-label">⛑️👐📣 FAQ</p>
+          <h2 className="font-display text-[11vw] sm:text-[70px] mt-2">SMALL QUESTIONS, <span className="text-gradient">BIG ANSWERS.</span></h2>
+          <div className="grid gap-3 mt-8">
+            {faqs.map((f) => <Faq key={f.q} q={f.q} a={f.a} />)}
+          </div>
+        </div>
+      </section>
+
+      {/* ── CONTACT — "Racontez-nous" ── */}
       <section id="contact" className="px-6 sm:px-10 pb-24">
         <div className="mx-auto max-w-[1100px] grid lg:grid-cols-2 gap-8 items-start">
           <div>
-            <p className="text-[12px] tracking-[0.3em] uppercase text-[#4FEA73]">Contact</p>
-            <h2 className="font-display text-[13vw] sm:text-[80px] leading-[0.9]">TELL US <br/><span className="text-gradient">EVERYTHING.</span></h2>
-            <p className="text-white/65 mt-4">A mini form, 30 seconds. We reply within 24 hours with a free teardown and a fixed quote. No spam, NDA on request.</p>
-            <div className="mt-6 space-y-2 text-[14px] text-white/70">
-              <p>✉ hello@spryb.digital</p>
-              <p>◷ Mon–Sat, 10am–7pm IST · Remote-first, shoots on-site</p>
-            </div>
+            <p className="section-label">Contact</p>
+            <h2 className="font-display text-[13vw] sm:text-[80px]">TELL US <br /><span className="text-gradient">EVERYTHING.</span></h2>
+            <p className="text-white/65 mt-4">A mini form, 30 seconds. We get your answers and come back fast.</p>
+            <p className="text-white/50 text-[14px] mt-4">✉ hello@spryb.digital<br />◷ Mon–Sat, 10am–7pm IST · Remote-first, shoots on-site</p>
           </div>
           <ContactForm />
         </div>
