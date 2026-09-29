@@ -95,9 +95,9 @@ body {
   50% { background-position: 100% 50%; }
   100% { background-position: 0% 50%; }
 }
-/* Static bright gradient (for giant background words) — rich Spryb, darker at bottom */
+/* Static bright gradient (for giant background words) — vivid green to lime */
 .text-gradient-bright {
-  background: linear-gradient(180deg, #4fea73 0%, #3ddc67 45%, #7fae1c 100%);
+  background: linear-gradient(100deg, #35e065 0%, #6fd52e 52%, #b8d41c 100%);
   -webkit-background-clip: text;
   background-clip: text;
   color: transparent;
