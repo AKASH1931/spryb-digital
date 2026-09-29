@@ -81,6 +81,21 @@ body {
   color: transparent;
 }
 
+/* Flowing animated gradient — colors keep moving */
+.animate-gradient-flow {
+  background: linear-gradient(110deg, #4fea73, #d8f23f, #2ecf63, #121130, #4fea73);
+  background-size: 300% 100%;
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  animation: gradient-flow 7s ease infinite;
+}
+@keyframes gradient-flow {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
 /* Section Label — whispered micro-typography above headlines */
 .section-label {
   font-size: 12px;
