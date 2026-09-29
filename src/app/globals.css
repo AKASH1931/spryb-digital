@@ -60,7 +60,7 @@ body {
 }
 
 .text-gradient {
-  background: linear-gradient(135deg, #2ecf63 0%, #a8c90e 100%);
+  background: linear-gradient(100deg, #1fae53 0%, #7a9e06 100%);
   -webkit-background-clip: text;
   background-clip: text;
   color: transparent;
@@ -151,7 +151,7 @@ body {
 }
 
 .btn-gradient {
-  background: linear-gradient(135deg, #4fea73 0%, #d8f23f 100%);
+  background: linear-gradient(100deg, #35e065 0%, #b8d41c 100%);
   color: #121130;
   font-weight: 700;
   border-radius: 10px;
