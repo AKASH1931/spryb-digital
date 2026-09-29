@@ -7,16 +7,16 @@ export default function ServicesPage() {
       <div className="mx-auto max-w-[1440px]">
         <p className="section-label">Expertise</p>
         <h1 className="font-display text-[13vw] sm:text-[100px]">THINK DEEP <br />TO <span className="text-gradient">RESONATE.</span></h1>
-        <p className="text-white/60 text-[17px] max-w-[60ch] mt-6">Spryb runs on strong expertises. Start with one pillar or hand us the whole engine — every retainer begins with strategy, never advice-only.</p>
+        <p className="text-[#121130]/70 text-[17px] max-w-[60ch] mt-6">Spryb runs on strong expertises. Start with one pillar or hand us the whole engine — every retainer begins with strategy, never advice-only.</p>
         <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-x-8 gap-y-10 mt-12">
           {expertises.map((e, i) => (
-            <div key={e.title} className="border-t border-white/15 pt-5">
-              <p className="text-[11px] font-bold tracking-[0.25em] text-[#4FEA73]">0{i + 1}</p>
+            <div key={e.title} className="border-t border-[#121130]/15 pt-5">
+              <p className="text-[11px] font-bold tracking-[0.25em] text-[#0e9f5b]">0{i + 1}</p>
               <h2 className="font-display text-2xl mt-2">{e.title}</h2>
-              <ul className="mt-4 space-y-2 text-[14px] text-white/65">
+              <ul className="mt-4 space-y-2 text-[14px] text-[#121130]/70">
                 {e.points.map((p) => <li key={p}>— {p}</li>)}
               </ul>
-              <Link href="/contact" className="tlink text-[14px] inline-block mt-4">Get a quote →</Link>
+              <Link href="/contact" className="tlink-dark text-[14px] inline-block mt-4">Get a quote →</Link>
             </div>
           ))}
         </div>

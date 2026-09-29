@@ -8,7 +8,7 @@ export default function WorkPage() {
       <div className="mx-auto max-w-[1440px]">
         <p className="section-label">Projects</p>
         <h1 className="font-display text-[13vw] sm:text-[100px]">WE MAKE THEM, <br /><span className="text-stroke-lime">SOCIAL.</span></h1>
-        <p className="text-white/60 text-[17px] max-w-[60ch] mt-6">Proof, not promises. Every case below ran the same order: strategy → art direction → creation → community → reporting.</p>
+        <p className="text-[#121130]/70 text-[17px] max-w-[60ch] mt-6">Proof, not promises. Every case below ran the same order: strategy → art direction → creation → community → reporting.</p>
         <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4 mt-12">
           {projects.map((p) => (
             <article key={p.slug} className="card-dark overflow-hidden group">

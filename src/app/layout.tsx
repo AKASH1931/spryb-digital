@@ -26,7 +26,7 @@ export const metadata: Metadata = {
 export default function RootLayout({ children }: LayoutProps<"/">) {
   return (
     <html lang="en" className={`${anton.variable} ${inter.variable} h-full`}>
-      <body className="min-h-full flex flex-col bg-[#121130] text-white antialiased">
+      <body className="min-h-full flex flex-col bg-white text-[#121130] antialiased">
         <Navbar />
         <main className="flex-1">{children}</main>
         <Footer />

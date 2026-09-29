@@ -1,13 +1,14 @@
 @import "tailwindcss";
 
 @theme {
-  /* Spryb colors + Foudre component roles */
+  /* Spryb on white — logo look: white canvas, navy ink, green energy */
   --color-spryb-navy: #121130;
   --color-spryb-deep: #0c0b22;
   --color-spryb-card: #1a1940;
   --color-spryb-mint: #4fea73;
   --color-spryb-lime: #d8f23f;
   --color-spryb-white: #ffffff;
+  --color-spryb-green: #0e9f5b;
 
   --font-display: "Anton", "Arial Black", ui-sans-serif, system-ui, sans-serif;
   --font-sans: "Inter", ui-sans-serif, system-ui, -apple-system, sans-serif;
@@ -42,8 +43,8 @@ html {
 }
 
 body {
-  background: #121130;
-  color: #ffffff;
+  background: #ffffff;
+  color: #121130;
   font-family: var(--font-sans);
   overflow-x: hidden;
   -webkit-font-smoothing: antialiased;
@@ -59,7 +60,7 @@ body {
 }
 
 .text-gradient {
-  background: linear-gradient(135deg, #4fea73 0%, #d8f23f 100%);
+  background: linear-gradient(135deg, #2ecf63 0%, #a8c90e 100%);
   -webkit-background-clip: text;
   background-clip: text;
   color: transparent;
@@ -68,24 +69,28 @@ body {
   background: linear-gradient(135deg, #4fea73 0%, #d8f23f 100%);
 }
 .text-stroke {
-  -webkit-text-stroke: 1.5px rgba(255, 255, 255, 0.3);
+  -webkit-text-stroke: 1.5px rgba(18, 17, 48, 0.35);
   color: transparent;
 }
 .text-stroke-lime {
-  -webkit-text-stroke: 1.5px rgba(216, 242, 63, 0.55);
+  -webkit-text-stroke: 1.5px rgba(18, 17, 48, 0.35);
+  color: transparent;
+}
+.text-stroke-white {
+  -webkit-text-stroke: 1.5px rgba(255, 255, 255, 0.3);
   color: transparent;
 }
 
-/* Section Label — whispered micro-typography above headlines (Foudre role) */
+/* Section Label — whispered micro-typography above headlines */
 .section-label {
   font-size: 12px;
   letter-spacing: 0.3em;
   text-transform: uppercase;
-  color: #4fea73;
+  color: #0e9f5b;
   font-weight: 500;
 }
 
-/* Pill Badge / Tag (Foudre role, Spryb colors) */
+/* Pill Badge / Tag — for dark cards */
 .pill-tag {
   font-size: 12px;
   font-weight: 500;
@@ -98,7 +103,7 @@ body {
   display: inline-block;
 }
 
-/* Circular menu + brand dots — Foudre signature, Spryb gradient */
+/* Circular menu + brand dots */
 .circle-btn {
   width: 50px;
   height: 50px;
@@ -115,10 +120,12 @@ body {
   box-shadow: 0 8px 30px rgba(79, 234, 115, 0.35);
 }
 
+/* Dark cards on white canvas — like Foudre's dark-green case card */
 .card-dark {
   background: #1a1940;
-  border: 1px solid rgba(255, 255, 255, 0.12);
+  border: 1px solid rgba(18, 17, 48, 0.12);
   border-radius: 20px;
+  color: #ffffff;
 }
 
 .btn-gradient {
@@ -136,24 +143,35 @@ body {
   box-shadow: 0 14px 44px rgba(216, 242, 63, 0.35);
 }
 .btn-ghost {
-  border: 1px solid rgba(255, 255, 255, 0.22);
-  color: #fff;
+  border: 1px solid rgba(18, 17, 48, 0.25);
+  color: #121130;
   border-radius: 10px;
   padding: 16px 32px;
   display: inline-block;
   transition: all 0.2s ease;
 }
 .btn-ghost:hover {
-  border-color: #d8f23f;
-  color: #d8f23f;
+  border-color: #0e9f5b;
+  color: #0e9f5b;
 }
 
+/* Text link on dark surfaces */
 .tlink {
   color: #fff;
   font-weight: 500;
 }
 .tlink:hover {
   color: #d8f23f;
+  text-decoration: underline;
+  text-underline-offset: 6px;
+}
+/* Text link on light surfaces */
+.tlink-dark {
+  color: #121130;
+  font-weight: 500;
+}
+.tlink-dark:hover {
+  color: #0e9f5b;
   text-decoration: underline;
   text-underline-offset: 6px;
 }
@@ -183,7 +201,7 @@ body {
   width: 10px;
 }
 ::-webkit-scrollbar-track {
-  background: #0c0b22;
+  background: #ffffff;
 }
 ::-webkit-scrollbar-thumb {
   background: linear-gradient(#4fea73, #d8f23f);

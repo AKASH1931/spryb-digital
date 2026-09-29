@@ -41,7 +41,7 @@ export default function Home() {
             <br />
             <span className="text-stroke">SOCIAL CLUB</span>
           </h1>
-          <p className="text-white/65 text-[16px] max-w-[52ch] mt-5">We are the current, you are the story. Strategy, content, ads, SEO, ORM & hyperlocal — one team.</p>
+          <p className="text-[#121130]/70 text-[16px] max-w-[52ch] mt-5">We are the current, you are the story. Strategy, content, ads, SEO, ORM & hyperlocal — one team.</p>
           <div className="mt-6 flex flex-wrap gap-3">
             <Link href="/contact" className="btn-gradient">Get free teardown →</Link>
             <Link href="/work" className="btn-ghost">See proof</Link>
@@ -81,7 +81,7 @@ export default function Home() {
             <br />
             <span className="text-gradient">YOUR NETWORKS,</span>
           </h2>
-          <p className="text-white/65 text-[16px] sm:text-[20px] leading-[1.4] max-w-[60ch] mt-6">
+          <p className="text-[#121130]/70 text-[16px] sm:text-[20px] leading-[1.4] max-w-[60ch] mt-6">
             At Spryb, we believe digital communication isn&apos;t a few posts on Instagram. It&apos;s a story to tell, a strategy to build, an image to embody. Our mission: turn your networks into visibility and growth — keeping what matters most: humans at the heart.
           </p>
           <div className="mt-10">
@@ -143,8 +143,8 @@ export default function Home() {
       {/* ── IMPACT — "FRAPPER FORT" ── */}
       <section className="px-6 sm:px-10 py-20 text-left sm:text-center relative overflow-hidden">
         <div className="mx-auto max-w-[1440px]">
-          <p className="text-white/55 text-[15px]">It&apos;s the impact of your sincerity.</p>
-          <p className="text-white/55 text-[15px]">It&apos;s aiming right and</p>
+          <p className="text-[#121130]/60 text-[15px]">It&apos;s the impact of your sincerity.</p>
+          <p className="text-[#121130]/60 text-[15px]">It&apos;s aiming right and</p>
           <h2 className="font-display text-[20vw] sm:text-[150px] mt-2">
             HITTING <span className="text-gradient">HARD.</span>
           </h2>
@@ -160,13 +160,13 @@ export default function Home() {
             <br />
             TO <span className="text-gradient">RESONATE.</span>
           </h2>
-          <p className="text-white/60 text-[16px] max-w-[60ch] mt-5">Spryb runs on strong expertises — strategy, content, community… plus search, paid, web, reputation and hyperlocal.</p>
+          <p className="text-[#121130]/65 text-[16px] max-w-[60ch] mt-5">Spryb runs on strong expertises — strategy, content, community… plus search, paid, web, reputation and hyperlocal.</p>
           <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-x-8 gap-y-10 mt-12">
             {expertises.map((e, i) => (
-              <div key={e.title} className="border-t border-white/15 pt-5">
-                <p className="text-[11px] font-bold tracking-[0.25em] text-[#4FEA73]">0{i + 1}</p>
+              <div key={e.title} className="border-t border-[#121130]/15 pt-5">
+                <p className="text-[11px] font-bold tracking-[0.25em] text-[#0e9f5b]">0{i + 1}</p>
                 <h3 className="font-display text-2xl mt-2">{e.title}</h3>
-                <ul className="mt-4 space-y-2 text-[14px] text-white/65">
+                <ul className="mt-4 space-y-2 text-[14px] text-[#121130]/70">
                   {e.points.map((pt) => <li key={pt}>— {pt}</li>)}
                 </ul>
               </div>
@@ -186,16 +186,16 @@ export default function Home() {
             <br />
             THIS ORDER. <span className="text-gradient">ALWAYS.</span>
           </h2>
-          <p className="text-white/60 text-[16px] max-w-[60ch] mt-5">At Spryb, every project follows a clear process. Effective communication isn&apos;t improvised — our method blends strategy, creativity and rigour for concrete results.</p>
+          <p className="text-[#121130]/65 text-[16px] max-w-[60ch] mt-5">At Spryb, every project follows a clear process. Effective communication isn&apos;t improvised — our method blends strategy, creativity and rigour for concrete results.</p>
           <div className="mt-10 space-y-0">
             {process.map((p) => (
-              <div key={p.n} className="grid grid-cols-[64px_1fr] sm:grid-cols-[120px_1fr_1fr] gap-4 items-baseline border-t border-white/15 py-7">
+              <div key={p.n} className="grid grid-cols-[64px_1fr] sm:grid-cols-[120px_1fr_1fr] gap-4 items-baseline border-t border-[#121130]/15 py-7">
                 <span className="font-display text-4xl sm:text-6xl text-stroke">{p.n}</span>
-                <h3 className="font-display text-3xl sm:text-5xl text-[#D8F23F]">{p.title}</h3>
-                <p className="text-white/60 text-[15px] col-start-2 sm:col-start-3">{p.desc}</p>
+                <h3 className="font-display text-3xl sm:text-5xl text-[#0e9f5b]">{p.title}</h3>
+                <p className="text-[#121130]/65 text-[15px] col-start-2 sm:col-start-3">{p.desc}</p>
               </div>
             ))}
-            <div className="border-t border-white/15" />
+            <div className="border-t border-[#121130]/15" />
           </div>
         </div>
       </section>
@@ -232,8 +232,8 @@ export default function Home() {
           <div>
             <p className="section-label">Contact</p>
             <h2 className="font-display text-[13vw] sm:text-[80px]">TELL US <br /><span className="text-gradient">EVERYTHING.</span></h2>
-            <p className="text-white/65 mt-4">A mini form, 30 seconds. We get your answers and come back fast.</p>
-            <p className="text-white/50 text-[14px] mt-4">✉ hello@spryb.digital<br />◷ Mon–Sat, 10am–7pm IST · Remote-first, shoots on-site</p>
+            <p className="text-[#121130]/70 mt-4">A mini form, 30 seconds. We get your answers and come back fast.</p>
+            <p className="text-[#121130]/55 text-[14px] mt-4">✉ hello@spryb.digital<br />◷ Mon–Sat, 10am–7pm IST · Remote-first, shoots on-site</p>
           </div>
           <ContactForm />
         </div>
