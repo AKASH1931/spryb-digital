@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 import { team, expertises, projects, process, whyUs, faqs } from "@/data/site";
 import { Marquee, CarouselShell, Faq, ContactForm } from "@/components/ui";
 
@@ -15,18 +16,18 @@ export default function Home() {
 
         {/* overlapping tilted photo cards */}
         <div className="relative mx-auto max-w-[1100px] h-[440px] sm:h-[520px] -mt-[10vw] sm:-mt-[6vw]">
-          <div className="absolute left-[2%] top-10 w-[42%] sm:w-[36%] aspect-[3/4] rounded-[20px] overflow-hidden -rotate-6 shadow-[0_24px_70px_rgba(0,0,0,0.45)] bg-gradient-to-br from-[#1A1940] to-[#0C0B22] border border-white/10 hover:rotate-0 transition-transform duration-300">
-            <div className="h-full grid place-items-center text-7xl sm:text-8xl bg-gradient-to-br from-[#4FEA73]/25 to-transparent">🎥</div>
+          <div className="absolute left-[2%] top-10 w-[42%] sm:w-[36%] aspect-[3/4] rounded-[20px] overflow-hidden -rotate-6 shadow-[0_24px_70px_rgba(0,0,0,0.45)] border border-white/10 hover:rotate-0 hover:scale-[1.03] transition-transform duration-300 group">
+            <Image src="https://picsum.photos/seed/spryb-shoot/600/800" alt="Shoot days" fill className="object-cover group-hover:scale-110 transition-transform duration-500" />
             <span className="absolute bottom-3 left-3 text-[11px] bg-[#121130]/85 px-3 py-1.5 rounded-full text-white/70">Shoot days</span>
             <span className="absolute top-[38%] -right-2 bg-[#1A1940] border border-white/15 rounded-2xl px-3 py-2 text-lg rotate-3">🖥️⚡️🎧</span>
           </div>
-          <div className="absolute left-1/2 -translate-x-1/2 top-0 w-[46%] sm:w-[38%] aspect-[3/4] rounded-[20px] overflow-hidden z-10 shadow-[0_30px_80px_rgba(0,0,0,0.5)] bg-gradient-to-br from-[#1A1940] to-[#0C0B22] border border-white/10 hover:scale-[1.02] transition-transform duration-300">
-            <div className="h-full grid place-items-center text-7xl sm:text-8xl bg-gradient-to-br from-[#D8F23F]/20 to-transparent">⚡</div>
+          <div className="absolute left-1/2 -translate-x-1/2 top-0 w-[46%] sm:w-[38%] aspect-[3/4] rounded-[20px] overflow-hidden z-10 shadow-[0_30px_80px_rgba(0,0,0,0.5)] border border-white/10 hover:scale-[1.03] transition-transform duration-300 group">
+            <Image src="https://picsum.photos/seed/spryb-team/600/800" alt="Team Spryb" fill className="object-cover group-hover:scale-110 transition-transform duration-500" />
             <span className="absolute bottom-3 left-3 text-[11px] bg-[#121130]/85 px-3 py-1.5 rounded-full text-white/70">Team Spryb</span>
             <span className="absolute top-8 left-6 bg-[#1A1940] border border-white/15 rounded-2xl px-3 py-2 text-lg -rotate-3">⚡</span>
           </div>
-          <div className="absolute right-[2%] top-10 w-[42%] sm:w-[36%] aspect-[3/4] rounded-[20px] overflow-hidden rotate-6 shadow-[0_24px_70px_rgba(0,0,0,0.45)] bg-gradient-to-br from-[#1A1940] to-[#0C0B22] border border-white/10 hover:rotate-0 transition-transform duration-300">
-            <div className="h-full grid place-items-center text-7xl sm:text-8xl bg-gradient-to-br from-[#4FEA73]/15 to-[#D8F23F]/10">📸</div>
+          <div className="absolute right-[2%] top-10 w-[42%] sm:w-[36%] aspect-[3/4] rounded-[20px] overflow-hidden rotate-6 shadow-[0_24px_70px_rgba(0,0,0,0.45)] border border-white/10 hover:rotate-0 hover:scale-[1.03] transition-transform duration-300 group">
+            <Image src="https://picsum.photos/seed/spryb-bts/600/800" alt="Behind the scenes" fill className="object-cover group-hover:scale-110 transition-transform duration-500" />
             <span className="absolute bottom-3 left-3 text-[11px] bg-[#121130]/85 px-3 py-1.5 rounded-full text-white/70">Behind the scenes</span>
             <span className="absolute top-[42%] -left-2 bg-[#1A1940] border border-white/15 rounded-2xl px-3 py-2 text-lg -rotate-3">📽️⚡🤛</span>
           </div>
@@ -50,7 +51,9 @@ export default function Home() {
         {/* Case of the month — peeking card like Foudre */}
         <div className="mx-auto max-w-[1440px] px-6 sm:px-10 pb-14">
           <Link href="/work" className="card-dark overflow-hidden flex flex-col sm:flex-row items-stretch gap-0 !p-0 group">
-            <div className="bg-gradient-to-br from-[#4FEA73] to-[#D8F23F] sm:w-[280px] grid place-items-center text-7xl p-8">☕</div>
+            <div className="sm:w-[280px] min-h-[180px] relative overflow-hidden">
+              <Image src="https://picsum.photos/seed/spryb-coffee/560/360" alt="Urban Brew Co." fill className="object-cover group-hover:scale-110 transition-transform duration-500" />
+            </div>
             <div className="p-6 sm:p-8 flex-1">
               <p className="text-[11px] tracking-[0.25em] uppercase text-[#4FEA73]">Case of the month</p>
               <h3 className="font-display text-3xl sm:text-4xl mt-2 group-hover:text-[#D8F23F] transition">URBAN BREW CO.</h3>
@@ -66,7 +69,7 @@ export default function Home() {
       </section>
 
       <div className="mt-14">
-        <Marquee items={team.map((t) => `${t.emoji} ${t.name}`)} />
+        <Marquee items={["SOCIAL MEDIA STRATEGY", "CONTENT CREATION", "COMMUNITY MANAGEMENT", "SEO & SEARCH", "PERFORMANCE ADS", "WEB & BRANDING", "ORM & REPUTATION", "HYPERLOCAL MARKETING"]} />
       </div>
 
       {/* ── TEAM CAROUSEL — "Nous électrisons vos réseaux" ── */}
@@ -84,9 +87,9 @@ export default function Home() {
           <div className="mt-10">
             <CarouselShell id="team-carousel">
               {team.map((m) => (
-                <article key={m.name} className="card-dark w-[300px] sm:w-[340px] p-6">
-                  <div className="h-44 rounded-[14px] bg-gradient-spryb grid place-items-center text-7xl text-[#121130] font-black">
-                    {m.emoji}
+                <article key={m.name} className="card-dark w-[300px] sm:w-[340px] p-6 group">
+                  <div className="h-44 rounded-[14px] overflow-hidden relative">
+                    <Image src={m.img} alt={m.name} fill className="object-cover group-hover:scale-110 transition-transform duration-500" />
                   </div>
                   <p className="text-[11px] tracking-[0.25em] uppercase text-[#4FEA73] mt-5">{m.role}</p>
                   <h3 className="font-display text-3xl mt-1">{m.name}</h3>
@@ -110,10 +113,10 @@ export default function Home() {
           <div className="mt-10">
             <CarouselShell id="work-carousel">
               {projects.map((p) => (
-                <article key={p.slug} className="card-dark w-[300px] sm:w-[360px] overflow-hidden">
-                  <div className={`h-48 bg-gradient-to-br ${p.gradient} p-5 flex flex-col justify-between`}>
-                    <span className="text-5xl">{p.emoji}</span>
-                    <span className="self-start bg-[#121130] text-white text-[11px] font-bold px-3 py-1.5 rounded-full">{p.result}</span>
+                <article key={p.slug} className="card-dark w-[300px] sm:w-[360px] overflow-hidden group">
+                  <div className="h-48 relative overflow-hidden">
+                    <Image src={p.img} alt={p.brand} fill className="object-cover group-hover:scale-110 transition-transform duration-500" />
+                    <span className="absolute bottom-3 left-3 bg-[#121130] text-white text-[11px] font-bold px-3 py-1.5 rounded-full">{p.result}</span>
                   </div>
                   <div className="p-6">
                     <div className="flex flex-wrap gap-1.5 mb-3">

@@ -3,36 +3,42 @@ export const team = [
     name: "Aarav",
     role: "Founder · Strategy",
     emoji: "⚡",
+    img: "https://i.pravatar.cc/600?img=12",
     bio: "The one who started Spryb. Turns 10 years of marketing chaos into calm, sharp strategies — and still jumps behind the camera when the story needs it.",
   },
   {
     name: "Meera",
     role: "Content Lead",
     emoji: "📷",
+    img: "https://i.pravatar.cc/600?img=47",
     bio: "Present since day one. Directs every shoot, frames every story, and finds the angle nobody else saw. Reels whisperer, trend translator.",
   },
   {
     name: "Kabir",
     role: "Performance Marketer",
     emoji: "💻",
+    img: "https://i.pravatar.cc/600?img=59",
     bio: "The numbers madman. Lives inside ad dashboards, turns every rupee into a lesson, and scales only what the data blesses.",
   },
   {
     name: "Zoya",
     role: "Art Director",
     emoji: "🎨",
+    img: "https://i.pravatar.cc/600?img=44",
     bio: "Imagines every moodboard, owns every grid. Bright, precise, allergic to boring — your feed's new favourite designer.",
   },
   {
     name: "Rohan",
     role: "Video & Shoot",
     emoji: "🎥",
+    img: "https://i.pravatar.cc/600?img=53",
     bio: "Passionate about film and rhythm. Captures the real and the alive, edits it into scroll-stoppers with that extra something.",
   },
   {
     name: "Ira",
     role: "ORM & Hyperlocal",
     emoji: "📍",
+    img: "https://i.pravatar.cc/600?img=26",
     bio: "Gen-Z CM energy: reviews, ratings, local buzz. Writes, posts, replies and keeps every listing glowing across the map.",
   },
 ];
@@ -75,6 +81,7 @@ export const expertises = [
 export const projects = [
   {
     slug: "urban-brew",
+    img: "https://picsum.photos/seed/spryb-coffee/640/420",
     brand: "Urban Brew Co.",
     category: "D2C Coffee",
     tags: ["Content", "Social Strategy"],
@@ -85,6 +92,7 @@ export const projects = [
   },
   {
     slug: "solace-stays",
+    img: "https://picsum.photos/seed/spryb-hotel/640/420",
     brand: "Solace Stays",
     category: "Boutique Hotels",
     tags: ["Content", "Community", "ORM"],
@@ -95,6 +103,7 @@ export const projects = [
   },
   {
     slug: "meat-up",
+    img: "https://picsum.photos/seed/spryb-food/640/420",
     brand: "Meat Up Kitchen",
     category: "QSR Chain",
     tags: ["Hyperlocal", "Content"],
@@ -105,6 +114,7 @@ export const projects = [
   },
   {
     slug: "nest-realty",
+    img: "https://picsum.photos/seed/spryb-city/640/420",
     brand: "Nest Realty",
     category: "Real Estate",
     tags: ["SEO", "Web", "Ads"],
@@ -115,6 +125,7 @@ export const projects = [
   },
   {
     slug: "glowkart",
+    img: "https://picsum.photos/seed/spryb-beauty/640/420",
     brand: "GlowKart",
     category: "Beauty",
     tags: ["Branding", "Content"],

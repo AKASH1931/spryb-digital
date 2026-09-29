@@ -20,8 +20,10 @@ export default function AboutPage() {
           </div>
           <div className="grid sm:grid-cols-2 gap-4">
             {team.map((m) => (
-              <div key={m.name} className="card-dark p-6">
-                <div className="h-28 rounded-[14px] bg-gradient-spryb grid place-items-center text-5xl">{m.emoji}</div>
+              <div key={m.name} className="card-dark p-6 group">
+                <div className="h-28 rounded-[14px] overflow-hidden relative">
+                  <Image src={m.img} alt={m.name} fill className="object-cover group-hover:scale-110 transition-transform duration-500" />
+                </div>
                 <p className="text-[11px] tracking-[0.25em] uppercase text-[#4FEA73] mt-4">{m.role}</p>
                 <div className="font-display text-2xl mt-1">{m.name}</div>
                 <p className="text-white/55 text-[13px] mt-2 leading-relaxed">{m.bio}</p>
