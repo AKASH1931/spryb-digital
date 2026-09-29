@@ -1,0 +1,71 @@
+"use client";
+import { useState } from "react";
+
+export function Marquee({ items, slow = false }: { items: string[]; slow?: boolean }) {
+  const row = [...items, ...items];
+  return (
+    <div className="overflow-hidden whitespace-nowrap border-y border-white/10 bg-[#0C0B22]/60 py-3">
+      <div className={`inline-flex gap-8 pr-8 ${slow ? "animate-[marquee_46s_linear_infinite]" : "animate-[marquee_28s_linear_infinite]"}`}>
+        {row.map((t, i) => (
+          <span key={i} className="font-display text-lg sm:text-xl text-white/80">
+            {t} <span className="text-gradient ml-8">✦</span>
+          </span>
+        ))}
+      </div>
+    </div>
+  );
+}
+
+export function Faq({ q, a }: { q: string; a: string }) {
+  const [open, setOpen] = useState(false);
+  return (
+    <div className="card-dark overflow-hidden">
+      <button onClick={() => setOpen(!open)} className="w-full text-left px-6 py-5 flex justify-between items-center gap-4">
+        <span className="font-medium text-[16px]">{q}</span>
+        <span className={`w-9 h-9 shrink-0 rounded-full grid place-items-center font-bold ${open ? "bg-gradient-spryb text-[#121130]" : "border border-white/20"}`}>
+          {open ? "−" : "+"}
+        </span>
+      </button>
+      {open && <p className="px-6 pb-6 text-white/65 text-[15px] leading-relaxed">{a}</p>}
+    </div>
+  );
+}
+
+export function ContactForm() {
+  const [sent, setSent] = useState(false);
+  if (sent) {
+    return (
+      <div className="card-dark p-10 text-center">
+        <div className="w-14 h-14 mx-auto rounded-full bg-gradient-spryb grid place-items-center text-2xl text-[#121130] font-black">✓</div>
+        <h3 className="font-display text-3xl mt-5">THANK YOU.</h3>
+        <p className="text-white/65 mt-2">We got your brief. Expect a reply within 24 hours with a teardown + next steps.</p>
+      </div>
+    );
+  }
+  return (
+    <form
+      onSubmit={(e) => { e.preventDefault(); setSent(true); }}
+      className="card-dark p-6 sm:p-8 grid gap-4"
+    >
+      <div className="grid sm:grid-cols-2 gap-4">
+        <input required placeholder="Name *" className="bg-[#121130] border border-white/12 rounded-[10px] px-4 py-3.5 text-sm outline-none focus:border-[#D8F23F] placeholder:text-white/35" />
+        <input required type="email" placeholder="Email *" className="bg-[#121130] border border-white/12 rounded-[10px] px-4 py-3.5 text-sm outline-none focus:border-[#D8F23F] placeholder:text-white/35" />
+      </div>
+      <div className="grid sm:grid-cols-2 gap-4">
+        <input placeholder="Phone / WhatsApp" className="bg-[#121130] border border-white/12 rounded-[10px] px-4 py-3.5 text-sm outline-none focus:border-[#D8F23F] placeholder:text-white/35" />
+        <input placeholder="Company / Brand" className="bg-[#121130] border border-white/12 rounded-[10px] px-4 py-3.5 text-sm outline-none focus:border-[#D8F23F] placeholder:text-white/35" />
+      </div>
+      <div className="flex flex-wrap gap-2 text-[12px]">
+        {["Social Media","Content Shoot","SEO","Ads","Web","ORM","Hyperlocal"].map(s=>(
+          <label key={s} className="cursor-pointer">
+            <input type="checkbox" className="peer hidden" />
+            <span className="inline-block px-3.5 py-1.5 rounded-full border border-white/15 text-white/60 peer-checked:bg-gradient-spryb peer-checked:text-[#121130] peer-checked:border-transparent peer-checked:font-bold transition">{s}</span>
+          </label>
+        ))}
+      </div>
+      <textarea required rows={4} placeholder="Tell us about your goal — 2 lines is enough *" className="bg-[#121130] border border-white/12 rounded-[10px] px-4 py-3.5 text-sm outline-none focus:border-[#D8F23F] placeholder:text-white/35" />
+      <button className="btn-gradient py-4 text-[15px]">Send message →</button>
+      <p className="text-[12px] text-white/40 text-center">30 seconds. No spam. NDA on request.</p>
+    </form>
+  );
+}
