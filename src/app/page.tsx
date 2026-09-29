@@ -5,46 +5,63 @@ import { Marquee, CarouselShell, Faq, ContactForm } from "@/components/ui";
 export default function Home() {
   return (
     <div>
-      {/* ── HERO — Foudre flow: poetic lines + giant display + image slabs ── */}
-      <section id="hero" className="pt-32 sm:pt-40 px-6 sm:px-10 relative overflow-hidden">
-        <div className="absolute -top-32 -right-32 w-[480px] h-[480px] rounded-full bg-[#4FEA73]/10 blur-[120px]" />
-        <div className="mx-auto max-w-[1440px] relative">
-          <p className="text-white/70 text-[17px] sm:text-[22px] leading-[1.5] max-w-[46ch]">
-            Get heard, without making noise.
-            <br />Get noticed, without showing off.
-            <br />And step out of the shadows, <em className="text-gradient not-italic font-bold">to take the light.</em>
-          </p>
+      {/* ── HERO — Foudre signature: giant word + overlapping tilted photo cards ── */}
+      <section id="hero" className="pt-24 sm:pt-28 relative overflow-hidden min-h-[105vh]">
+        <div className="absolute top-24 -right-32 w-[480px] h-[480px] rounded-full bg-[#4FEA73]/10 blur-[120px]" />
+        {/* giant background word */}
+        <div aria-hidden className="font-display text-[38vw] sm:text-[30vw] leading-[0.8] text-center select-none text-stroke opacity-50 -mb-[6vw] sm:-mb-[4vw]">
+          SPRYB
+        </div>
 
-          <div className="grid sm:grid-cols-3 gap-4 mt-10">
-            {[
-              { e: "⚡", t: "Team energy" },
-              { e: "🖥️⚡️🎧", t: "Studio mode" },
-              { e: "📽️⚡🤛", t: "Shoot days" },
-            ].map((c) => (
-              <div key={c.t} className="card-dark h-52 sm:h-64 grid place-items-center relative overflow-hidden">
-                <span className="text-6xl animate-float">{c.e}</span>
-                <span className="absolute bottom-4 text-[12px] text-white/45">{c.t}</span>
-              </div>
-            ))}
+        {/* overlapping tilted photo cards */}
+        <div className="relative mx-auto max-w-[1100px] h-[440px] sm:h-[520px] -mt-[10vw] sm:-mt-[6vw]">
+          <div className="absolute left-[2%] top-10 w-[42%] sm:w-[36%] aspect-[3/4] rounded-[20px] overflow-hidden -rotate-6 shadow-[0_24px_70px_rgba(0,0,0,0.45)] bg-gradient-to-br from-[#1A1940] to-[#0C0B22] border border-white/10 hover:rotate-0 transition-transform duration-300">
+            <div className="h-full grid place-items-center text-7xl sm:text-8xl bg-gradient-to-br from-[#4FEA73]/25 to-transparent">🎥</div>
+            <span className="absolute bottom-3 left-3 text-[11px] bg-[#121130]/85 px-3 py-1.5 rounded-full text-white/70">Shoot days</span>
+            <span className="absolute top-[38%] -right-2 bg-[#1A1940] border border-white/15 rounded-2xl px-3 py-2 text-lg rotate-3">🖥️⚡️🎧</span>
           </div>
+          <div className="absolute left-1/2 -translate-x-1/2 top-0 w-[46%] sm:w-[38%] aspect-[3/4] rounded-[20px] overflow-hidden z-10 shadow-[0_30px_80px_rgba(0,0,0,0.5)] bg-gradient-to-br from-[#1A1940] to-[#0C0B22] border border-white/10 hover:scale-[1.02] transition-transform duration-300">
+            <div className="h-full grid place-items-center text-7xl sm:text-8xl bg-gradient-to-br from-[#D8F23F]/20 to-transparent">⚡</div>
+            <span className="absolute bottom-3 left-3 text-[11px] bg-[#121130]/85 px-3 py-1.5 rounded-full text-white/70">Team Spryb</span>
+            <span className="absolute top-8 left-6 bg-[#1A1940] border border-white/15 rounded-2xl px-3 py-2 text-lg -rotate-3">⚡</span>
+          </div>
+          <div className="absolute right-[2%] top-10 w-[42%] sm:w-[36%] aspect-[3/4] rounded-[20px] overflow-hidden rotate-6 shadow-[0_24px_70px_rgba(0,0,0,0.45)] bg-gradient-to-br from-[#1A1940] to-[#0C0B22] border border-white/10 hover:rotate-0 transition-transform duration-300">
+            <div className="h-full grid place-items-center text-7xl sm:text-8xl bg-gradient-to-br from-[#4FEA73]/15 to-[#D8F23F]/10">📸</div>
+            <span className="absolute bottom-3 left-3 text-[11px] bg-[#121130]/85 px-3 py-1.5 rounded-full text-white/70">Behind the scenes</span>
+            <span className="absolute top-[42%] -left-2 bg-[#1A1940] border border-white/15 rounded-2xl px-3 py-2 text-lg -rotate-3">📽️⚡🤛</span>
+          </div>
+        </div>
 
-          <p className="section-label mt-14">Spryb Digital — Full-stack agency</p>
-          <h1 className="font-display text-[16vw] sm:text-[120px] lg:text-[160px] mt-3">
-            HUMAN
+        {/* bottom-left stacked headline */}
+        <div className="mx-auto max-w-[1440px] px-6 sm:px-10 pb-10">
+          <p className="section-label">Full-stack growth agency</p>
+          <h1 className="font-display text-[17vw] sm:text-[110px] leading-[0.85] mt-2">
+            <span className="text-gradient">HUMAN</span>
             <br />
-            <span className="text-gradient">SOCIAL CLUB</span>
+            <span className="text-stroke">SOCIAL CLUB</span>
           </h1>
-          <p className="font-display text-[9vw] sm:text-[54px] mt-6 text-white">
-            WE ARE THE CURRENT, <span className="text-stroke">YOU ARE THE STORY.</span>
-          </p>
-          <div className="mt-8 flex flex-wrap gap-3">
+          <p className="text-white/65 text-[16px] max-w-[52ch] mt-5">We are the current, you are the story. Strategy, content, ads, SEO, ORM & hyperlocal — one team.</p>
+          <div className="mt-6 flex flex-wrap gap-3">
             <Link href="/contact" className="btn-gradient">Get free teardown →</Link>
             <Link href="/work" className="btn-ghost">See proof</Link>
           </div>
-          <div className="mt-8 flex flex-wrap gap-2">
-            <span className="pill-tag">📱⚡️😜 Social-first</span>
-            <span className="pill-tag">SEO + Ads + ORM + Hyperlocal</span>
-          </div>
+        </div>
+
+        {/* Case of the month — peeking card like Foudre */}
+        <div className="mx-auto max-w-[1440px] px-6 sm:px-10 pb-14">
+          <Link href="/work" className="card-dark overflow-hidden flex flex-col sm:flex-row items-stretch gap-0 !p-0 group">
+            <div className="bg-gradient-to-br from-[#4FEA73] to-[#D8F23F] sm:w-[280px] grid place-items-center text-7xl p-8">☕</div>
+            <div className="p-6 sm:p-8 flex-1">
+              <p className="text-[11px] tracking-[0.25em] uppercase text-[#4FEA73]">Case of the month</p>
+              <h3 className="font-display text-3xl sm:text-4xl mt-2 group-hover:text-[#D8F23F] transition">URBAN BREW CO.</h3>
+              <div className="flex flex-wrap gap-1.5 mt-3">
+                <span className="pill-tag">Content</span>
+                <span className="pill-tag">Social Strategy</span>
+                <span className="pill-tag">+212% revenue</span>
+              </div>
+              <span className="tlink text-[14px] inline-block mt-4">View the case →</span>
+            </div>
+          </Link>
         </div>
       </section>
 
