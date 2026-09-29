@@ -19,16 +19,17 @@ export default function ParallaxHero() {
     let ticking = false;
     const update = () => {
       ticking = false;
-      const section = sectionRef.current;
-      if (!section) return;
-      const h = section.offsetHeight || 1;
-      const y = Math.min(Math.max(window.scrollY / h, 0), 1.4);
-      if (wordRef.current) wordRef.current.style.transform = `translate3d(0, ${y * 170}px, 0)`;
-      if (leftRef.current) leftRef.current.style.transform = `translate3d(0, ${y * -70}px, 0)`;
+      // progress completes within the first viewport of scrolling
+      const y = Math.min(Math.max(window.scrollY / window.innerHeight, 0), 1.2);
+      // giant word drifts down slow
+      if (wordRef.current) wordRef.current.style.transform = `translate3d(0, ${y * 200}px, 0)`;
+      // side cards CLOSE toward the center + lift up (Foudre closing tiles)
+      if (leftRef.current) leftRef.current.style.transform = `translate3d(${y * 150}px, ${y * -70}px, 0)`;
+      if (rightRef.current) rightRef.current.style.transform = `translate3d(${y * -150}px, ${y * -70}px, 0)`;
+      // center card lingers + grows slightly
       if (centerRef.current) {
-        centerRef.current.style.transform = `translate3d(0, ${y * 100}px, 0) scale(${1 + y * 0.04})`;
+        centerRef.current.style.transform = `translate3d(0, ${y * 110}px, 0) scale(${1 + y * 0.05})`;
       }
-      if (rightRef.current) rightRef.current.style.transform = `translate3d(0, ${y * -40}px, 0)`;
       if (headRef.current) {
         headRef.current.style.transform = `translate3d(0, ${y * -30}px, 0)`;
         headRef.current.style.opacity = `${Math.max(1 - y * 0.7, 0)}`;
