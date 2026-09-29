@@ -17,24 +17,24 @@ export default function Home() {
         {/* overlapping tilted photo cards */}
         <div className="relative mx-auto max-w-[1100px] h-[440px] sm:h-[520px] -mt-[10vw] sm:-mt-[6vw]">
           <div className="absolute left-[2%] top-10 w-[42%] sm:w-[36%] aspect-[3/4] rounded-[20px] overflow-hidden -rotate-6 shadow-[0_24px_70px_rgba(0,0,0,0.45)] border border-white/10 hover:rotate-0 hover:scale-[1.03] transition-transform duration-300 group">
-            <Image src="https://images.unsplash.com/photo-1432888622747-4eb9a8efeb07?auto=format&fit=crop&w=600&q=80" alt="Meta Ads" fill className="object-cover group-hover:scale-110 transition-transform duration-500" />
+            <Image src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=600&q=80" alt="Meta Ads" fill className="object-cover group-hover:scale-110 transition-transform duration-500" />
             <span className="absolute bottom-3 left-3 text-[11px] bg-[#121130]/85 px-3 py-1.5 rounded-full text-white/70">Meta Ads</span>
             <span className="absolute top-[38%] -right-2 bg-[#1A1940] border border-white/15 rounded-2xl px-3 py-2 text-lg rotate-3">🖥️⚡️🎧</span>
           </div>
           <div className="absolute left-1/2 -translate-x-1/2 top-0 w-[46%] sm:w-[38%] aspect-[3/4] rounded-[20px] overflow-hidden z-10 shadow-[0_30px_80px_rgba(0,0,0,0.5)] border border-white/10 hover:scale-[1.03] transition-transform duration-300 group">
-            <Image src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?auto=format&fit=crop&w=600&q=80" alt="Influencer Marketing" fill className="object-cover group-hover:scale-110 transition-transform duration-500" />
+            <Image src="https://images.unsplash.com/photo-1487412720507-e7ab37603c6f?auto=format&fit=crop&w=600&q=80" alt="Influencer Marketing" fill className="object-cover group-hover:scale-110 transition-transform duration-500" />
             <span className="absolute bottom-3 left-3 text-[11px] bg-[#121130]/85 px-3 py-1.5 rounded-full text-white/70">Influencer Marketing</span>
             <span className="absolute top-8 left-6 bg-[#1A1940] border border-white/15 rounded-2xl px-3 py-2 text-lg -rotate-3">⚡</span>
           </div>
           <div className="absolute right-[2%] top-10 w-[42%] sm:w-[36%] aspect-[3/4] rounded-[20px] overflow-hidden rotate-6 shadow-[0_24px_70px_rgba(0,0,0,0.45)] border border-white/10 hover:rotate-0 hover:scale-[1.03] transition-transform duration-300 group">
-            <Image src="https://images.unsplash.com/photo-1449824913935-59a10b8d2000?auto=format&fit=crop&w=600&q=80" alt="Hyperlocal" fill className="object-cover group-hover:scale-110 transition-transform duration-500" />
+            <Image src="https://images.unsplash.com/photo-1477959858617-67f85cf4f1df?auto=format&fit=crop&w=600&q=80" alt="Hyperlocal" fill className="object-cover group-hover:scale-110 transition-transform duration-500" />
             <span className="absolute bottom-3 left-3 text-[11px] bg-[#121130]/85 px-3 py-1.5 rounded-full text-white/70">Hyperlocal</span>
             <span className="absolute top-[42%] -left-2 bg-[#1A1940] border border-white/15 rounded-2xl px-3 py-2 text-lg -rotate-3">📽️⚡🤛</span>
           </div>
         </div>
 
         {/* bottom-left stacked headline */}
-        <div className="mx-auto max-w-[1440px] px-6 sm:px-10 pb-10 mt-10 sm:mt-16">
+        <div className="mx-auto max-w-[1440px] px-6 sm:px-10 pb-10 mt-16 sm:mt-24">
           <p className="section-label">Full-stack growth agency</p>
           <h1 className="font-display text-[17vw] sm:text-[110px] leading-[0.85] mt-2">
             <span className="text-gradient">HUMAN</span>
