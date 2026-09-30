@@ -1,4 +1,4 @@
-import { services, faqs } from "@/data/site";
+import { expertises, faqs } from "@/data/site";
 
 const SITE = "https://sprybdigital.com";
 
@@ -15,7 +15,7 @@ function build(full: boolean): string {
     "## Services",
     "",
   ];
-  for (const s of services) {
+  for (const s of expertises) {
     lines.push(`### ${s.title}`);
     lines.push("");
     lines.push(s.desc);
