@@ -11,13 +11,18 @@ export default function ContactForm() {
   const [values, setValues] = useState({ name: "", email: "", phone: "", company: "", message: "" });
   const [errors, setErrors] = useState<Record<string, string>>({});
   const [sending, setSending] = useState(false);
+  const [failed, setFailed] = useState(false);
+  const [services, setServices] = useState<string[]>([]);
+
+  const toggleService = (s: string) =>
+    setServices((prev) => (prev.includes(s) ? prev.filter((x) => x !== s) : [...prev, s]));
 
   const set = (k: string) => (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     setValues((v) => ({ ...v, [k]: e.target.value }));
     setErrors((er) => ({ ...er, [k]: "" }));
   };
 
-  const submit = (e: React.FormEvent) => {
+  const submit = async (e: React.FormEvent) => {
     e.preventDefault();
     const er: Record<string, string> = {};
     if (values.name.trim().length < 2) er.name = "Please tell us your name.";
@@ -26,7 +31,28 @@ export default function ContactForm() {
     setErrors(er);
     if (Object.keys(er).length > 0) return;
     setSending(true);
-    setTimeout(() => router.push("/thank-you"), 700);
+    setFailed(false);
+    try {
+      const res = await fetch("https://formsubmit.co/ajax/pg@sprybdigital.com", {
+        method: "POST",
+        headers: { "Content-Type": "application/json", Accept: "application/json" },
+        body: JSON.stringify({
+          _subject: `New website query — ${values.name}`,
+          _template: "table",
+          Name: values.name.trim(),
+          Email: values.email.trim(),
+          Phone: values.phone.trim(),
+          Company: values.company.trim(),
+          Services: services.join(", ") || "Not selected",
+          Message: values.message.trim(),
+        }),
+      });
+      if (!res.ok) throw new Error("send failed");
+      router.push("/thank-you");
+    } catch {
+      setSending(false);
+      setFailed(true);
+    }
   };
 
   return (
@@ -48,7 +74,7 @@ export default function ContactForm() {
       <div className="flex flex-wrap gap-2 text-[12px]">
         {["Social Media", "Content Shoot", "SEO", "Ads", "Web", "ORM", "Hyperlocal"].map((s) => (
           <label key={s} className="cursor-pointer">
-            <input type="checkbox" className="peer hidden" />
+            <input type="checkbox" className="peer hidden" checked={services.includes(s)} onChange={() => toggleService(s)} />
             <span className="inline-block px-3.5 py-1.5 rounded-full border border-white/15 text-white/60 peer-checked:bg-gradient-spryb peer-checked:text-[#121130] peer-checked:border-transparent peer-checked:font-bold transition">{s}</span>
           </label>
         ))}
@@ -60,6 +86,12 @@ export default function ContactForm() {
       <button disabled={sending} className="btn-gradient py-4 text-[15px] disabled:opacity-60">
         {sending ? "Sending…" : "Send message →"}
       </button>
+      {failed && (
+        <p className="text-[13px] text-[#ff8a8a] text-center">
+          Couldn&apos;t send right now. Please mail us directly at{" "}
+          <a href="mailto:pg@sprybdigital.com" className="underline">pg@sprybdigital.com</a>.
+        </p>
+      )}
       <p className="text-[12px] text-white/40 text-center">30 seconds. No spam. NDA on request.</p>
     </form>
   );
