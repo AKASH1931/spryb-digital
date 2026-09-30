@@ -1,17 +1,17 @@
 "use client";
-import { useEffect, useState } from "react";
+import { useState } from "react";
 
 const KEY = "spryb-cookie-consent";
 
 export default function CookieBanner() {
-  const [show, setShow] = useState(false);
-  useEffect(() => {
+  const [show, setShow] = useState(() => {
     try {
-      if (!localStorage.getItem(KEY)) setShow(true);
+      if (typeof window === "undefined") return false;
+      return !localStorage.getItem(KEY);
     } catch {
-      setShow(true);
+      return true;
     }
-  }, []);
+  });
   const choose = (v: string) => {
     try {
       localStorage.setItem(KEY, v);
