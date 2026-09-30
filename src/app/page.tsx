@@ -13,19 +13,40 @@ export default function Home() {
         <Marquee items={["SOCIAL MEDIA STRATEGY", "CONTENT CREATION", "COMMUNITY MANAGEMENT", "SEO & SEARCH", "PERFORMANCE ADS", "WEB & BRANDING", "ORM & REPUTATION", "HYPERLOCAL MARKETING"]} />
       </div>
 
-      {/* ── TEAM CAROUSEL — "Nous électrisons vos réseaux" ── */}
-      <section id="agence" className="px-6 sm:px-10 py-20 sm:py-[120px]">
+      {/* ── TEAM — Foudre 3-col: headline / group photo / text ── */}
+      <section id="agence" className="px-6 sm:px-10 py-20 sm:py-[120px] relative overflow-hidden">
         <div className="mx-auto max-w-[1440px]">
           <p className="section-label">Agency</p>
-          <h2 className="font-display text-[12vw] sm:text-[90px] lg:text-[120px] mt-3">
-            WE ELECTRIFY
-            <br />
-            <span className="text-gradient">YOUR NETWORKS,</span>
-          </h2>
-          <p className="text-[#121130]/70 text-[16px] sm:text-[20px] leading-[1.4] max-w-[60ch] mt-6">
-            At Spryb, we believe digital communication isn&apos;t a few posts on Instagram. It&apos;s a story to tell, a strategy to build, an image to embody. Our mission: turn your networks into visibility and growth — keeping what matters most: humans at the heart.
-          </p>
-          <div className="mt-10">
+          <div className="grid lg:grid-cols-[1fr_1.15fr_1fr] gap-10 items-center mt-6">
+            <div className="relative">
+              <span className="inline-block bg-[#1A1940] text-white rounded-2xl px-4 py-2.5 text-xl rotate-[-4deg]">📱⚡️😜</span>
+              <h2 className="font-display text-[13vw] sm:text-[64px] lg:text-[76px] mt-4">
+                WE ELECTRIFY
+                <br />
+                <span className="text-gradient">YOUR NETWORKS,</span>
+              </h2>
+            </div>
+            <div className="relative mx-auto w-full max-w-[440px]">
+              <div className="absolute -left-8 top-10 w-[45%] aspect-[3/4] rounded-[20px] overflow-hidden -rotate-12 opacity-90">
+                <Image src="https://picsum.photos/seed/spryb-side1/400/520" alt="On shoot" fill className="object-cover" />
+              </div>
+              <div className="absolute -right-8 top-10 w-[45%] aspect-[3/4] rounded-[20px] overflow-hidden rotate-12 opacity-90">
+                <Image src="https://picsum.photos/seed/spryb-side2/400/520" alt="In studio" fill className="object-cover" />
+              </div>
+              <div className="relative z-10 aspect-[3/4] rounded-[20px] overflow-hidden shadow-[0_30px_80px_rgba(18,17,48,0.25)] border border-[#121130]/10">
+                <Image src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&w=800&q=80" alt="Team Spryb" fill className="object-cover" />
+              </div>
+              <span className="absolute -top-2 left-1/4 w-3 h-3 rounded-full bg-gradient-spryb z-20" />
+              <span className="absolute top-1/3 -left-3 w-2.5 h-2.5 rounded-full bg-gradient-spryb z-20" />
+              <span className="absolute top-1/4 -right-2 w-3 h-3 rounded-full bg-gradient-spryb z-20" />
+              <span className="absolute bottom-1/4 right-1/4 w-2.5 h-2.5 rounded-full bg-gradient-spryb z-20" />
+            </div>
+            <div className="text-[15px] sm:text-[17px] leading-relaxed text-[#121130]/75">
+              <p className="font-bold text-[#121130]">At Spryb, we believe digital communication isn&apos;t publishing a few posts on Instagram.</p>
+              <p className="mt-4">It&apos;s a story to tell, a strategy to build, an image to embody. Our mission: turn your networks into visibility and growth — keeping what matters most: humans at the heart of every project.</p>
+            </div>
+          </div>
+          <div className="mt-14">
             <CarouselShell id="team-carousel">
               {team.map((m) => (
                 <article key={m.name} className="card-dark w-[300px] sm:w-[340px] p-6 group">
@@ -42,37 +63,49 @@ export default function Home() {
         </div>
       </section>
 
-      {/* ── PROJECTS CAROUSEL — "NOUS LES RENDONS, SOCIAUX" ── */}
-      <section className="px-6 sm:px-10 pb-20">
-        <div className="mx-auto max-w-[1440px]">
-          <p className="section-label">📱💖😎 Work</p>
-          <h2 className="font-display text-[12vw] sm:text-[90px] lg:text-[120px] mt-3">
-            WE MAKE THEM,
-            <br />
-            <span className="text-stroke-lime">SOCIAL.</span>
-          </h2>
-          <div className="mt-10">
+      {/* ── PROJECTS — Foudre sticky title + tall horizontal cards ── */}
+      <section className="pl-6 sm:pl-10 pb-20">
+        <div className="mx-auto max-w-[1440px] grid lg:grid-cols-[340px_1fr] gap-8 items-start">
+          <div className="lg:sticky lg:top-28 pr-6">
+            <p className="section-label">📱💖😎 Work</p>
+            <span className="inline-block bg-[#1A1940] text-white rounded-2xl px-4 py-2.5 text-xl rotate-[3deg] mt-4">📱💖😎</span>
+            <h2 className="font-display text-[13vw] sm:text-[64px] mt-3">
+              WE MAKE THEM,
+              <br />
+              SOCIAL.
+            </h2>
+            <div className="flex items-center mt-6">
+              {team.slice(0, 4).map((m, i) => (
+                <span key={m.name} className="w-11 h-11 rounded-full overflow-hidden border-2 border-white shadow -ml-2 first:ml-0 relative" style={{ zIndex: 4 - i }}>
+                  <Image src={m.img} alt={m.name} fill className="object-cover" />
+                </span>
+              ))}
+              <Link href="/work" className="circle-btn !w-11 !h-11 !text-sm -ml-2 font-bold">+2</Link>
+            </div>
+            <Link href="/work" className="btn-gradient mt-6 inline-block !py-3 !px-6 text-sm">Explore all →</Link>
+          </div>
+          <div className="overflow-hidden">
             <CarouselShell id="work-carousel">
               {projects.map((p) => (
-                <article key={p.slug} className="card-dark w-[300px] sm:w-[360px] overflow-hidden group">
-                  <div className="h-48 relative overflow-hidden">
-                    <Image src={p.img} alt={p.brand} fill className="object-cover group-hover:scale-110 transition-transform duration-500" />
-                    <span className="absolute bottom-3 left-3 bg-[#121130] text-white text-[11px] font-bold px-3 py-1.5 rounded-full">{p.result}</span>
-                  </div>
-                  <div className="p-6">
-                    <div className="flex flex-wrap gap-1.5 mb-3">
-                      {p.tags.map((t) => <span key={t} className="pill-tag">{t}</span>)}
+                <article key={p.slug} className="w-[270px] sm:w-[320px] aspect-[3/4] rounded-[20px] overflow-hidden relative group shadow-[0_20px_60px_rgba(18,17,48,0.2)]">
+                  <Image src={p.img} alt={p.brand} fill className="object-cover group-hover:scale-108 transition-transform duration-500" />
+                  <div className="absolute inset-0 bg-gradient-to-b from-[#121130]/30 via-transparent to-[#121130]/70" />
+                  <h3 className="absolute top-5 left-0 right-0 text-center font-display text-4xl sm:text-5xl text-white drop-shadow-[0_2px_12px_rgba(0,0,0,0.5)] px-4">{p.brand}</h3>
+                  <div className="absolute bottom-4 left-4 right-4">
+                    <div className="flex items-center gap-2 mb-3">
+                      <span className="w-9 h-9 rounded-full bg-gradient-spryb grid place-items-center text-[#121130] font-bold">+</span>
+                      <span className="w-9 h-9 rounded-full bg-white grid place-items-center text-[#121130]">♥</span>
+                      <span className="ml-auto text-[11px] font-bold bg-white/90 text-[#121130] px-3 py-1.5 rounded-full">{p.result}</span>
                     </div>
-                    <h3 className="font-display text-2xl">{p.brand}</h3>
-                    <p className="text-white/45 text-[12px] mt-1">{p.category}</p>
-                    <p className="text-white/60 text-[14px] mt-3">{p.desc}</p>
-                    <Link href="/work" className="tlink text-[14px] inline-block mt-4">View the case →</Link>
+                    <div className="flex flex-wrap gap-1.5">
+                      {p.tags.map((t) => <span key={t} className="text-[11px] font-medium bg-white/90 text-[#121130] px-3 py-1.5 rounded-full">{t}</span>)}
+                    </div>
                   </div>
                 </article>
               ))}
-              <Link href="/work" className="card-dark w-[300px] sm:w-[340px] p-8 grid place-items-center text-center border-dashed">
+              <Link href="/work" className="w-[270px] sm:w-[320px] aspect-[3/4] rounded-[20px] bg-[#1A1940] p-8 grid place-items-center text-center shrink-0">
                 <div>
-                  <h3 className="font-display text-3xl">MORE PROJECTS?</h3>
+                  <h3 className="font-display text-3xl text-white">MORE PROJECTS?</h3>
                   <span className="btn-gradient mt-5 inline-block !py-3 !px-6 text-sm">Explore →</span>
                 </div>
               </Link>
