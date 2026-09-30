@@ -81,6 +81,14 @@ const orgSchema = {
   name: "Spryb Digital",
   url: SITE_URL,
   email: "hello@sprybdigital.com",
+  address: {
+    "@type": "PostalAddress",
+    streetAddress: "Plot no. 744, Phase-5, Udyog Vihar, Sec 19",
+    addressLocality: "Gurugram",
+    addressRegion: "Haryana",
+    postalCode: "122016",
+    addressCountry: "IN",
+  },
   description:
     "Full-stack digital marketing agency in India: social media strategy, content production, community management, SEO, performance ads, web & branding, ORM and hyperlocal marketing.",
   areaServed: "IN",
