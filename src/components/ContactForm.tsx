@@ -33,18 +33,16 @@ export default function ContactForm() {
     setSending(true);
     setFailed(false);
     try {
-      const res = await fetch("https://formsubmit.co/ajax/pg@sprybdigital.com", {
+      const res = await fetch("/api/contact", {
         method: "POST",
-        headers: { "Content-Type": "application/json", Accept: "application/json" },
+        headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
-          _subject: `New website query — ${values.name}`,
-          _template: "table",
-          Name: values.name.trim(),
-          Email: values.email.trim(),
-          Phone: values.phone.trim(),
-          Company: values.company.trim(),
-          Services: services.join(", ") || "Not selected",
-          Message: values.message.trim(),
+          name: values.name.trim(),
+          email: values.email.trim(),
+          phone: values.phone.trim(),
+          company: values.company.trim(),
+          services: services.join(", "),
+          message: values.message.trim(),
         }),
       });
       if (!res.ok) throw new Error("send failed");
