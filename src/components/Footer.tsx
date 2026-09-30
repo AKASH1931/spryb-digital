@@ -22,12 +22,22 @@ export default function Footer() {
           </div>
           <div className="text-sm">
             <p className="text-white/40 uppercase tracking-widest text-[11px] mb-4">Sitemap</p>
-            <div className="flex flex-col gap-2.5 text-white/75">
-              <Link className="tlink" href="/">Home</Link>
-              <Link className="tlink" href="/about">Agency</Link>
-              <Link className="tlink" href="/work">Projects</Link>
-              <Link className="tlink" href="/services">Expertise</Link>
-              <Link className="tlink" href="/contact">Contact</Link>
+            <div className="flex flex-wrap gap-2">
+              {[
+                ["Home", "/"],
+                ["Agency", "/about"],
+                ["Projects", "/work"],
+                ["Expertise", "/services"],
+                ["Contact", "/contact"],
+              ].map(([label, href]) => (
+                <Link
+                  key={href}
+                  href={href}
+                  className="text-[13px] text-white/80 border border-white/20 bg-white/[0.04] rounded-full px-4 py-2 hover:border-[#D8F23F] hover:text-[#D8F23F] hover:bg-white/[0.08] transition"
+                >
+                  {label}
+                </Link>
+              ))}
             </div>
           </div>
           <div className="text-sm">
