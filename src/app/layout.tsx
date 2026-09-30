@@ -83,10 +83,10 @@ const orgSchema = {
   email: "hello@sprybdigital.com",
   address: {
     "@type": "PostalAddress",
-    streetAddress: "Plot no. 744, Phase-5, Udyog Vihar, Sec 19",
-    addressLocality: "Gurugram",
-    addressRegion: "Haryana",
-    postalCode: "122016",
+    streetAddress: "C 401, Sahara Plaza, Patrakarpuram Crossing Rd, Vikas Khand 1",
+    addressLocality: "Lucknow",
+    addressRegion: "Uttar Pradesh",
+    postalCode: "226010",
     addressCountry: "IN",
   },
   description:

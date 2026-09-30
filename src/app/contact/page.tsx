@@ -31,14 +31,14 @@ export default function ContactPage() {
             <p className="mt-1">Plot no. 744, Phase-5, Udyog Vihar, Sec 19, Gurugram, Haryana — 122016</p>
           </div>
           <div className="card-dark p-5">
-            <span className="text-white/45 text-[12px] uppercase tracking-widest">Lucknow Office</span>
-            <p className="mt-1">C 401 Sahara Plaza, Patrakarpuram, Gomti Nagar, Lucknow, UP</p>
+            <span className="text-white/45 text-[12px] uppercase tracking-widest">Lucknow Office · Current</span>
+            <p className="mt-1">C 401, Sahara Plaza, Patrakarpuram Crossing Rd, Vikas Khand 1, Gomti Nagar, Lucknow, UP — 226010</p>
           </div>
         </div>
         <div className="card-dark overflow-hidden !p-0 min-h-[320px]">
           <iframe
             title="Spryb Digital on map"
-            src="https://maps.google.com/maps?q=Plot%20no.%20744%2C%20Phase-5%2C%20Udyog%20Vihar%2C%20Gurugram%2C%20Haryana%20122016&t=&z=14&ie=UTF8&iwloc=&output=embed"
+            src="https://maps.google.com/maps?q=C%20401%2C%20Sahara%20Plaza%2C%20Patrakarpuram%2C%20Gomti%20Nagar%2C%20Lucknow%20226010&t=&z=15&ie=UTF8&iwloc=&output=embed"
             className="w-full h-full min-h-[320px] grayscale-[20%]"
             loading="lazy"
           />
