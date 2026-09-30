@@ -62,8 +62,25 @@ export default function ParallaxTeam() {
         <div ref={rightPeekRef} className="absolute -right-8 top-10 w-[45%] aspect-[3/4] rounded-[20px] overflow-hidden opacity-90 will-change-transform">
           <Image src="https://picsum.photos/seed/spryb-side2/400/520" alt="In studio" fill className="object-cover" />
         </div>
-        <div ref={centerRef} className="relative z-10 aspect-[3/4] rounded-[20px] overflow-hidden shadow-[0_30px_80px_rgba(18,17,48,0.25)] border border-[#121130]/10 will-change-transform">
-            <Image src="https://images.unsplash.com/photo-1543269865-cbf427effbad?auto=format&fit=crop&w=800&q=80" alt="Team Spryb" fill className="object-cover" />
+        <div ref={centerRef} className="relative z-10 aspect-[3/4] will-change-transform group">
+          <div className="absolute inset-x-10 top-2 bottom-14 -rotate-[9deg] bg-white p-3 pb-12 rounded-xl shadow-[0_20px_60px_rgba(18,17,48,0.25)] overflow-hidden transition-transform duration-500 group-hover:-rotate-[14deg] group-hover:-translate-x-8">
+            <div className="relative w-full h-full rounded-lg overflow-hidden">
+              <Image src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&w=600&q=80" alt="Strategy sessions" fill className="object-cover" />
+            </div>
+            <p className="text-center text-[13px] italic text-[#121130]/70 mt-2">strategy sundays ✎</p>
+          </div>
+          <div className="absolute inset-x-10 top-2 bottom-14 rotate-[9deg] bg-white p-3 pb-12 rounded-xl shadow-[0_20px_60px_rgba(18,17,48,0.25)] overflow-hidden transition-transform duration-500 group-hover:rotate-[14deg] group-hover:translate-x-8">
+            <div className="relative w-full h-full rounded-lg overflow-hidden">
+              <Image src="https://images.unsplash.com/photo-1492691527719-9d1e07e534b4?auto=format&fit=crop&w=600&q=80" alt="Shoot days" fill className="object-cover" />
+            </div>
+            <p className="text-center text-[13px] italic text-[#121130]/70 mt-2">shoot days 🎬</p>
+          </div>
+          <div className="absolute inset-x-4 top-0 bottom-8 bg-white p-3 pb-12 rounded-xl shadow-[0_30px_80px_rgba(18,17,48,0.3)] overflow-hidden transition-transform duration-500 group-hover:scale-[1.03]">
+            <div className="relative w-full h-full rounded-lg overflow-hidden">
+              <Image src="https://images.unsplash.com/photo-1543269865-cbf427effbad?auto=format&fit=crop&w=800&q=80" alt="Team Spryb" fill className="object-cover" />
+            </div>
+            <p className="text-center text-[13px] italic text-[#121130]/70 mt-2">team spryb ⚡</p>
+          </div>
         </div>
         <div ref={dotsRef} className="absolute inset-0 pointer-events-none will-change-transform">
           <span className="absolute -top-2 left-1/4 w-3 h-3 rounded-full bg-gradient-spryb z-20" />
