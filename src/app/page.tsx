@@ -19,20 +19,6 @@ export default function Home() {
         <div className="mx-auto max-w-[1440px]">
           <p className="section-label">Agency</p>
           <ParallaxTeam />
-          <div className="mt-14">
-            <CarouselShell id="team-carousel">
-              {team.map((m) => (
-                <article key={m.name} className="card-dark w-[300px] sm:w-[340px] p-6 group">
-                  <div className="h-44 rounded-[14px] overflow-hidden relative">
-                    <Image src={m.img} alt={m.name} fill className="object-cover group-hover:scale-110 transition-transform duration-500" />
-                  </div>
-                  <p className="text-[11px] tracking-[0.25em] uppercase text-[#4FEA73] mt-5">{m.role}</p>
-                  <h3 className="font-display text-3xl mt-1">{m.name}</h3>
-                  <p className="text-white/60 text-[14px] mt-3 leading-relaxed">{m.bio}</p>
-                </article>
-              ))}
-            </CarouselShell>
-          </div>
         </div>
       </section>
 
@@ -162,7 +148,27 @@ export default function Home() {
         </div>
       </section>
 
-      {/* ── FAQ — "Petites questions, grandes réponses" ── */}
+      {/* ── CREW — member cards moved down here ── */}
+      <section className="pl-6 sm:pl-10 pb-20">
+        <div className="mx-auto max-w-[1440px]">
+          <p className="section-label">The crew</p>
+          <h2 className="font-display text-[11vw] sm:text-[70px] mt-2 pr-6">MEET THE <span className="text-gradient">HUMANS.</span></h2>
+          <div className="mt-8">
+            <CarouselShell id="team-carousel">
+              {team.map((m) => (
+                <article key={m.name} className="card-dark w-[300px] sm:w-[340px] p-6 group">
+                  <div className="h-44 rounded-[14px] overflow-hidden relative">
+                    <Image src={m.img} alt={m.name} fill className="object-cover group-hover:scale-110 transition-transform duration-500" />
+                  </div>
+                  <p className="text-[11px] tracking-[0.25em] uppercase text-[#4FEA73] mt-5">{m.role}</p>
+                  <h3 className="font-display text-3xl mt-1">{m.name}</h3>
+                  <p className="text-white/60 text-[14px] mt-3 leading-relaxed">{m.bio}</p>
+                </article>
+              ))}
+            </CarouselShell>
+          </div>
+        </div>
+      </section>
       <section id="faq" className="px-6 sm:px-10 pb-20">
         <div className="mx-auto max-w-[1100px]">
           <p className="section-label">⛑️👐📣 FAQ</p>
