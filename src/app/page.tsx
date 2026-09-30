@@ -46,15 +46,46 @@ export default function Home() {
             <br />
             TO <span className="text-gradient">RESONATE.</span>
           </h2>
-          <p className="text-[#121130]/65 text-[16px] max-w-[60ch] mt-5">Spryb runs on strong expertises — strategy, content, community… plus search, paid, web, reputation and hyperlocal.</p>
-          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-x-8 gap-y-10 mt-12">
+          <p className="text-[#121130]/65 text-[16px] max-w-[60ch] mt-5">Spryb runs on strong expertises — strategy, content, community… plus search, paid, web, reputation and hyperlocal. Scroll, cards stack karte jayenge.</p>
+          <div className="mt-12 space-y-5">
             {expertises.map((e, i) => (
-              <div key={e.title} className="border-t border-[#121130]/15 pt-5">
-                <p className="text-[11px] font-bold tracking-[0.25em] text-[#0e9f5b]">0{i + 1}</p>
-                <h3 className="font-display text-2xl mt-2">{e.title}</h3>
-                <ul className="mt-4 space-y-2 text-[14px] text-[#121130]/70">
-                  {e.points.map((pt) => <li key={pt}>— {pt}</li>)}
-                </ul>
+              <div
+                key={e.title}
+                className="card-dark overflow-hidden lg:sticky shadow-[0_24px_70px_rgba(18,17,48,0.3)]"
+                style={{ top: `${96 + i * 18}px` }}
+              >
+                <div className="grid md:grid-cols-[1fr_320px]">
+                  <div className="p-7 sm:p-10">
+                    <div className="flex items-baseline gap-5">
+                      <span className="font-display text-5xl sm:text-7xl text-stroke-white opacity-80">0{i + 1}</span>
+                      <h3 className="font-display text-3xl sm:text-5xl text-white">{e.title}</h3>
+                    </div>
+                    <div className="flex flex-wrap gap-2 mt-6">
+                      {e.points.map((pt) => (
+                        <span key={pt} className="text-[13px] text-white/80 bg-white/[0.06] border border-white/15 rounded-full px-4 py-2">→ {pt}</span>
+                      ))}
+                    </div>
+                    <Link href="/contact" className="btn-gradient mt-7 inline-block !py-3 !px-6 text-sm">Get {e.title} quote →</Link>
+                  </div>
+                  <div className="relative min-h-[220px] md:min-h-full overflow-hidden">
+                    <Image
+                      src={[
+                        "https://images.unsplash.com/photo-1553877522-43269d4ea984?auto=format&fit=crop&w=640&q=80",
+                        "https://images.unsplash.com/photo-1492691527719-9d1e07e534b4?auto=format&fit=crop&w=640&q=80",
+                        "https://images.unsplash.com/photo-1529156069898-49953e39b3ac?auto=format&fit=crop&w=640&q=80",
+                        "https://images.unsplash.com/photo-1571171637578-41bc2dd41cd2?auto=format&fit=crop&w=640&q=80",
+                        "https://images.unsplash.com/photo-1533750349088-cd871a92f312?auto=format&fit=crop&w=640&q=80",
+                        "https://images.unsplash.com/photo-1547658719-da2b51169166?auto=format&fit=crop&w=640&q=80",
+                        "https://images.unsplash.com/photo-1560250097-0b93528c311a?auto=format&fit=crop&w=640&q=80",
+                        "https://images.unsplash.com/photo-1514565131-fce0801e5785?auto=format&fit=crop&w=640&q=80",
+                      ][i % 8]}
+                      alt={e.title}
+                      fill
+                      className="object-cover"
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-r from-[#1A1940] via-transparent to-transparent hidden md:block" />
+                  </div>
+                </div>
               </div>
             ))}
           </div>
