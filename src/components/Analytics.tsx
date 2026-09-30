@@ -5,8 +5,7 @@ import Script from "next/script";
  * Share your GTM container ID (GTM-XXXXXXX) and we enable it in one line.
  */
 export default function Analytics() {
-  const id = process.env.NEXT_PUBLIC_GTM_ID;
-  if (!id) return null;
+  const id = process.env.NEXT_PUBLIC_GTM_ID || "GTM-NNM4KPM9";
   return (
     <>
       <Script
