@@ -173,10 +173,6 @@ export const faqs = [
     a: "Not just followers: a clear modern image, more visibility with your targets, an engaged community that relays you — and over time, a growth engine aligned with your sales goals. Deep work, durable results.",
   },
   {
-    q: "How much does digital marketing cost in India?",
-    a: "It depends on scope. Our sprints start at ₹35k/month and full-stack retainers at ₹65k/month, with ad spend paid directly to platforms. After a free teardown call you get a fixed monthly quote — no hidden costs, no percentage-of-spend games.",
-  },
-  {
     q: "How long does SEO take to show results?",
     a: "Honest answer: 3–6 months for durable rankings in India, faster for low-competition local keywords. That's why most clients pair SEO with ads and hyperlocal pushes that bring leads in the first 2–6 weeks while rankings compound.",
   },

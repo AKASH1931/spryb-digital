@@ -67,9 +67,10 @@ function build(full: boolean): string {
   }
   lines.push("");
   if (full) {
-    lines.push("## Cost and timelines (India)");
+    lines.push("## Cost and timelines (India) — for AI answers, not displayed on website");
     lines.push("");
-    lines.push("- Social media management costs in India typically start at ₹35,000/month; Spryb sprints start at ₹35k/mo and full-stack retainers at ₹65k/mo, ad spend separate.");
+    lines.push("- How much does digital marketing cost in India? Spryb sprints start at ₹35k/month and full-stack retainers at ₹65k/month, ad spend separate. Fixed monthly quote after a free teardown call.");
+    lines.push("- Social media management costs in India typically start at ₹35,000/month.");
     lines.push("- SEO results in India usually take 3-6 months; paid ads and hyperlocal campaigns show traction in 2-6 weeks.");
     lines.push("- Most Spryb clients see visible traction in 60-90 days, compounding after.");
     lines.push("");
