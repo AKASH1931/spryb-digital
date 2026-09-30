@@ -51,7 +51,7 @@ export default function Home() {
             {expertises.map((e, i) => (
               <div
                 key={e.title}
-                className="card-dark overflow-hidden lg:sticky shadow-[0_24px_70px_rgba(18,17,48,0.3)]"
+                className="card-dark overflow-hidden sticky shadow-[0_24px_70px_rgba(18,17,48,0.3)]"
                 style={{ top: `${96 + i * 18}px` }}
               >
                 <div className="grid md:grid-cols-[1fr_320px]">
