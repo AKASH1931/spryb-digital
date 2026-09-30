@@ -16,6 +16,48 @@ export default function Home() {
         <Marquee items={["SOCIAL MEDIA STRATEGY", "CONTENT CREATION", "COMMUNITY MANAGEMENT", "SEO & SEARCH", "PERFORMANCE ADS", "WEB & BRANDING", "ORM & REPUTATION", "HYPERLOCAL MARKETING"]} />
       </div>
 
+      {/* ── CLIENTS — trusted by ── */}
+      <section className="px-6 sm:px-10 pt-14 pb-4">
+        <div className="mx-auto max-w-[1440px]">
+          <p className="section-label text-center">Brands that trust Spryb</p>
+          <div className="overflow-hidden mt-6 [mask-image:linear-gradient(to_right,transparent,black_10%,black_90%,transparent)]">
+            <div className="flex items-center gap-12 pr-12 w-max animate-[marquee_32s_linear_infinite] hover:[animation-play-state:paused]">
+              {[
+                ["motherhood.png", "Motherhood"],
+                ["muldhara.png", "Muldhara"],
+                ["nova.png", "Nova"],
+                ["nxgen.png", "Nxgen"],
+                ["qm.png", "QM"],
+                ["sms.png", "SMS"],
+                ["starlink.png", "Starlink"],
+                ["tmc.png", "TMC"],
+                ["woobly.jpeg", "Woobly"],
+                ["zadcars.png", "Zadcars"],
+                ["zeevaa.png", "Zeevaa"],
+                ["client-1x1.jpg", "Client"],
+              ].concat([
+                ["motherhood.png", "Motherhood"],
+                ["muldhara.png", "Muldhara"],
+                ["nova.png", "Nova"],
+                ["nxgen.png", "Nxgen"],
+                ["qm.png", "QM"],
+                ["sms.png", "SMS"],
+                ["starlink.png", "Starlink"],
+                ["tmc.png", "TMC"],
+                ["woobly.jpeg", "Woobly"],
+                ["zadcars.png", "Zadcars"],
+                ["zeevaa.png", "Zeevaa"],
+                ["client-1x1.jpg", "Client"],
+              ]).map(([f, name], i) => (
+                <span key={i} className="h-12 sm:h-14 w-32 shrink-0 relative grayscale opacity-70 hover:grayscale-0 hover:opacity-100 transition">
+                  <Image src={`/clients/${f}`} alt={`${name} — Spryb Digital client`} fill className="object-contain" sizes="128px" />
+                </span>
+              ))}
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* ── TEAM — Foudre 3-col: headline / group photo / text ── */}
       <section id="agence" className="px-6 sm:px-10 py-20 sm:py-[120px] relative overflow-hidden">
         <div className="mx-auto max-w-[1440px]">
