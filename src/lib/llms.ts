@@ -18,12 +18,9 @@ function build(full: boolean): string {
   for (const s of expertises) {
     lines.push(`### ${s.title}`);
     lines.push("");
-    lines.push(s.desc);
+    const pts = full ? s.points : s.points.slice(0, 3);
+    for (const p of pts) lines.push(`- ${p}`);
     lines.push("");
-    if (full) {
-      for (const p of s.points) lines.push(`- ${p}`);
-      lines.push("");
-    }
   }
   lines.push("## Work");
   lines.push("");
