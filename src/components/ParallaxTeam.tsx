@@ -1,18 +1,35 @@
 "use client";
-import { useEffect, useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 import Image from "next/image";
 
-/** Foudre-style scroll parallax for the team 3-col block */
+const CARDS = [
+  {
+    img: "https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&w=600&q=80",
+    alt: "Strategy sessions",
+    caption: "strategy sundays ✎",
+  },
+  {
+    img: "https://images.unsplash.com/photo-1492691527719-9d1e07e534b4?auto=format&fit=crop&w=600&q=80",
+    alt: "Shoot days",
+    caption: "shoot days 🎬",
+  },
+  {
+    img: "https://images.unsplash.com/photo-1543269865-cbf427effbad?auto=format&fit=crop&w=800&q=80",
+    alt: "Team Spryb",
+    caption: "team spryb ⚡",
+  },
+];
+
+/** Foudre-style scroll parallax + click-to-front polaroids */
 export default function ParallaxTeam() {
   const sectionRef = useRef<HTMLDivElement>(null);
   const headRef = useRef<HTMLDivElement>(null);
   const centerRef = useRef<HTMLDivElement>(null);
-  const fanLRef = useRef<HTMLDivElement>(null);
-  const fanRRef = useRef<HTMLDivElement>(null);
   const leftPeekRef = useRef<HTMLDivElement>(null);
   const rightPeekRef = useRef<HTMLDivElement>(null);
   const textRef = useRef<HTMLDivElement>(null);
   const dotsRef = useRef<HTMLDivElement>(null);
+  const [front, setFront] = useState(2);
 
   useEffect(() => {
     let ticking = false;
@@ -26,13 +43,6 @@ export default function ParallaxTeam() {
       if (headRef.current) headRef.current.style.transform = `translate3d(0, ${p * 60}px, 0)`;
       if (centerRef.current) {
         centerRef.current.style.transform = `translate3d(0, ${p * -60}px, 0) scale(${1 + p * 0.04})`;
-      }
-      // side polaroids fan out with scroll
-      if (fanLRef.current) {
-        fanLRef.current.style.transform = `translate3d(${-p * 60}px, ${p * 24}px, 0) rotate(${-9 - p * 9}deg)`;
-      }
-      if (fanRRef.current) {
-        fanRRef.current.style.transform = `translate3d(${p * 60}px, ${p * 24}px, 0) rotate(${9 + p * 9}deg)`;
       }
       if (leftPeekRef.current) {
         leftPeekRef.current.style.transform = `translate3d(${p * -70}px, ${p * 40}px, 0) rotate(${-12 - p * 6}deg)`;
@@ -54,6 +64,8 @@ export default function ParallaxTeam() {
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
 
+  const posOf = (i: number) => (i - front + CARDS.length) % CARDS.length; // 0 = front
+
   return (
     <div ref={sectionRef} className="grid lg:grid-cols-[1fr_1.15fr_1fr] gap-10 items-center mt-6">
       <div ref={headRef} className="relative will-change-transform">
@@ -71,25 +83,35 @@ export default function ParallaxTeam() {
         <div ref={rightPeekRef} className="absolute -right-8 top-10 w-[45%] aspect-[3/4] rounded-[20px] overflow-hidden opacity-90 will-change-transform">
           <Image src="https://picsum.photos/seed/spryb-side2/400/520" alt="In studio" fill className="object-cover" />
         </div>
-        <div ref={centerRef} className="relative z-10 aspect-[3/4] will-change-transform group">
-          <div ref={fanLRef} className="absolute inset-x-10 top-2 bottom-14 bg-white p-3 pb-12 rounded-xl shadow-[0_20px_60px_rgba(18,17,48,0.25)] overflow-hidden will-change-transform">
-            <div className="relative w-full h-full rounded-lg overflow-hidden">
-              <Image src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&w=600&q=80" alt="Strategy sessions" fill className="object-cover" />
-            </div>
-            <p className="text-center text-[13px] italic text-[#121130]/70 mt-2">strategy sundays ✎</p>
-          </div>
-          <div ref={fanRRef} className="absolute inset-x-10 top-2 bottom-14 bg-white p-3 pb-12 rounded-xl shadow-[0_20px_60px_rgba(18,17,48,0.25)] overflow-hidden will-change-transform">
-            <div className="relative w-full h-full rounded-lg overflow-hidden">
-              <Image src="https://images.unsplash.com/photo-1492691527719-9d1e07e534b4?auto=format&fit=crop&w=600&q=80" alt="Shoot days" fill className="object-cover" />
-            </div>
-            <p className="text-center text-[13px] italic text-[#121130]/70 mt-2">shoot days 🎬</p>
-          </div>
-          <div className="absolute inset-x-4 top-0 bottom-8 bg-white p-3 pb-12 rounded-xl shadow-[0_30px_80px_rgba(18,17,48,0.3)] overflow-hidden transition-transform duration-500 group-hover:scale-[1.03]">
-            <div className="relative w-full h-full rounded-lg overflow-hidden">
-              <Image src="https://images.unsplash.com/photo-1543269865-cbf427effbad?auto=format&fit=crop&w=800&q=80" alt="Team Spryb" fill className="object-cover" />
-            </div>
-            <p className="text-center text-[13px] italic text-[#121130]/70 mt-2">team spryb ⚡</p>
-          </div>
+        <div ref={centerRef} className="relative z-10 aspect-[3/4] will-change-transform">
+          {CARDS.map((c, i) => {
+            const pos = posOf(i);
+            const isFront = pos === 0;
+            return (
+              <button
+                key={c.caption}
+                onClick={() => setFront(i)}
+                aria-label={`Bring ${c.alt} to front`}
+                className={`absolute inset-x-4 top-0 bottom-8 bg-white p-3 pb-12 rounded-xl shadow-[0_30px_80px_rgba(18,17,48,0.3)] overflow-hidden transition-all duration-500 text-left ${
+                  isFront
+                    ? "z-20 scale-100 rotate-0 cursor-default"
+                    : pos === 1
+                      ? "z-10 scale-[0.92] rotate-[10deg] translate-x-8 cursor-pointer hover:scale-[0.95]"
+                      : "z-10 scale-[0.92] -rotate-[10deg] -translate-x-8 cursor-pointer hover:scale-[0.95]"
+                }`}
+              >
+                <span className="relative block w-full h-full rounded-lg overflow-hidden">
+                  <Image src={c.img} alt={c.alt} fill className="object-cover pointer-events-none" />
+                </span>
+                <span className="block text-center text-[13px] italic text-[#121130]/70 mt-2">{c.caption}</span>
+                {!isFront && (
+                  <span className="absolute top-4 right-4 bg-[#121130]/85 text-white text-[11px] px-3 py-1.5 rounded-full">
+                    Tap to view ↑
+                  </span>
+                )}
+              </button>
+            );
+          })}
         </div>
         <div ref={dotsRef} className="absolute inset-0 pointer-events-none will-change-transform">
           <span className="absolute -top-2 left-1/4 w-3 h-3 rounded-full bg-gradient-spryb z-20" />
