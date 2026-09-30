@@ -18,16 +18,90 @@ const inter = Inter({
   display: "swap",
 });
 
+const SITE_URL = "https://sprybdigital.com";
+
 export const metadata: Metadata = {
-  title: "Spryb Digital — Full-Stack Digital Marketing Agency",
+  metadataBase: new URL(SITE_URL),
+  title: {
+    default: "Spryb Digital — Digital Marketing Agency India | SEO, Ads, Social Media, ORM",
+    template: "%s | Spryb Digital",
+  },
   description:
-    "Spryb Digital is a full-stack growth agency: SEO, Performance Ads, Social Media, Content, Web, Branding, ORM & Hyperlocal Marketing. We make brands impossible to ignore.",
+    "Spryb Digital is a full-stack digital marketing agency in India: Social Media Strategy, Content Production, Community Management, SEO, Performance Ads, Web & Branding, ORM and Hyperlocal Marketing. We make brands impossible to ignore.",
+  keywords: [
+    "digital marketing agency india",
+    "social media agency india",
+    "seo services india",
+    "performance marketing agency",
+    "meta ads agency india",
+    "content production agency",
+    "community management services",
+    "online reputation management india",
+    "hyperlocal marketing",
+    "web design agency india",
+    "spryb digital",
+  ],
+  authors: [{ name: "Spryb Digital" }],
+  creator: "Spryb Digital",
+  alternates: { canonical: "/" },
+  openGraph: {
+    type: "website",
+    locale: "en_IN",
+    url: SITE_URL,
+    siteName: "Spryb Digital",
+    title: "Spryb Digital — Digital Marketing Agency India",
+    description:
+      "Full-stack growth: social media, content, SEO, performance ads, web, ORM & hyperlocal. One team turning attention into revenue.",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Spryb Digital — Digital Marketing Agency India",
+    description:
+      "Social media, content, SEO, performance ads, web, ORM & hyperlocal. We make brands impossible to ignore.",
+  },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      "max-image-preview": "large",
+      "max-snippet": -1,
+    },
+  },
+  icons: { icon: "/favicon.ico" },
+};
+
+const orgSchema = {
+  "@context": "https://schema.org",
+  "@type": "ProfessionalService",
+  name: "Spryb Digital",
+  url: SITE_URL,
+  email: "hello@spryb.digital",
+  description:
+    "Full-stack digital marketing agency in India: social media strategy, content production, community management, SEO, performance ads, web & branding, ORM and hyperlocal marketing.",
+  areaServed: "IN",
+  priceRange: "₹₹",
+  makesOffer: [
+    "Social Media Strategy",
+    "Content Production",
+    "Community Management",
+    "SEO",
+    "Performance Ads",
+    "Web & Branding",
+    "ORM",
+    "Hyperlocal Marketing",
+  ].map((name) => ({ "@type": "Offer", itemOffered: { "@type": "Service", name } })),
 };
 
 export default function RootLayout({ children }: LayoutProps<"/">) {
   return (
     <html lang="en" className={`${anton.variable} ${inter.variable} h-full`}>
       <body className="min-h-full flex flex-col bg-white text-[#121130] antialiased">
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(orgSchema) }}
+        />
         <SmoothScroll />
         <Navbar />
         <main className="flex-1">{children}</main>

@@ -1,5 +1,13 @@
+import type { Metadata } from "next";
 import Link from "next/link";
 import { expertises } from "@/data/site";
+
+export const metadata: Metadata = {
+  title: "Services — Social, SEO, Ads, ORM & Hyperlocal",
+  description:
+    "Explore Spryb Digital's 8 growth pillars: social media strategy, content production, community management, SEO, performance ads, web & branding, ORM and hyperlocal marketing in India.",
+  alternates: { canonical: "/services" },
+};
 
 export default function ServicesPage() {
   return (

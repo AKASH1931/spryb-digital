@@ -1,4 +1,12 @@
+import type { Metadata } from "next";
 import { ContactForm } from "@/components/ui";
+
+export const metadata: Metadata = {
+  title: "Contact — Get a Free Teardown",
+  description:
+    "Tell Spryb Digital everything in 30 seconds. Get a free teardown and fixed quote within 24 hours: hello@sprybdigital.com. Sprints from ₹35k/mo.",
+  alternates: { canonical: "/contact" },
+};
 
 export default function ContactPage() {
   return (

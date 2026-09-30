@@ -1,6 +1,14 @@
+import type { Metadata } from "next";
 import Link from "next/link";
 import Image from "next/image";
 import { team } from "@/data/site";
+
+export const metadata: Metadata = {
+  title: "About — Humans First, Metrics Always",
+  description:
+    "Meet Spryb Digital: a remote-first team of strategists, creators, media buyers and ORM experts turning attention into revenue for Indian brands.",
+  alternates: { canonical: "/about" },
+};
 
 export default function AboutPage() {
   return (
