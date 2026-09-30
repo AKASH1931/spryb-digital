@@ -2,13 +2,13 @@
 import { useState } from "react";
 import Link from "next/link";
 
-/** Sticky mobile CTA — phones only, dismissible */
+/** Mobile CTA band — static, sits below footer (not sticky) */
 export default function StickyCta() {
   const [show, setShow] = useState(true);
   if (!show) return null;
   return (
-    <div className="fixed bottom-0 inset-x-0 z-40 sm:hidden px-3 pb-[max(0.75rem,env(safe-area-inset-bottom))]">
-      <div className="bg-[#121130] border border-white/15 rounded-2xl shadow-[0_-8px_40px_rgba(18,17,48,0.35)] px-4 py-3 flex items-center gap-3">
+    <div className="sm:hidden bg-[#0C0B22] px-4 pt-2 pb-[max(1rem,env(safe-area-inset-bottom))]">
+      <div className="bg-[#1A1940] border border-white/15 rounded-2xl px-4 py-3.5 flex items-center gap-3">
         <div className="text-[13px] text-white font-medium leading-tight">
           Ready to grow?
           <br />
