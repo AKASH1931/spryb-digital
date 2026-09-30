@@ -1,0 +1,120 @@
+"use client";
+import { useEffect, useRef, useState } from "react";
+import Link from "next/link";
+import Image from "next/image";
+import { projects, team } from "@/data/site";
+
+/**
+ * Pinned horizontal scroll (Foudre style):
+ * section pins, vertical scroll drives cards horizontally,
+ * then releases to the next section. Desktop only; mobile = swipe row.
+ */
+export default function PinnedWork() {
+  const outerRef = useRef<HTMLDivElement>(null);
+  const trackRef = useRef<HTMLDivElement>(null);
+  const [enabled, setEnabled] = useState(false);
+
+  useEffect(() => {
+    const mq = window.matchMedia("(min-width: 1024px)");
+    const apply = () => setEnabled(mq.matches);
+    apply();
+    mq.addEventListener("change", apply);
+    return () => mq.removeEventListener("change", apply);
+  }, []);
+
+  useEffect(() => {
+    if (!enabled) {
+      if (outerRef.current) outerRef.current.style.height = "";
+      if (trackRef.current) trackRef.current.style.transform = "";
+      return;
+    }
+    const outer = outerRef.current;
+    const track = trackRef.current;
+    if (!outer || !track) return;
+
+    const layout = () => {
+      const distance = Math.max(track.scrollWidth - track.parentElement!.clientWidth + 80, 0);
+      outer.style.height = `${distance + window.innerHeight}px`;
+    };
+    layout();
+
+    let ticking = false;
+    const update = () => {
+      ticking = false;
+      const rect = outer.getBoundingClientRect();
+      const total = outer.offsetHeight - window.innerHeight;
+      const p = Math.min(Math.max(-rect.top / Math.max(total, 1), 0), 1);
+      const maxX = Math.max(track.scrollWidth - track.parentElement!.clientWidth + 80, 0);
+      track.style.transform = `translate3d(${-p * maxX}px, 0, 0)`;
+    };
+    const onScroll = () => {
+      if (!ticking) {
+        ticking = true;
+        requestAnimationFrame(update);
+      }
+    };
+    update();
+    window.addEventListener("scroll", onScroll, { passive: true });
+    window.addEventListener("resize", layout);
+    return () => {
+      window.removeEventListener("scroll", onScroll);
+      window.removeEventListener("resize", layout);
+    };
+  }, [enabled]);
+
+  return (
+    <section className="pl-6 sm:pl-10 pb-20">
+      <div ref={outerRef}>
+        <div className="lg:sticky lg:top-0 lg:h-screen lg:overflow-hidden flex flex-col justify-center py-10">
+          <div className="mx-auto max-w-[1440px] w-full grid lg:grid-cols-[340px_1fr] gap-8 items-center">
+            <div className="pr-6 shrink-0">
+              <p className="section-label">📱💖😎 Work</p>
+              <span className="inline-block bg-[#1A1940] text-white rounded-2xl px-4 py-2.5 text-xl rotate-[3deg] mt-4">📱💖😎</span>
+              <h2 className="font-display text-[13vw] sm:text-[64px] mt-3">
+                WE MAKE THEM,
+                <br />
+                SOCIAL.
+              </h2>
+              <div className="flex items-center mt-6">
+                {team.slice(0, 4).map((m, i) => (
+                  <span key={m.name} className="w-11 h-11 rounded-full overflow-hidden border-2 border-white shadow -ml-2 first:ml-0 relative" style={{ zIndex: 4 - i }}>
+                    <Image src={m.img} alt={m.name} fill className="object-cover" />
+                  </span>
+                ))}
+                <Link href="/work" className="circle-btn !w-11 !h-11 !text-sm -ml-2 font-bold">+2</Link>
+              </div>
+              <Link href="/work" className="btn-gradient mt-6 inline-block !py-3 !px-6 text-sm">Explore all →</Link>
+            </div>
+            <div className={enabled ? "overflow-hidden" : "overflow-x-auto carousel-row pr-6"}>
+              <div ref={trackRef} className="flex gap-4 w-max will-change-transform">
+                {projects.map((p) => (
+                  <article key={p.slug} className="w-[270px] sm:w-[320px] aspect-[3/4] rounded-[20px] overflow-hidden relative group shadow-[0_20px_60px_rgba(18,17,48,0.2)] shrink-0">
+                    <Image src={p.img} alt={p.brand} fill className="object-cover group-hover:scale-108 transition-transform duration-500" />
+                    <div className="absolute inset-0 bg-gradient-to-b from-[#121130]/30 via-transparent to-[#121130]/70" />
+                    <h3 className="absolute top-5 left-0 right-0 text-center font-display text-4xl sm:text-5xl text-white drop-shadow-[0_2px_12px_rgba(0,0,0,0.5)] px-4">{p.brand}</h3>
+                    <div className="absolute bottom-4 left-4 right-4">
+                      <div className="flex items-center gap-2 mb-3">
+                        <span className="w-9 h-9 rounded-full bg-gradient-spryb grid place-items-center text-[#121130] font-bold">+</span>
+                        <span className="w-9 h-9 rounded-full bg-white grid place-items-center text-[#121130]">♥</span>
+                        <span className="ml-auto text-[11px] font-bold bg-white/90 text-[#121130] px-3 py-1.5 rounded-full">{p.result}</span>
+                      </div>
+                      <div className="flex flex-wrap gap-1.5">
+                        {p.tags.map((t) => <span key={t} className="text-[11px] font-medium bg-white/90 text-[#121130] px-3 py-1.5 rounded-full">{t}</span>)}
+                      </div>
+                    </div>
+                  </article>
+                ))}
+                <Link href="/work" className="w-[270px] sm:w-[320px] aspect-[3/4] rounded-[20px] bg-[#1A1940] p-8 grid place-items-center text-center shrink-0">
+                  <div>
+                    <h3 className="font-display text-3xl text-white">MORE PROJECTS?</h3>
+                    <span className="btn-gradient mt-5 inline-block !py-3 !px-6 text-sm">Explore →</span>
+                  </div>
+                </Link>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+}

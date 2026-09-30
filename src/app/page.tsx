@@ -1,9 +1,10 @@
 import Link from "next/link";
 import Image from "next/image";
-import { team, expertises, projects, process, whyUs, faqs } from "@/data/site";
+import { team, expertises, process, whyUs, faqs } from "@/data/site";
 import { Marquee, CarouselShell, Faq, ContactForm } from "@/components/ui";
 import ParallaxHero from "@/components/ParallaxHero";
 import ParallaxTeam from "@/components/ParallaxTeam";
+import PinnedWork from "@/components/PinnedWork";
 
 export default function Home() {
   return (
@@ -22,56 +23,8 @@ export default function Home() {
         </div>
       </section>
 
-      {/* ── PROJECTS — Foudre sticky title + tall horizontal cards ── */}
-      <section className="pl-6 sm:pl-10 pb-20">
-        <div className="mx-auto max-w-[1440px] grid lg:grid-cols-[340px_1fr] gap-8 items-start">
-          <div className="lg:sticky lg:top-28 pr-6">
-            <p className="section-label">📱💖😎 Work</p>
-            <span className="inline-block bg-[#1A1940] text-white rounded-2xl px-4 py-2.5 text-xl rotate-[3deg] mt-4">📱💖😎</span>
-            <h2 className="font-display text-[13vw] sm:text-[64px] mt-3">
-              WE MAKE THEM,
-              <br />
-              SOCIAL.
-            </h2>
-            <div className="flex items-center mt-6">
-              {team.slice(0, 4).map((m, i) => (
-                <span key={m.name} className="w-11 h-11 rounded-full overflow-hidden border-2 border-white shadow -ml-2 first:ml-0 relative" style={{ zIndex: 4 - i }}>
-                  <Image src={m.img} alt={m.name} fill className="object-cover" />
-                </span>
-              ))}
-              <Link href="/work" className="circle-btn !w-11 !h-11 !text-sm -ml-2 font-bold">+2</Link>
-            </div>
-            <Link href="/work" className="btn-gradient mt-6 inline-block !py-3 !px-6 text-sm">Explore all →</Link>
-          </div>
-          <div className="overflow-hidden">
-            <CarouselShell id="work-carousel" drift>
-              {projects.map((p) => (
-                <article key={p.slug} className="w-[270px] sm:w-[320px] aspect-[3/4] rounded-[20px] overflow-hidden relative group shadow-[0_20px_60px_rgba(18,17,48,0.2)]">
-                  <Image src={p.img} alt={p.brand} fill className="object-cover group-hover:scale-108 transition-transform duration-500" />
-                  <div className="absolute inset-0 bg-gradient-to-b from-[#121130]/30 via-transparent to-[#121130]/70" />
-                  <h3 className="absolute top-5 left-0 right-0 text-center font-display text-4xl sm:text-5xl text-white drop-shadow-[0_2px_12px_rgba(0,0,0,0.5)] px-4">{p.brand}</h3>
-                  <div className="absolute bottom-4 left-4 right-4">
-                    <div className="flex items-center gap-2 mb-3">
-                      <span className="w-9 h-9 rounded-full bg-gradient-spryb grid place-items-center text-[#121130] font-bold">+</span>
-                      <span className="w-9 h-9 rounded-full bg-white grid place-items-center text-[#121130]">♥</span>
-                      <span className="ml-auto text-[11px] font-bold bg-white/90 text-[#121130] px-3 py-1.5 rounded-full">{p.result}</span>
-                    </div>
-                    <div className="flex flex-wrap gap-1.5">
-                      {p.tags.map((t) => <span key={t} className="text-[11px] font-medium bg-white/90 text-[#121130] px-3 py-1.5 rounded-full">{t}</span>)}
-                    </div>
-                  </div>
-                </article>
-              ))}
-              <Link href="/work" className="w-[270px] sm:w-[320px] aspect-[3/4] rounded-[20px] bg-[#1A1940] p-8 grid place-items-center text-center shrink-0">
-                <div>
-                  <h3 className="font-display text-3xl text-white">MORE PROJECTS?</h3>
-                  <span className="btn-gradient mt-5 inline-block !py-3 !px-6 text-sm">Explore →</span>
-                </div>
-              </Link>
-            </CarouselShell>
-          </div>
-        </div>
-      </section>
+      {/* ── PROJECTS — pinned horizontal scroll, one section at a time ── */}
+      <PinnedWork />
 
       {/* ── IMPACT — "FRAPPER FORT" ── */}
       <section className="px-6 sm:px-10 py-20 text-left sm:text-center relative overflow-hidden">
