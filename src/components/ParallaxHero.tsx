@@ -32,7 +32,6 @@ export default function ParallaxHero() {
       }
       if (headRef.current) {
         headRef.current.style.transform = `translate3d(0, ${y * -30}px, 0)`;
-        headRef.current.style.opacity = `${Math.max(1 - y * 0.7, 0)}`;
       }
     };
     const onScroll = () => {
