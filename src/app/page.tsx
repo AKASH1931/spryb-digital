@@ -8,8 +8,18 @@ import ParallaxTeam from "@/components/ParallaxTeam";
 import PinnedWork from "@/components/PinnedWork";
 
 export default function Home() {
+  const faqSchema = {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    mainEntity: faqs.map((f) => ({
+      "@type": "Question",
+      name: f.q,
+      acceptedAnswer: { "@type": "Answer", text: f.a },
+    })),
+  };
   return (
     <div>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
       <ParallaxHero />
 
       {/* ── CLIENTS — trusted by ── */}
