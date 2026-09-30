@@ -63,7 +63,7 @@ export default function ParallaxTeam() {
           <Image src="https://picsum.photos/seed/spryb-side2/400/520" alt="In studio" fill className="object-cover" />
         </div>
         <div ref={centerRef} className="relative z-10 aspect-[3/4] rounded-[20px] overflow-hidden shadow-[0_30px_80px_rgba(18,17,48,0.25)] border border-[#121130]/10 will-change-transform">
-          <Image src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&w=800&q=80" alt="Team Spryb" fill className="object-cover" />
+            <Image src="https://images.unsplash.com/photo-1543269865-cbf427effbad?auto=format&fit=crop&w=800&q=80" alt="Team Spryb" fill className="object-cover" />
         </div>
         <div ref={dotsRef} className="absolute inset-0 pointer-events-none will-change-transform">
           <span className="absolute -top-2 left-1/4 w-3 h-3 rounded-full bg-gradient-spryb z-20" />
