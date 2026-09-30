@@ -81,6 +81,7 @@ const orgSchema = {
   name: "Spryb Digital",
   url: SITE_URL,
   email: "hello@sprybdigital.com",
+  telephone: "+91-7307934372",
   address: {
     "@type": "PostalAddress",
     streetAddress: "C 401, Sahara Plaza, Patrakarpuram Crossing Rd, Vikas Khand 1",

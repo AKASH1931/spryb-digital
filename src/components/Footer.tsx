@@ -18,6 +18,7 @@ export default function Footer() {
               <Link href="/contact" className="btn-gradient !py-3 !px-6 text-sm">Get proposal →</Link>
               <a href="mailto:hello@sprybdigital.com" className="btn-ghost !py-3 !px-6 text-sm">hello@sprybdigital.com</a>
             </div>
+            <p className="mt-4 text-[14px] text-white/70">✆ <a href="tel:+917307934372" className="text-[#D8F23F] font-medium">+91 73079 34372</a></p>
           </div>
           <div className="text-sm">
             <p className="text-white/40 uppercase tracking-widest text-[11px] mb-4">Sitemap</p>
