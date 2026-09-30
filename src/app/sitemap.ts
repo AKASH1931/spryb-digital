@@ -3,7 +3,7 @@ import type { MetadataRoute } from "next";
 const SITE_URL = "https://sprybdigital.com";
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const routes = ["", "/services", "/work", "/about", "/contact"];
+  const routes = ["", "/services", "/work", "/about", "/contact", "/privacy", "/terms"];
   return routes.map((route) => ({
     url: `${SITE_URL}${route}`,
     lastModified: new Date(),

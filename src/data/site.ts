@@ -174,6 +174,6 @@ export const faqs = [
   },
   {
     q: "How to get a quote or start?",
-    a: "Simple: fill the 30-second form below or mail hello@spryb.digital. Then a first call — video, at our place or yours — to understand you and build a tailor-made proposal.",
+    a: "Simple: fill the 30-second form below or mail hello@sprybdigital.com. Then a first call — video, at our place or yours — to understand you and build a tailor-made proposal.",
   },
 ];

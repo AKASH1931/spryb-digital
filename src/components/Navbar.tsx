@@ -59,7 +59,7 @@ export default function Navbar() {
             ))}
             <div className="mt-8 flex flex-wrap gap-3">
               <Link href="/contact" onClick={() => setOpen(false)} className="btn-gradient">Start a project →</Link>
-              <a href="mailto:hello@spryb.digital" className="btn-ghost">hello@spryb.digital</a>
+              <a href="mailto:hello@sprybdigital.com" className="btn-ghost">hello@sprybdigital.com</a>
             </div>
           </div>
         </div>

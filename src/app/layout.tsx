@@ -4,6 +4,9 @@ import "./globals.css";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import SmoothScroll from "@/components/SmoothScroll";
+import StickyCta from "@/components/StickyCta";
+import CookieBanner from "@/components/CookieBanner";
+import Analytics from "@/components/Analytics";
 
 const anton = Anton({
   weight: "400",
@@ -77,7 +80,7 @@ const orgSchema = {
   "@type": "ProfessionalService",
   name: "Spryb Digital",
   url: SITE_URL,
-  email: "hello@spryb.digital",
+  email: "hello@sprybdigital.com",
   description:
     "Full-stack digital marketing agency in India: social media strategy, content production, community management, SEO, performance ads, web & branding, ORM and hyperlocal marketing.",
   areaServed: "IN",
@@ -103,9 +106,12 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
           dangerouslySetInnerHTML={{ __html: JSON.stringify(orgSchema) }}
         />
         <SmoothScroll />
+        <Analytics />
         <Navbar />
         <main className="flex-1">{children}</main>
         <Footer />
+        <StickyCta />
+        <CookieBanner />
       </body>
     </html>
   );

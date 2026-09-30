@@ -16,7 +16,7 @@ export default function Footer() {
             </p>
             <div className="mt-6 flex flex-wrap gap-3">
               <Link href="/contact" className="btn-gradient !py-3 !px-6 text-sm">Get proposal →</Link>
-              <a href="mailto:hello@spryb.digital" className="btn-ghost !py-3 !px-6 text-sm">hello@spryb.digital</a>
+              <a href="mailto:hello@sprybdigital.com" className="btn-ghost !py-3 !px-6 text-sm">hello@sprybdigital.com</a>
             </div>
           </div>
           <div className="text-sm">
@@ -48,7 +48,10 @@ export default function Footer() {
 
         <div className="mt-6 pt-6 border-t border-white/10 flex flex-col sm:flex-row justify-between gap-3 text-[12px] text-white/45">
           <span>© 2026 Spryb Digital. All rights reserved.</span>
-          <span>Privacy · Legal</span>
+          <span className="flex gap-4">
+            <Link href="/privacy" className="hover:text-[#D8F23F]">Privacy</Link>
+            <Link href="/terms" className="hover:text-[#D8F23F]">Terms</Link>
+          </span>
         </div>
       </div>
     </footer>

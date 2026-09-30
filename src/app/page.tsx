@@ -1,7 +1,8 @@
 import Link from "next/link";
 import Image from "next/image";
 import { team, expertises, process, whyUs, faqs } from "@/data/site";
-import { Marquee, CarouselShell, Faq, ContactForm } from "@/components/ui";
+import { Marquee, CarouselShell, Faq } from "@/components/ui";
+import ContactForm from "@/components/ContactForm";
 import ParallaxHero from "@/components/ParallaxHero";
 import ParallaxTeam from "@/components/ParallaxTeam";
 import PinnedWork from "@/components/PinnedWork";
@@ -170,7 +171,7 @@ export default function Home() {
             <p className="section-label">Contact</p>
             <h2 className="font-display text-[13vw] sm:text-[80px]">TELL US <br /><span className="text-gradient">EVERYTHING.</span></h2>
             <p className="text-[#121130]/70 mt-4">A mini form, 30 seconds. We get your answers and come back fast.</p>
-            <p className="text-[#121130]/55 text-[14px] mt-4">✉ hello@spryb.digital<br />◷ Mon–Sat, 10am–7pm IST · Remote-first, shoots on-site</p>
+            <p className="text-[#121130]/55 text-[14px] mt-4">✉ hello@sprybdigital.com<br />◷ Mon–Sat, 10am–7pm IST · Remote-first, shoots on-site</p>
           </div>
           <ContactForm />
         </div>
