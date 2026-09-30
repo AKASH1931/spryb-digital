@@ -7,6 +7,8 @@ export default function ParallaxTeam() {
   const sectionRef = useRef<HTMLDivElement>(null);
   const headRef = useRef<HTMLDivElement>(null);
   const centerRef = useRef<HTMLDivElement>(null);
+  const fanLRef = useRef<HTMLDivElement>(null);
+  const fanRRef = useRef<HTMLDivElement>(null);
   const leftPeekRef = useRef<HTMLDivElement>(null);
   const rightPeekRef = useRef<HTMLDivElement>(null);
   const textRef = useRef<HTMLDivElement>(null);
@@ -24,6 +26,13 @@ export default function ParallaxTeam() {
       if (headRef.current) headRef.current.style.transform = `translate3d(0, ${p * 60}px, 0)`;
       if (centerRef.current) {
         centerRef.current.style.transform = `translate3d(0, ${p * -60}px, 0) scale(${1 + p * 0.04})`;
+      }
+      // side polaroids fan out with scroll
+      if (fanLRef.current) {
+        fanLRef.current.style.transform = `translate3d(${-p * 60}px, ${p * 24}px, 0) rotate(${-9 - p * 9}deg)`;
+      }
+      if (fanRRef.current) {
+        fanRRef.current.style.transform = `translate3d(${p * 60}px, ${p * 24}px, 0) rotate(${9 + p * 9}deg)`;
       }
       if (leftPeekRef.current) {
         leftPeekRef.current.style.transform = `translate3d(${p * -70}px, ${p * 40}px, 0) rotate(${-12 - p * 6}deg)`;
@@ -63,13 +72,13 @@ export default function ParallaxTeam() {
           <Image src="https://picsum.photos/seed/spryb-side2/400/520" alt="In studio" fill className="object-cover" />
         </div>
         <div ref={centerRef} className="relative z-10 aspect-[3/4] will-change-transform group">
-          <div className="absolute inset-x-10 top-2 bottom-14 -rotate-[9deg] bg-white p-3 pb-12 rounded-xl shadow-[0_20px_60px_rgba(18,17,48,0.25)] overflow-hidden transition-transform duration-500 group-hover:-rotate-[14deg] group-hover:-translate-x-8">
+          <div ref={fanLRef} className="absolute inset-x-10 top-2 bottom-14 bg-white p-3 pb-12 rounded-xl shadow-[0_20px_60px_rgba(18,17,48,0.25)] overflow-hidden will-change-transform">
             <div className="relative w-full h-full rounded-lg overflow-hidden">
               <Image src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&w=600&q=80" alt="Strategy sessions" fill className="object-cover" />
             </div>
             <p className="text-center text-[13px] italic text-[#121130]/70 mt-2">strategy sundays ✎</p>
           </div>
-          <div className="absolute inset-x-10 top-2 bottom-14 rotate-[9deg] bg-white p-3 pb-12 rounded-xl shadow-[0_20px_60px_rgba(18,17,48,0.25)] overflow-hidden transition-transform duration-500 group-hover:rotate-[14deg] group-hover:translate-x-8">
+          <div ref={fanRRef} className="absolute inset-x-10 top-2 bottom-14 bg-white p-3 pb-12 rounded-xl shadow-[0_20px_60px_rgba(18,17,48,0.25)] overflow-hidden will-change-transform">
             <div className="relative w-full h-full rounded-lg overflow-hidden">
               <Image src="https://images.unsplash.com/photo-1492691527719-9d1e07e534b4?auto=format&fit=crop&w=600&q=80" alt="Shoot days" fill className="object-cover" />
             </div>
