@@ -1,5 +1,5 @@
 "use client";
-import { useState, useRef } from "react";
+import { useState, useRef, useEffect } from "react";
 
 export function Marquee({ items, slow = false }: { items: string[]; slow?: boolean }) {
   const row = [...items, ...items];
@@ -16,13 +16,36 @@ export function Marquee({ items, slow = false }: { items: string[]; slow?: boole
   );
 }
 
-export function CarouselShell({ children, id }: { children: React.ReactNode; id: string }) {
+export function CarouselShell({ children, id, drift = false }: { children: React.ReactNode; id: string; drift?: boolean }) {
   const ref = useRef<HTMLDivElement>(null);
+  const wrapRef = useRef<HTMLDivElement>(null);
   const scroll = (dir: number) => {
     ref.current?.scrollBy({ left: dir * 340, behavior: "smooth" });
   };
+  useEffect(() => {
+    if (!drift) return;
+    let ticking = false;
+    const update = () => {
+      ticking = false;
+      const el = wrapRef.current;
+      if (!el) return;
+      const rect = el.getBoundingClientRect();
+      const vh = window.innerHeight;
+      const p = Math.min(Math.max((vh - rect.top) / (vh + rect.height), 0), 1);
+      el.style.transform = `translate3d(${80 - p * 220}px, 0, 0)`;
+    };
+    const onScroll = () => {
+      if (!ticking) {
+        ticking = true;
+        requestAnimationFrame(update);
+      }
+    };
+    update();
+    window.addEventListener("scroll", onScroll, { passive: true });
+    return () => window.removeEventListener("scroll", onScroll);
+  }, [drift]);
   return (
-    <div>
+    <div ref={wrapRef} className={drift ? "will-change-transform" : undefined}>
       <div ref={ref} id={id} className="carousel-row">
         {children}
       </div>

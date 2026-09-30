@@ -44,7 +44,7 @@ export default function Home() {
             <Link href="/work" className="btn-gradient mt-6 inline-block !py-3 !px-6 text-sm">Explore all →</Link>
           </div>
           <div className="overflow-hidden">
-            <CarouselShell id="work-carousel">
+            <CarouselShell id="work-carousel" drift>
               {projects.map((p) => (
                 <article key={p.slug} className="w-[270px] sm:w-[320px] aspect-[3/4] rounded-[20px] overflow-hidden relative group shadow-[0_20px_60px_rgba(18,17,48,0.2)]">
                   <Image src={p.img} alt={p.brand} fill className="object-cover group-hover:scale-108 transition-transform duration-500" />
