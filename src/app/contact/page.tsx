@@ -14,6 +14,7 @@ export default function ContactPage() {
       <div className="mx-auto max-w-[1100px] grid lg:grid-cols-2 gap-10 items-start">
         <div>
           <p className="section-label">Contact</p>
+          <span className="inline-block bg-[#1A1940] text-white rounded-2xl px-4 py-2.5 text-xl rotate-[-3deg] mt-4">✉️⚡️📞</span>
           <h1 className="font-display text-[14vw] sm:text-[90px]">TELL US <br /><span className="text-gradient">EVERYTHING.</span></h1>
           <p className="text-[#121130]/70 mt-5 text-[16px]">A mini form, 30 seconds. We get your answers and come back fast.</p>
           <div className="mt-8 text-[15px]">

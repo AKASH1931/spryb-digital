@@ -16,6 +16,19 @@ export default function AboutPage() {
       <div className="mx-auto max-w-[1440px]">
         <p className="section-label">Agency</p>
         <h1 className="font-display text-[13vw] sm:text-[100px]">WE ELECTRIFY <br /><span className="text-gradient">YOUR NETWORKS.</span></h1>
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-3 mt-8">
+          {[
+            ["120+", "brands scaled"],
+            ["4.9★", "avg. rating lift"],
+            ["3.2x", "avg. ROAS"],
+            ["48hr", "kickoff speed"],
+          ].map(([n, l]) => (
+            <div key={l} className="border-t border-[#121130]/15 pt-4">
+              <div className="font-display text-4xl sm:text-5xl text-gradient">{n}</div>
+              <div className="text-[#121130]/55 text-[13px] mt-1">{l}</div>
+            </div>
+          ))}
+        </div>
         <div className="grid lg:grid-cols-2 gap-8 mt-8 items-start">
           <div className="card-dark p-8">
             <Image src="/spryb-logo.png" alt="Spryb Digital" width={280} height={150} className="rounded-xl bg-white p-4" />
