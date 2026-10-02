@@ -37,8 +37,7 @@ export default function ServicesPage() {
         {expertises.map((e, i) => (
           <article
             key={e.title}
-            className="sticky rounded-[28px] overflow-hidden min-h-[88vh] flex items-end shadow-[0_30px_90px_rgba(18,17,48,0.35)]"
-            style={{ top: `${88 + i * 14}px` }}
+            className="rounded-[28px] overflow-hidden min-h-[88vh] flex items-end shadow-[0_30px_90px_rgba(18,17,48,0.35)] relative"
           >
             <div className="absolute inset-0">
               <div className="absolute inset-0 animate-kenburns">
