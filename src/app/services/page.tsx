@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { expertises, process } from "@/data/site";
 import ServicePanel from "@/components/ServicePanel";
+import ServicesAccordion from "@/components/ServicesAccordion";
 
 const IMAGES = [
   "https://images.unsplash.com/photo-1511707171634-5f897ff02aa9?auto=format&fit=crop&w=1400&q=80",
@@ -33,10 +34,13 @@ export default function ServicesPage() {
       </div>
     </div>
     <div className="mt-4 space-y-6 px-6 sm:px-10 pb-24">
-      <div className="mx-auto max-w-[1440px] space-y-6">
+      <div className="mx-auto max-w-[1440px] space-y-6 hidden md:block">
         {expertises.map((e, i) => (
           <ServicePanel key={e.title} e={e} i={i} img={IMAGES[i % IMAGES.length]} />
         ))}
+      </div>
+      <div className="mx-auto max-w-[1440px] md:hidden">
+        <ServicesAccordion />
       </div>
     </div>
     <div className="px-6 sm:px-10 pb-24">
