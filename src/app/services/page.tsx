@@ -23,6 +23,7 @@ export const metadata: Metadata = {
 
 export default function ServicesPage() {
   return (
+    <>
     <div className="pt-32 sm:pt-40 px-6 sm:px-10 pb-24">
       <div className="mx-auto max-w-[1440px]">
         <p className="section-label">Expertise</p>
@@ -85,5 +86,6 @@ export default function ServicesPage() {
         </div>
       </div>
     </div>
+    </>
   );
 }
