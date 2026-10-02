@@ -4,10 +4,13 @@ import { expertises, process } from "@/data/site";
 import ServicePanel from "@/components/ServicePanel";
 import ServicesAccordion from "@/components/ServicesAccordion";
 
-const VIDEOS: Record<number, string> = {
-  0: "https://videos.pexels.com/video-files/6563909/6563909-sd_960_540_25fps.mp4",
-  1: "https://videos.pexels.com/video-files/7677007/7677007-sd_960_540_25fps.mp4",
-  7: "https://videos.pexels.com/video-files/20538640/20538640-sd_640_360_30fps.mp4",
+const VIDEOS: Record<number, string | { d: string; m: string }> = {
+  0: "https://videos.pexels.com/video-files/6563909/6563909-hd_1280_720_25fps.mp4",
+  1: "https://videos.pexels.com/video-files/7677007/7677007-hd_1280_720_25fps.mp4",
+  7: {
+    d: "https://videos.pexels.com/video-files/20538640/20538640-sd_960_540_30fps.mp4",
+    m: "https://videos.pexels.com/video-files/20538640/20538640-sd_640_360_30fps.mp4",
+  },
 };
 const IMAGES = [
   "https://images.unsplash.com/photo-1511707171634-5f897ff02aa9?auto=format&fit=crop&w=1400&q=80",

@@ -6,7 +6,7 @@ import Image from "next/image";
 type Expertise = { title: string; points: string[] };
 
 /** Full-screen service panel: video/parallax bg + staggered reveal, no overlap */
-export default function ServicePanel({ e, i, img, video }: { e: Expertise; i: number; img: string; video?: string }) {
+export default function ServicePanel({ e, i, img, video }: { e: Expertise; i: number; img: string; video?: string | { d: string; m: string } }) {
   const rootRef = useRef<HTMLElement>(null);
   const bgRef = useRef<HTMLDivElement>(null);
   const videoRef = useRef<HTMLVideoElement>(null);
@@ -36,10 +36,11 @@ export default function ServicePanel({ e, i, img, video }: { e: Expertise; i: nu
       (entries) => {
         if (entries[0].isIntersecting) {
           setShown(true);
-          // lazy-load + play video only when visible
+          // lazy-load + play video only when visible (desktop/mobile best-fit)
           const v = videoRef.current;
-          if (v && v.dataset.src && !v.src) {
-            v.src = v.dataset.src;
+          if (v && !v.src) {
+            const src = typeof video === "string" ? video : window.innerWidth >= 768 ? video!.d : video!.m;
+            v.src = src;
             v.load();
             v.play().catch(() => {});
           }
@@ -68,7 +69,6 @@ export default function ServicePanel({ e, i, img, video }: { e: Expertise; i: nu
           <div ref={bgRef} className="absolute -inset-y-[10%] inset-x-0 will-change-transform">
             <video
               ref={videoRef}
-              data-src={video}
               className="w-full h-full object-cover"
               muted
               loop
