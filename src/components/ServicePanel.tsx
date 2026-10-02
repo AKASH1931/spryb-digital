@@ -38,11 +38,17 @@ export default function ServicePanel({ e, i, img, video }: { e: Expertise; i: nu
           setShown(true);
           // lazy-load + play video only when visible (desktop/mobile best-fit)
           const v = videoRef.current;
-          if (v && !v.src) {
+          if (v && !v.currentSrc) {
             const src = typeof video === "string" ? video : window.innerWidth >= 768 ? video!.d : video!.m;
+            v.muted = true;
+            v.defaultMuted = true;
+            v.setAttribute("muted", "");
+            v.setAttribute("playsinline", "");
             v.src = src;
             v.load();
-            v.play().catch(() => {});
+            const tryPlay = () => v.play().catch(() => {});
+            if (v.readyState >= 2) tryPlay();
+            else v.addEventListener("canplay", tryPlay, { once: true });
           }
           io.disconnect();
         }
