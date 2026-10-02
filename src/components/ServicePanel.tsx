@@ -5,10 +5,11 @@ import Image from "next/image";
 
 type Expertise = { title: string; points: string[] };
 
-/** Full-screen service panel: parallax bg + staggered reveal, no overlap */
-export default function ServicePanel({ e, i, img }: { e: Expertise; i: number; img: string }) {
+/** Full-screen service panel: video/parallax bg + staggered reveal, no overlap */
+export default function ServicePanel({ e, i, img, video }: { e: Expertise; i: number; img: string; video?: string }) {
   const rootRef = useRef<HTMLElement>(null);
   const bgRef = useRef<HTMLDivElement>(null);
+  const videoRef = useRef<HTMLVideoElement>(null);
   const [shown, setShown] = useState(false);
 
   useEffect(() => {
@@ -35,6 +36,13 @@ export default function ServicePanel({ e, i, img }: { e: Expertise; i: number; i
       (entries) => {
         if (entries[0].isIntersecting) {
           setShown(true);
+          // lazy-load + play video only when visible
+          const v = videoRef.current;
+          if (v && v.dataset.src && !v.src) {
+            v.src = v.dataset.src;
+            v.load();
+            v.play().catch(() => {});
+          }
           io.disconnect();
         }
       },
@@ -56,9 +64,25 @@ export default function ServicePanel({ e, i, img }: { e: Expertise; i: number; i
       className="rounded-[28px] overflow-hidden min-h-[88vh] flex items-end shadow-[0_30px_90px_rgba(18,17,48,0.35)] relative"
     >
       <div className="absolute inset-0 overflow-hidden">
-        <div ref={bgRef} className="absolute -inset-y-[10%] inset-x-0 will-change-transform">
-          <Image src={img} alt={e.title} fill className="object-cover" sizes="100vw" />
-        </div>
+        {video ? (
+          <div ref={bgRef} className="absolute -inset-y-[10%] inset-x-0 will-change-transform">
+            <video
+              ref={videoRef}
+              data-src={video}
+              className="w-full h-full object-cover"
+              muted
+              loop
+              playsInline
+              preload="none"
+              poster={img}
+              aria-label={e.title}
+            />
+          </div>
+        ) : (
+          <div ref={bgRef} className="absolute -inset-y-[10%] inset-x-0 will-change-transform">
+            <Image src={img} alt={e.title} fill className="object-cover" sizes="100vw" />
+          </div>
+        )}
         <div className="absolute inset-0 bg-gradient-to-t from-[#0C0B22] via-[#121130]/55 to-[#121130]/25" />
       </div>
       <div className="relative p-7 sm:p-12 w-full">

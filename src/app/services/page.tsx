@@ -4,6 +4,11 @@ import { expertises, process } from "@/data/site";
 import ServicePanel from "@/components/ServicePanel";
 import ServicesAccordion from "@/components/ServicesAccordion";
 
+const VIDEOS: Record<number, string> = {
+  0: "https://videos.pexels.com/video-files/6563909/6563909-sd_960_540_25fps.mp4",
+  1: "https://videos.pexels.com/video-files/7677007/7677007-sd_960_540_25fps.mp4",
+  7: "https://videos.pexels.com/video-files/20538640/20538640-sd_640_360_30fps.mp4",
+};
 const IMAGES = [
   "https://images.unsplash.com/photo-1511707171634-5f897ff02aa9?auto=format&fit=crop&w=1400&q=80",
   "https://images.unsplash.com/photo-1492691527719-9d1e07e534b4?auto=format&fit=crop&w=1400&q=80",
@@ -36,7 +41,7 @@ export default function ServicesPage() {
     <div className="mt-4 space-y-6 px-6 sm:px-10 pb-24">
       <div className="mx-auto max-w-[1440px] space-y-6 hidden md:block">
         {expertises.map((e, i) => (
-          <ServicePanel key={e.title} e={e} i={i} img={IMAGES[i % IMAGES.length]} />
+          <ServicePanel key={e.title} e={e} i={i} img={IMAGES[i % IMAGES.length]} video={VIDEOS[i]} />
         ))}
       </div>
       <div className="mx-auto max-w-[1440px] md:hidden">
