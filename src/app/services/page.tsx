@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import Image from "next/image";
 import { expertises, process } from "@/data/site";
+import ServicePanel from "@/components/ServicePanel";
 
 const IMAGES = [
   "https://images.unsplash.com/photo-1511707171634-5f897ff02aa9?auto=format&fit=crop&w=1400&q=80",
@@ -35,32 +35,7 @@ export default function ServicesPage() {
     <div className="mt-4 space-y-6 px-6 sm:px-10 pb-24">
       <div className="mx-auto max-w-[1440px] space-y-6">
         {expertises.map((e, i) => (
-          <article
-            key={e.title}
-            className="rounded-[28px] overflow-hidden min-h-[88vh] flex items-end shadow-[0_30px_90px_rgba(18,17,48,0.35)] relative"
-          >
-            <div className="absolute inset-0">
-              <div className="absolute inset-0 animate-kenburns">
-                <Image src={IMAGES[i % IMAGES.length]} alt={e.title} fill className="object-cover" sizes="100vw" />
-              </div>
-              <div className="absolute inset-0 bg-gradient-to-t from-[#0C0B22] via-[#121130]/55 to-[#121130]/25" />
-            </div>
-            <div className="relative p-7 sm:p-12 w-full">
-              <div className="flex items-end justify-between gap-4">
-                <span className="font-display text-6xl sm:text-8xl text-stroke-white opacity-80">0{i + 1}</span>
-                <span className="text-[11px] font-bold tracking-[0.25em] text-[#D8F23F] mb-3">0{i + 1} / 08</span>
-              </div>
-              <h2 className="font-display text-[11vw] sm:text-[72px] text-white mt-2">{e.title}</h2>
-              <div className="flex flex-wrap gap-2 mt-5">
-                {e.points.map((p) => (
-                  <span key={p} className="text-[13px] text-white bg-white/10 border border-white/20 backdrop-blur rounded-full px-4 py-2">→ {p}</span>
-                ))}
-              </div>
-              <Link href="/contact" className="btn-gradient mt-7 inline-block !py-3 !px-7 text-sm">
-                Get {e.title} quote →
-              </Link>
-            </div>
-          </article>
+          <ServicePanel key={e.title} e={e} i={i} img={IMAGES[i % IMAGES.length]} />
         ))}
       </div>
     </div>
