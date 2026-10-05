@@ -73,7 +73,7 @@ export default function ContactForm() {
         {["Social Media", "Content Shoot", "SEO", "Ads", "Web", "ORM", "Hyperlocal"].map((s) => (
           <label key={s} className="cursor-pointer">
             <input type="checkbox" className="peer hidden" checked={services.includes(s)} onChange={() => toggleService(s)} />
-            <span className="inline-block px-3.5 py-1.5 rounded-full border border-white/15 text-white/60 peer-checked:bg-gradient-spryb peer-checked:text-[#121130] peer-checked:border-transparent peer-checked:font-bold transition">{s}</span>
+            <span className="inline-block px-3.5 py-1.5 rounded-full border border-white/15 text-white/60 peer-checked:bg-[#D8F23F] peer-checked:text-[#121130] peer-checked:border-transparent peer-checked:font-bold transition">{s}</span>
           </label>
         ))}
       </div>
