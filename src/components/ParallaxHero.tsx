@@ -97,7 +97,7 @@ export default function ParallaxHero() {
       <div className="mx-auto max-w-[1440px] px-6 sm:px-10 pb-14">
         <Link href="/work" className="card-dark overflow-hidden flex flex-col sm:flex-row items-stretch gap-0 !p-0 group">
           <div className="sm:w-[280px] min-h-[180px] relative overflow-hidden">
-            <Image src="https://images.pexels.com/photos/32566502/pexels-photo-32566502.jpeg?auto=compress&cs=tinysrgb&w=560" alt="Agri Investment Plan" fill className="object-cover group-hover:scale-110 transition-transform duration-500" />
+            <Image src="https://images.pexels.com/photos/33786724/pexels-photo-33786724.jpeg?auto=compress&cs=tinysrgb&w=560" alt="Agri Investment Plan" fill className="object-cover group-hover:scale-110 transition-transform duration-500" />
           </div>
           <div className="p-6 sm:p-8 flex-1">
             <p className="text-[11px] tracking-[0.25em] uppercase text-[#4FEA73]">Case of the month</p>
