@@ -42,6 +42,13 @@ export const team = [
     bio: "Conversations are her craft. Comments, DMs and community threads that turn followers into regulars.",
   },
   {
+    name: "Rishabh Mishra",
+    role: "Assistant Manager · Social Media",
+    emoji: "🎯",
+    img: "/team/rishabh.jpg",
+    bio: "Runs the social engine room. Strategy into calendars, calendars into growth — the bridge between plans and posting.",
+  },
+  {
     name: "Muskan",
     role: "HR Intern",
     emoji: "🌱",
