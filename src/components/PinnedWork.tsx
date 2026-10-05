@@ -82,10 +82,10 @@ export default function PinnedWork() {
                     <h3 className="absolute top-5 left-0 right-0 text-center font-display text-3xl sm:text-5xl text-white drop-shadow-[0_3px_18px_rgba(0,0,0,0.9)] px-4">{p.brand}</h3>
                     <div className="absolute bottom-4 left-4 right-4">
                       <div className="mb-3">
-                        <span className="text-[11px] font-bold bg-white/90 text-[#121130] px-3 py-1.5 rounded-full">{p.result}</span>
+                        <span className="text-[11px] font-bold bg-gradient-spryb text-[#121130] px-3.5 py-2 rounded-full shadow-[0_4px_20px_rgba(79,234,115,0.4)]">{p.result}</span>
                       </div>
                       <div className="flex flex-wrap gap-1.5">
-                        {p.tags.map((t) => <span key={t} className="text-[11px] font-medium bg-white/90 text-[#121130] px-3 py-1.5 rounded-full">{t}</span>)}
+                        {p.tags.map((t) => <span key={t} className="text-[11px] font-medium bg-[#121130]/70 backdrop-blur text-[#D8F23F] border border-[#D8F23F]/40 px-3 py-1.5 rounded-full">{t}</span>)}
                       </div>
                     </div>
                   </article>
