@@ -2,7 +2,7 @@
 import { useEffect, useRef } from "react";
 import Link from "next/link";
 import Image from "next/image";
-import { projects, team } from "@/data/site";
+import { projects } from "@/data/site";
 
 /**
  * Pinned horizontal scroll (Foudre style) — ALL screens including phones:
@@ -59,14 +59,14 @@ export default function PinnedWork() {
             <div className="pr-6 shrink-0">
               <p className="section-label">Work</p>
               <h2 className="font-display text-[12vw] sm:text-[64px] mt-2 sm:mt-3">
-                WE MAKE THEM,
+                WE MAKE THEM
                 <br />
-                SOCIAL.
+                GROW.
               </h2>
               <div className="hidden sm:flex items-center mt-6">
-                {team.slice(0, 4).map((m, i) => (
-                  <span key={m.name} className="w-11 h-11 rounded-full overflow-hidden border-2 border-white shadow -ml-2 first:ml-0 relative" style={{ zIndex: 4 - i }}>
-                    <Image src={m.img} alt={m.name} fill className="object-cover" />
+                {projects.slice(0, 4).map((p, i) => (
+                  <span key={p.slug} className="w-11 h-11 rounded-full overflow-hidden border-2 border-white shadow -ml-2 first:ml-0 relative" style={{ zIndex: 4 - i }}>
+                    <Image src={p.img} alt={p.brand} fill className="object-cover" />
                   </span>
                 ))}
                 <Link href="/work" className="circle-btn !w-11 !h-11 !text-sm -ml-2 font-bold">+2</Link>
