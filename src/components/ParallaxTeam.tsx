@@ -5,20 +5,55 @@ import Image from "next/image";
 const CARDS = [
   {
     img: "https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&w=600&q=80",
-    alt: "Strategy sessions",
-    caption: "strategy sundays ✎",
+    video: "https://videos.pexels.com/video-files/6563909/6563909-sd_960_540_25fps.mp4",
+    alt: "Agency life",
+    caption: "agency life 🎬",
   },
   {
-    img: "https://images.unsplash.com/photo-1492691527719-9d1e07e534b4?auto=format&fit=crop&w=600&q=80",
-    alt: "Shoot days",
-    caption: "shoot days 🎬",
+    img: "https://images.unsplash.com/photo-1552664730-d307ca884978?auto=format&fit=crop&w=600&q=80",
+    video: "https://videos.pexels.com/video-files/3249672/3249672-sd_960_540_25fps.mp4",
+    alt: "Team at work",
+    caption: "team work 📱",
   },
   {
-    img: "https://images.unsplash.com/photo-1543269865-cbf427effbad?auto=format&fit=crop&w=800&q=80",
-    alt: "Team Spryb",
-    caption: "team spryb ⚡",
+    img: "/team/palash.jpg",
+    alt: "Palash Goorha, Founder",
+    caption: "founder ⚡",
   },
 ];
+
+function AutoVideo({ src, poster, alt }: { src: string; poster: string; alt: string }) {
+  const ref = useRef<HTMLVideoElement>(null);
+  useEffect(() => {
+    const v = ref.current;
+    if (!v) return;
+    const io = new IntersectionObserver(
+      (entries) => {
+        if (entries[0].isIntersecting) {
+          v.muted = true;
+          v.defaultMuted = true;
+          v.setAttribute("muted", "");
+          v.setAttribute("playsinline", "");
+          v.src = src;
+          v.load();
+          const play = () => v.play().catch(() => {});
+          if (v.readyState >= 2) play();
+          else v.addEventListener("canplay", play, { once: true });
+          io.disconnect();
+        }
+      },
+      { threshold: 0.2 }
+    );
+    io.observe(v);
+    return () => io.disconnect();
+  }, [src]);
+  return (
+    <>
+      <Image src={poster} alt={alt} fill className="object-cover" />
+      <video ref={ref} className="absolute inset-0 w-full h-full object-cover" muted loop playsInline preload="none" poster={poster} aria-label={alt} />
+    </>
+  );
+}
 
 /** Foudre-style scroll parallax + click-to-front polaroids */
 export default function ParallaxTeam() {
@@ -29,7 +64,7 @@ export default function ParallaxTeam() {
   const rightPeekRef = useRef<HTMLDivElement>(null);
   const textRef = useRef<HTMLDivElement>(null);
   const dotsRef = useRef<HTMLDivElement>(null);
-  const [front, setFront] = useState(2);
+  const [front, setFront] = useState(0);
 
   useEffect(() => {
     let ticking = false;
@@ -101,7 +136,11 @@ export default function ParallaxTeam() {
                 }`}
               >
                 <span className="relative block w-full h-full rounded-lg overflow-hidden">
-                  <Image src={c.img} alt={c.alt} fill className="object-cover pointer-events-none" />
+                  {"video" in c && c.video ? (
+                    <AutoVideo src={c.video} poster={c.img} alt={c.alt} />
+                  ) : (
+                    <Image src={c.img} alt={c.alt} fill className="object-cover pointer-events-none" />
+                  )}
                 </span>
                 <span className="block text-center text-[13px] italic text-[#121130]/70 mt-2">{c.caption}</span>
                 {!isFront && (
