@@ -89,7 +89,7 @@ export default function ParallaxHero() {
         <p className="text-[#121130]/70 text-[16px] max-w-[52ch] mt-5">We are the current, you are the story. Strategy, content, ads, SEO, ORM & hyperlocal — one team.</p>
         <div className="mt-6 flex flex-wrap gap-3">
           <Link href="/contact" className="btn-gradient">Get free teardown →</Link>
-          <Link href="/work" className="btn-ghost">See proof</Link>
+            <Link href="/work" className="btn-ghost">See case studies →</Link>
         </div>
       </div>
 
