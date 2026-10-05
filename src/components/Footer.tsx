@@ -53,7 +53,7 @@ export default function Footer() {
           </div>
         </div>
 
-        <div className="font-display text-[22vw] md:text-[190px] leading-[0.85] text-center mt-14 select-none text-stroke-white opacity-60">
+        <div className="font-display text-[22vw] md:text-[190px] leading-[0.85] text-center mt-14 select-none animate-shine">
           SPRYB
         </div>
 

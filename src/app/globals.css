@@ -81,6 +81,20 @@ body {
   color: transparent;
 }
 
+/* Lightning shine sweep — light band continuously passes through text */
+.animate-shine {
+  background: linear-gradient(110deg, #333268 25%, #ffffff 42%, #4fea73 50%, #ffffff 58%, #333268 75%);
+  background-size: 220% 100%;
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  animation: shine-sweep 4.5s linear infinite;
+}
+@keyframes shine-sweep {
+  0% { background-position: 200% 0; }
+  100% { background-position: -200% 0; }
+}
+
 /* Flowing animated gradient — colors keep moving */
 .animate-gradient-flow {
   background: linear-gradient(110deg, #4fea73, #d8f23f, #2ecf63, #121130, #4fea73);
