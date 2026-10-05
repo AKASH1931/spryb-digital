@@ -7,7 +7,7 @@ export default function Footer() {
         <div className="grid md:grid-cols-[1.2fr_1fr_1fr] gap-10">
           <div>
             <p className="section-label">Spryb Digital</p>
-            <p className="font-display text-4xl sm:text-5xl mt-3">
+            <p className="font-display text-4xl sm:text-5xl mt-3 text-white">
               LET&apos;S MAKE <br />
               <span className="text-gradient">SOME NOISE.</span>
             </p>
