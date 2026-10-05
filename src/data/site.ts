@@ -96,9 +96,9 @@ export const projects = [
     desc: "45-day Meta engine driving quality investors for an agri-based investment plan.",
     tagline: "Grow land. Grow wealth.",
     slides: [
-      "https://images.pexels.com/photos/9548243/pexels-photo-9548243.jpeg?auto=compress&cs=tinysrgb&w=640",
-      "https://images.pexels.com/photos/30544112/pexels-photo-30544112.jpeg?auto=compress&cs=tinysrgb&w=640",
-      "https://images.pexels.com/photos/2225499/pexels-photo-2225499.jpeg?auto=compress&cs=tinysrgb&w=640",
+      "https://images.pexels.com/photos/33786724/pexels-photo-33786724.jpeg?auto=compress&cs=tinysrgb&w=640",
+      "https://images.pexels.com/photos/37904521/pexels-photo-37904521.jpeg?auto=compress&cs=tinysrgb&w=640",
+      "https://images.pexels.com/photos/30113104/pexels-photo-30113104.jpeg?auto=compress&cs=tinysrgb&w=640",
     ],
     story: [
       "An agri-investment brand needed quality investors, not just clicks. We went 100% Meta: regional-language content, human-led videos and ruthless audience filters.",
