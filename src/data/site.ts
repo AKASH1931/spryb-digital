@@ -12,7 +12,7 @@ export const team = [
     role: "Manager · ORM + Marketing",
     emoji: "🚀",
     img: "/team/akash.jpg",
-    pos: "50% 35%",
+    pos: "50% 22%",
     bio: "Owns reputation and pipeline. Reviews, rankings and revenue — if it has a number, it's growing.",
   },
   {
