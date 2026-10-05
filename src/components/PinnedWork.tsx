@@ -57,8 +57,7 @@ export default function PinnedWork() {
         <div className="sticky top-0 h-screen overflow-hidden flex flex-col justify-center py-6">
           <div className="mx-auto max-w-[1440px] w-full grid lg:grid-cols-[340px_1fr] gap-5 lg:gap-8 items-center">
             <div className="pr-6 shrink-0">
-              <p className="section-label">📱💖😎 Work</p>
-              <span className="hidden sm:inline-block bg-[#1A1940] text-white rounded-2xl px-4 py-2.5 text-xl rotate-[3deg] mt-4">📱💖😎</span>
+              <p className="section-label">Work</p>
               <h2 className="font-display text-[12vw] sm:text-[64px] mt-2 sm:mt-3">
                 WE MAKE THEM,
                 <br />

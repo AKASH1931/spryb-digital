@@ -59,21 +59,18 @@ export default function ParallaxHero() {
           <div className="aspect-[3/4] rounded-[20px] overflow-hidden -rotate-6 shadow-[0_24px_70px_rgba(0,0,0,0.45)] border border-white/10 hover:rotate-0 hover:scale-[1.03] transition-transform duration-300 group relative">
             <Image src="/hero/hero-1.jpg" alt="Meta Ads" fill className="object-cover group-hover:scale-110 transition-transform duration-500" />
             <span className="absolute bottom-3 left-3 text-[11px] bg-[#121130]/85 px-3 py-1.5 rounded-full text-white/70">Meta Ads</span>
-            <span className="absolute top-[38%] -right-2 bg-[#1A1940] border border-white/15 rounded-2xl px-3 py-2 text-lg rotate-3">🖥️⚡️🎧</span>
           </div>
         </div>
         <div ref={centerRef} className="absolute left-1/2 -translate-x-1/2 top-0 w-[46%] sm:w-[38%] z-10 will-change-transform">
           <div className="aspect-[3/4] rounded-[20px] overflow-hidden shadow-[0_30px_80px_rgba(0,0,0,0.5)] border border-white/10 hover:scale-[1.03] transition-transform duration-300 group relative">
             <Image src="/hero/hero-2.jpg" alt="Influencer Marketing" fill priority className="object-cover group-hover:scale-110 transition-transform duration-500" />
             <span className="absolute bottom-3 left-3 text-[11px] bg-[#121130]/85 px-3 py-1.5 rounded-full text-white/70">Influencer Marketing</span>
-            <span className="absolute top-8 left-6 bg-[#1A1940] border border-white/15 rounded-2xl px-3 py-2 text-lg -rotate-3">⚡</span>
           </div>
         </div>
         <div ref={rightRef} className="absolute right-[2%] top-10 w-[42%] sm:w-[36%] will-change-transform">
           <div className="aspect-[3/4] rounded-[20px] overflow-hidden rotate-6 shadow-[0_24px_70px_rgba(0,0,0,0.45)] border border-white/10 hover:rotate-0 hover:scale-[1.03] transition-transform duration-300 group relative">
             <Image src="/hero/hero-3.jpg" alt="Hyperlocal" fill className="object-cover group-hover:scale-110 transition-transform duration-500" />
             <span className="absolute bottom-3 left-3 text-[11px] bg-[#121130]/85 px-3 py-1.5 rounded-full text-white/70">Hyperlocal</span>
-            <span className="absolute top-[42%] -left-2 bg-[#1A1940] border border-white/15 rounded-2xl px-3 py-2 text-lg -rotate-3">📽️⚡🤛</span>
           </div>
         </div>
       </div>
@@ -97,7 +94,7 @@ export default function ParallaxHero() {
       <div className="mx-auto max-w-[1440px] px-6 sm:px-10 pb-14">
         <Link href="/work" className="card-dark overflow-hidden flex flex-col sm:flex-row items-stretch gap-0 !p-0 group">
           <div className="sm:w-[280px] min-h-[180px] relative overflow-hidden">
-            <Image src="https://images.pexels.com/photos/9548243/pexels-photo-9548243.jpeg?auto=compress&cs=tinysrgb&w=560" alt="Agri Investment Plan" fill className="object-cover group-hover:scale-110 transition-transform duration-500" />
+            <Image src="https://images.pexels.com/photos/33786724/pexels-photo-33786724.jpeg?auto=compress&cs=tinysrgb&w=560" alt="Agri Investment Plan" fill className="object-cover group-hover:scale-110 transition-transform duration-500" />
           </div>
           <div className="p-6 sm:p-8 flex-1">
             <p className="text-[11px] tracking-[0.25em] uppercase text-[#4FEA73]">Case of the month</p>

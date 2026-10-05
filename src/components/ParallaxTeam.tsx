@@ -98,7 +98,6 @@ export default function ParallaxTeam() {
   return (
     <div ref={sectionRef} className="grid lg:grid-cols-[1fr_1.15fr_1fr] gap-10 items-center mt-6">
       <div ref={headRef} className="relative will-change-transform">
-        <span className="inline-block bg-[#1A1940] text-white rounded-2xl px-4 py-2.5 text-xl rotate-[-4deg]">📱⚡️😜</span>
         <h2 className="font-display text-[13vw] sm:text-[64px] lg:text-[76px] mt-4">
           WE ELECTRIFY
           <br />

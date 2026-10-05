@@ -36,7 +36,6 @@ export default function ServicesPage() {
     <div className="pt-32 sm:pt-40 px-6 sm:px-10 pb-24">
       <div className="mx-auto max-w-[1440px]">
         <p className="section-label">Expertise</p>
-        <span className="inline-block bg-[#1A1940] text-white rounded-2xl px-4 py-2.5 text-xl rotate-[3deg] mt-4">👀📱📊</span>
         <h1 className="font-display text-[13vw] sm:text-[100px]">THINK DEEP <br />TO <span className="text-gradient">RESONATE.</span></h1>
         <p className="text-[#121130]/70 text-[17px] max-w-[60ch] mt-6">Spryb runs on strong expertises. Scroll — har service ek puri screen legi.</p>
       </div>
