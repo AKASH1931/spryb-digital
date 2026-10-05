@@ -4,21 +4,21 @@ import Image from "next/image";
 
 const CARDS = [
   {
-    img: "https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&w=600&q=80",
-    video: "https://videos.pexels.com/video-files/6563909/6563909-sd_960_540_25fps.mp4",
-    alt: "Agency life",
-    caption: "agency life 🎬",
+    img: "/hero/hero-1.jpg",
+    video: "/videos/entryway.mp4",
+    alt: "Entryway makeover",
+    caption: "home tour 🏠",
   },
   {
-    img: "https://images.unsplash.com/photo-1552664730-d307ca884978?auto=format&fit=crop&w=600&q=80",
-    video: "https://videos.pexels.com/video-files/3249672/3249672-sd_960_540_25fps.mp4",
-    alt: "Team at work",
-    caption: "team work 📱",
+    img: "/hero/hero-3.jpg",
+    video: "https://videos.pexels.com/video-files/7578554/7578554-sd_960_540_30fps.mp4",
+    alt: "Agency spaces",
+    caption: "agency spaces ✨",
   },
   {
-    img: "/team/palash.jpg",
-    alt: "Palash Goorha, Founder",
-    caption: "founder ⚡",
+    img: "/team/team-group.jpg",
+    alt: "Team Spryb",
+    caption: "the humans 💚",
   },
 ];
 
