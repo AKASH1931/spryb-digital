@@ -49,6 +49,13 @@ export const team = [
     bio: "Runs the social engine room. Strategy into calendars, calendars into growth — the bridge between plans and posting.",
   },
   {
+    name: "Shashank Bhushan",
+    role: "Graphic Designer",
+    emoji: "🎨",
+    img: "/team/shashank.jpg",
+    bio: "Makes brands look expensive. Grids, type, thumbs and templates — every pixel earns its place.",
+  },
+  {
     name: "Muskan",
     role: "HR Intern",
     emoji: "🌱",
