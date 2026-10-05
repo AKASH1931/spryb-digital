@@ -78,8 +78,8 @@ export default function PinnedWork() {
                 {projects.map((p) => (
                   <article key={p.slug} className="w-[230px] sm:w-[320px] aspect-[3/4] rounded-[20px] overflow-hidden relative group shadow-[0_20px_60px_rgba(18,17,48,0.2)] shrink-0">
                     <Image src={p.img} alt={p.brand} fill className="object-cover group-hover:scale-108 transition-transform duration-500" />
-                    <div className="absolute inset-0 bg-gradient-to-b from-[#121130]/30 via-transparent to-[#121130]/70" />
-                    <h3 className="absolute top-5 left-0 right-0 text-center font-display text-3xl sm:text-5xl text-white drop-shadow-[0_2px_12px_rgba(0,0,0,0.5)] px-4">{p.brand}</h3>
+                    <div className="absolute inset-0 bg-gradient-to-b from-[#121130]/80 via-[#121130]/10 to-[#121130]/80" />
+                    <h3 className="absolute top-5 left-0 right-0 text-center font-display text-3xl sm:text-5xl text-white drop-shadow-[0_3px_18px_rgba(0,0,0,0.9)] px-4">{p.brand}</h3>
                     <div className="absolute bottom-4 left-4 right-4">
                       <div className="flex items-center gap-2 mb-3">
                         <span className="w-9 h-9 rounded-full bg-gradient-spryb grid place-items-center text-[#121130] font-bold">+</span>
