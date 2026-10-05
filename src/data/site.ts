@@ -12,7 +12,7 @@ export const team = [
     role: "Manager · ORM + Marketing",
     emoji: "🚀",
     img: "/team/akash.jpg",
-    pos: "20% 40%",
+    pos: "15% 60%",
     bio: "Owns reputation and pipeline. Reviews, rankings and revenue — if it has a number, it's growing.",
   },
   {
@@ -28,7 +28,7 @@ export const team = [
     role: "ORM Manager",
     emoji: "🛡️",
     img: "/team/archit.jpg",
-    pos: "25% 20%",
+    pos: "35% 42%",
     bio: "Guardian of your ratings. Review engines, listing glow-ups and sentiment reports — nothing about your brand goes unnoticed.",
   },
   {
@@ -36,7 +36,7 @@ export const team = [
     role: "Assistant Manager · Social Media",
     emoji: "🎯",
     img: "/team/rishabh.jpg",
-    pos: "50% 20%",
+    pos: "50% 38%",
     bio: "Runs the social engine room. Strategy into calendars, calendars into growth — the bridge between plans and posting.",
   },
   {
