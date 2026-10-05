@@ -4,6 +4,7 @@ export const team = [
     role: "Founder · Strategy",
     emoji: "⚡",
     img: "/team/palash.jpg",
+    pos: "50% 30%",
     bio: "Started Spryb from a simple frustration: brands buying posts when they needed pipelines. Sets the strategy, still jumps behind the camera.",
   },
   {
@@ -11,6 +12,7 @@ export const team = [
     role: "ORM Manager",
     emoji: "🛡️",
     img: "/team/archit.jpg",
+    pos: "25% 20%",
     bio: "Guardian of your ratings. Review engines, listing glow-ups and sentiment reports — nothing about your brand goes unnoticed.",
   },
   {
@@ -18,6 +20,7 @@ export const team = [
     role: "HR",
     emoji: "💜",
     img: "/team/priyanshi.jpg",
+    pos: "50% 15%",
     bio: "Keeps the humans happy so the humans keep brands happy. Hiring, culture and the occasional much-needed reality check.",
   },
   {
@@ -25,6 +28,7 @@ export const team = [
     role: "Social Media Executive",
     emoji: "📱",
     img: "/team/sreyash.jpg",
+    pos: "50% 20%",
     bio: "Lives in feeds and trends. Calendars, publishing, DMs and community — your accounts never sleep on his watch.",
   },
   {
@@ -32,6 +36,7 @@ export const team = [
     role: "Social Media Executive",
     emoji: "📸",
     img: "/team/roshni.jpg",
+    pos: "50% 20%",
     bio: "Content with a sharp eye. Shoots, edits, posts — and spots the trend three days before it peaks.",
   },
   {
@@ -39,13 +44,23 @@ export const team = [
     role: "Social Media Executive",
     emoji: "💬",
     img: "/team/chanpreet.jpg",
+    pos: "30% 40%",
     bio: "Conversations are her craft. Comments, DMs and community threads that turn followers into regulars.",
+  },
+  {
+    name: "Muskan",
+    role: "HR Intern",
+    emoji: "🌱",
+    img: "/team/muskan.jpg",
+    pos: "50% 85%",
+    bio: "Learning the ropes at lightning speed. Sourcing, coordination and fresh energy in every room.",
   },
   {
     name: "Rishabh Mishra",
     role: "Assistant Manager · Social Media",
     emoji: "🎯",
     img: "/team/rishabh.jpg",
+    pos: "50% 20%",
     bio: "Runs the social engine room. Strategy into calendars, calendars into growth — the bridge between plans and posting.",
   },
   {
@@ -53,14 +68,16 @@ export const team = [
     role: "Graphic Designer",
     emoji: "🎨",
     img: "/team/shashank.jpg",
+    pos: "50% 25%",
     bio: "Makes brands look expensive. Grids, type, thumbs and templates — every pixel earns its place.",
   },
   {
-    name: "Muskan",
-    role: "HR Intern",
-    emoji: "🌱",
-    img: "/team/muskan.jpg",
-    bio: "Learning the ropes at lightning speed. Sourcing, coordination and fresh energy in every room.",
+    name: "Akash Awasthi",
+    role: "Manager · ORM + Marketing",
+    emoji: "🚀",
+    img: "/team/akash.jpg",
+    pos: "20% 40%",
+    bio: "Owns reputation and pipeline. Reviews, rankings and revenue — if it has a number, it's growing.",
   },
 ];
 

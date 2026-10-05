@@ -43,7 +43,7 @@ export default function AboutPage() {
             {team.map((m) => (
               <div key={m.name} className="card-dark p-6 group">
                 <div className="h-28 rounded-[14px] overflow-hidden relative">
-                  <Image src={m.img} alt={m.name} fill className="object-cover group-hover:scale-110 transition-transform duration-500" />
+                  <Image src={m.img} alt={m.name} fill className="object-cover group-hover:scale-110 transition-transform duration-500" style={{ objectPosition: m.pos }} />
                 </div>
                 <p className="text-[11px] tracking-[0.25em] uppercase text-[#4FEA73] mt-4">{m.role}</p>
                 <div className="font-display text-2xl mt-1">{m.name}</div>

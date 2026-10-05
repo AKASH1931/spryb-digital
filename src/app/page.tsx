@@ -191,7 +191,7 @@ export default function Home() {
               {team.map((m) => (
                 <article key={m.name} className="card-dark w-[300px] sm:w-[340px] p-6 group">
                   <div className="h-44 rounded-[14px] overflow-hidden relative">
-                    <Image src={m.img} alt={m.name} fill className="object-cover group-hover:scale-110 transition-transform duration-500" />
+                    <Image src={m.img} alt={m.name} fill className="object-cover group-hover:scale-110 transition-transform duration-500" style={{ objectPosition: m.pos }} />
                   </div>
                   <p className="text-[11px] tracking-[0.25em] uppercase text-[#4FEA73] mt-5">{m.role}</p>
                   <h3 className="font-display text-3xl mt-1">{m.name}</h3>
