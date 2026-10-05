@@ -10,12 +10,6 @@ const CARDS = [
     caption: "home tour 🏠",
   },
   {
-    img: "/hero/hero-3.jpg",
-    video: "https://videos.pexels.com/video-files/7578554/7578554-sd_960_540_30fps.mp4",
-    alt: "Agency spaces",
-    caption: "agency spaces ✨",
-  },
-  {
     img: "/team/team-group.jpg",
     alt: "Team Spryb",
     caption: "the humans 💚",
