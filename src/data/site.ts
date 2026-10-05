@@ -87,6 +87,34 @@ export const expertises = [
 
 export const projects = [
   {
+    slug: "agri-investment-plan",
+    img: "https://images.unsplash.com/photo-1500382017468-9049fed747ef?auto=format&fit=crop&w=640&q=80",
+    brand: "Agri Investment Plan",
+    category: "Agritech · Meta Ads",
+    tags: ["Performance Ads", "Meta", "Lead Gen"],
+    result: "2,747 leads @ ₹6.15 CPL",
+    desc: "45-day Meta engine driving quality investors for an agri-based investment plan.",
+    tagline: "Grow land. Grow wealth.",
+    slides: [
+      "https://images.unsplash.com/photo-1500382017468-9049fed747ef?auto=format&fit=crop&w=640&q=80",
+      "https://picsum.photos/seed/spryb-agri2/640/420",
+      "https://picsum.photos/seed/spryb-agri3/640/420",
+    ],
+    story: [
+      "An agri-investment brand needed quality investors, not just clicks. We went 100% Meta: regional-language content, human-led videos and ruthless audience filters.",
+      "45 days later: 2,747 high-intent leads at ₹6.15 each, with 72% marketing-qualified and a 3.8X return on ad spend. Pipeline strong, growth sustainable.",
+    ],
+    stats: [
+      { value: "2,747", label: "Total leads in 45 days", what: "High-intent leads generated for the investment plan.", benchmark: "Typical India lead-gen: 500–1,000." },
+      { value: "₹6.15", label: "Cost per lead", what: "Ad rupees spent per lead across the 45-day campaign.", benchmark: "Finance niche avg: ₹40–120." },
+      { value: "72%", label: "Marketing-qualified leads", what: "Share of leads (1,978) that matched investor criteria.", benchmark: "Good: 30–50%." },
+      { value: "3.8X", label: "Return on ad spend", what: "Potential revenue opportunities vs ₹16,891 total spend.", benchmark: "Healthy: 2–3x." },
+      { value: "3,82,463", label: "Impressions", what: "Total views across North & Western India farm-land audiences.", benchmark: "Regional reach: strong." },
+      { value: "41%", label: "Sales-qualified leads", what: "Share of leads (1,126) sales accepted as real opportunities.", benchmark: "Good: 15–25%." },
+    ],
+    socials: [{ label: "Meta Ads", href: "https://facebook.com" }],
+  },
+  {
     slug: "urban-brew",
     img: "https://picsum.photos/seed/spryb-coffee/640/420",
     brand: "Urban Brew Co.",

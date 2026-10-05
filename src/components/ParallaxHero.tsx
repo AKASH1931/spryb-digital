@@ -97,15 +97,15 @@ export default function ParallaxHero() {
       <div className="mx-auto max-w-[1440px] px-6 sm:px-10 pb-14">
         <Link href="/work" className="card-dark overflow-hidden flex flex-col sm:flex-row items-stretch gap-0 !p-0 group">
           <div className="sm:w-[280px] min-h-[180px] relative overflow-hidden">
-            <Image src="https://picsum.photos/seed/spryb-coffee/560/360" alt="Urban Brew Co." fill className="object-cover group-hover:scale-110 transition-transform duration-500" />
+            <Image src="https://images.unsplash.com/photo-1500382017468-9049fed747ef?auto=format&fit=crop&w=560&q=80" alt="Agri Investment Plan" fill className="object-cover group-hover:scale-110 transition-transform duration-500" />
           </div>
           <div className="p-6 sm:p-8 flex-1">
             <p className="text-[11px] tracking-[0.25em] uppercase text-[#4FEA73]">Case of the month</p>
-            <h3 className="font-display text-3xl sm:text-4xl mt-2 group-hover:text-[#D8F23F] transition">URBAN BREW CO.</h3>
+            <h3 className="font-display text-3xl sm:text-4xl mt-2 group-hover:text-[#D8F23F] transition">AGRI INVESTMENT PLAN</h3>
             <div className="flex flex-wrap gap-1.5 mt-3">
-              <span className="pill-tag">Content</span>
-              <span className="pill-tag">Social Strategy</span>
-              <span className="pill-tag">+212% revenue</span>
+              <span className="pill-tag">Performance Ads</span>
+              <span className="pill-tag">2,747 leads</span>
+              <span className="pill-tag">₹6.15 CPL</span>
             </div>
             <span className="tlink text-[14px] inline-block mt-4">View the case →</span>
           </div>
