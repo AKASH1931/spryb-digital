@@ -88,7 +88,7 @@ body {
   -webkit-background-clip: text;
   background-clip: text;
   color: transparent;
-  animation: shine-sweep 7s ease-in-out infinite;
+  animation: shine-sweep 8s ease-in-out infinite;
 }
 @keyframes shine-sweep {
   0% { background-position: 200% 0; }
