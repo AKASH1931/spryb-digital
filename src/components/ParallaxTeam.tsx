@@ -5,9 +5,9 @@ import Image from "next/image";
 const CARDS = [
   {
     img: "/hero/hero-1.jpg",
-    video: "/videos/entryway.mp4",
-    alt: "Entryway makeover",
-    caption: "home tour 🏠",
+    video: "/videos/team-video.mp4",
+    alt: "Behind the scenes",
+    caption: "behind the scenes 🎬",
   },
   {
     img: "/team/team-group.jpg",
