@@ -119,7 +119,7 @@ export const expertises = [
 export const projects = [
   {
     slug: "agri-investment-plan",
-    img: "https://images.pexels.com/photos/33786724/pexels-photo-33786724.jpeg?auto=compress&cs=tinysrgb&w=640",
+    img: "/cases/agri-tractor.jpg",
     brand: "Agri Investment Plan",
     category: "Agritech · Meta Ads",
     tags: ["Performance Ads", "Meta", "Lead Gen"],
@@ -127,9 +127,9 @@ export const projects = [
     desc: "45-day Meta engine driving quality investors for an agri-based investment plan.",
     tagline: "Grow land. Grow wealth.",
     slides: [
+      "/cases/agri-tractor.jpg",
       "https://images.pexels.com/photos/33786724/pexels-photo-33786724.jpeg?auto=compress&cs=tinysrgb&w=640",
       "https://images.pexels.com/photos/37904521/pexels-photo-37904521.jpeg?auto=compress&cs=tinysrgb&w=640",
-      "https://images.pexels.com/photos/30113104/pexels-photo-30113104.jpeg?auto=compress&cs=tinysrgb&w=640",
     ],
     story: [
       "An agri-investment brand needed quality investors, not just clicks. We went 100% Meta: regional-language content, human-led videos and ruthless audience filters.",
