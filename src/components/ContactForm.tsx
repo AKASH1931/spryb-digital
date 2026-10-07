@@ -33,11 +33,13 @@ export default function ContactForm() {
     setSending(true);
     setFailed(false);
     try {
-      const res = await fetch("/api/contact", {
+      const res = await fetch("https://api.web3forms.com/submit", {
         method: "POST",
-        headers: { "Content-Type": "application/json" },
+        headers: { "Content-Type": "application/json", Accept: "application/json" },
         body: JSON.stringify({
-          name: values.name.trim(),
+          access_key: process.env.NEXT_PUBLIC_WEB3FORMS_KEY || "WEB3FORMS_KEY_HERE",
+          subject: `New website query — ${values.name.trim()}`,
+          from_name: values.name.trim(),
           email: values.email.trim(),
           phone: values.phone.trim(),
           company: values.company.trim(),
@@ -45,7 +47,8 @@ export default function ContactForm() {
           message: values.message.trim(),
         }),
       });
-      if (!res.ok) throw new Error("send failed");
+      const data = await res.json().catch(() => ({}));
+      if (!res.ok || data.success !== true) throw new Error("send failed");
       router.push("/thank-you");
     } catch {
       setSending(false);
