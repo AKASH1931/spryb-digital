@@ -37,7 +37,7 @@ export default function ContactForm() {
         method: "POST",
         headers: { "Content-Type": "application/json", Accept: "application/json" },
         body: JSON.stringify({
-          access_key: process.env.NEXT_PUBLIC_WEB3FORMS_KEY || "WEB3FORMS_KEY_HERE",
+          access_key: "8d41f39f-8f5c-457c-9a96-1951513c9eda",
           subject: `New website query — ${values.name.trim()}`,
           from_name: values.name.trim(),
           email: values.email.trim(),
