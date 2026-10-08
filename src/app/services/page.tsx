@@ -41,7 +41,7 @@ export default function ServicesPage() {
           >
             <span className="font-display text-xl sm:text-4xl text-[#0e9f5b]">0{i + 1}</span>
             <span className="relative block w-[84px] h-[84px] sm:w-[220px] sm:h-[140px] rounded-[14px] sm:rounded-[16px] overflow-hidden shrink-0 shadow-[0_12px_40px_rgba(18,17,48,0.18)]">
-              <Image src={IMAGES[i % IMAGES.length]} alt={e.title} fill className="object-cover group-hover:scale-110 transition-transform duration-500" sizes="(max-width:640px) 84px, 220px" />
+              <Image src={IMAGES[i % IMAGES.length]} alt={e.title} fill className="object-cover group-hover:scale-110 transition-transform duration-500 saturate-[0.82] contrast-[1.08] brightness-[0.9]" sizes="(max-width:640px) 84px, 220px" />
             </span>
             <span className="col-span-1">
               <span className="block font-display text-3xl sm:text-5xl group-hover:text-[#0e9f5b] transition-colors">{e.title}</span>

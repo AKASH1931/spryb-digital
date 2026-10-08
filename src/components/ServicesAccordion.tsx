@@ -38,7 +38,7 @@ export default function ServicesAccordion() {
               <div className="overflow-hidden">
                 <div className="px-5 pb-5">
                   <div className="relative h-44 rounded-[14px] overflow-hidden">
-                    <Image src={IMAGES[i % IMAGES.length]} alt={e.title} fill className="object-cover" sizes="100vw" />
+                    <Image src={IMAGES[i % IMAGES.length]} alt={e.title} fill className="object-cover saturate-[0.82] contrast-[1.08] brightness-[0.9]" sizes="100vw" />
                     <div className="absolute inset-0 bg-gradient-to-t from-[#121130]/70 via-transparent to-[#121130]/20" />
                   </div>
                   <div className="flex flex-wrap gap-1.5 mt-4">
