@@ -38,7 +38,7 @@ export default function WorkList() {
   return (
     <>
       <div className="mx-auto max-w-[1440px]">
-        <p className="section-label">📱💖😎 Work</p>
+          <p className="section-label">Work</p>
         <h1 className="font-display text-[13vw] sm:text-[100px]">ALL OUR <span className="text-gradient">PROJECTS.</span></h1>
         <p className="text-[#121130]/70 text-[17px] max-w-[52ch] mt-5">Welcome to the Human Social Club. Proof, not promises — open any case.</p>
 

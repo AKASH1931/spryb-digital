@@ -89,7 +89,7 @@ export default function Home() {
       {/* ── EXPERTISES — "Raisonner pour mieux résonner" ── */}
       <section id="expertises" className="px-6 sm:px-10 pb-20">
         <div className="mx-auto max-w-[1440px]">
-          <p className="section-label">👀📱📊 Expertise</p>
+          <p className="section-label">Expertise</p>
           <h2 className="font-display text-[12vw] sm:text-[90px] lg:text-[120px] mt-3">
             THINK DEEP
             <br />
@@ -146,7 +146,7 @@ export default function Home() {
       {/* ── PROCESS — "Nous préfèrerons cet ordre. Toujours." ── */}
       <section className="px-6 sm:px-10 py-20 sm:py-[120px]">
         <div className="mx-auto max-w-[1440px]">
-          <p className="section-label">🫡⚡️🧠 Method</p>
+          <p className="section-label">Method</p>
           <h2 className="font-display text-[12vw] sm:text-[90px] lg:text-[120px] mt-3">
             WE PREFER
             <br />
@@ -204,7 +204,7 @@ export default function Home() {
       </section>
       <section id="faq" className="px-6 sm:px-10 pb-20">
         <div className="mx-auto max-w-[1100px]">
-          <p className="section-label">⛑️👐📣 FAQ</p>
+          <p className="section-label">FAQ</p>
           <h2 className="font-display text-[11vw] sm:text-[70px] mt-2">SMALL QUESTIONS, <span className="text-gradient">BIG ANSWERS.</span></h2>
           <div className="grid gap-3 mt-8">
             {faqs.map((f) => <Faq key={f.q} q={f.q} a={f.a} />)}
@@ -219,7 +219,7 @@ export default function Home() {
             <p className="section-label">Contact</p>
             <h2 className="font-display text-[13vw] sm:text-[80px]">TELL US <br /><span className="text-gradient">EVERYTHING.</span></h2>
             <p className="text-[#121130]/70 mt-4">A mini form, 30 seconds. We get your answers and come back fast.</p>
-            <p className="text-[#121130]/55 text-[14px] mt-4">✉ hello@sprybdigital.com<br />◷ Mon–Sat, 10am–7pm IST · Remote-first, shoots on-site</p>
+            <p className="text-[#121130]/55 text-[14px] mt-4">hello@sprybdigital.com<br />Mon–Sat, 10am–7pm IST · Remote-first, shoots on-site</p>
           </div>
           <ContactForm />
         </div>

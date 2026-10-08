@@ -7,12 +7,12 @@ const CARDS = [
     img: "/hero/hero-1.jpg",
     video: "/videos/team-video.mp4",
     alt: "Behind the scenes",
-    caption: "behind the scenes 🎬",
+    caption: "behind the scenes",
   },
   {
     img: "/team/team-group.jpg",
     alt: "Team Spryb",
-    caption: "the humans 💚",
+    caption: "the humans",
   },
 ];
 
