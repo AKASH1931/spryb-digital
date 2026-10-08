@@ -147,7 +147,7 @@ export const projects = [
   },
   {
     slug: "tiffin-brampton",
-    img: "https://images.pexels.com/photos/20408447/pexels-photo-20408447.jpeg?auto=compress&cs=tinysrgb&w=640",
+    img: "https://images.pexels.com/photos/37182514/pexels-photo-37182514.jpeg?auto=compress&cs=tinysrgb&w=640",
     brand: "Tiffin · Brampton",
     category: "F&B · Google Search",
     tags: ["Google Ads", "Search", "Lead Gen"],
@@ -155,9 +155,9 @@ export const projects = [
     desc: "3-month Google Search engine turning hungry Brampton searches into tiffin subscribers.",
     tagline: "Fresh. Homemade. Delivered.",
     slides: [
-      "https://images.pexels.com/photos/20408447/pexels-photo-20408447.jpeg?auto=compress&cs=tinysrgb&w=640",
+      "https://images.pexels.com/photos/37182514/pexels-photo-37182514.jpeg?auto=compress&cs=tinysrgb&w=640",
+      "https://images.pexels.com/photos/34217288/pexels-photo-34217288.jpeg?auto=compress&cs=tinysrgb&w=640",
       "https://images.pexels.com/photos/20422124/pexels-photo-20422124.jpeg?auto=compress&cs=tinysrgb&w=640",
-      "https://images.pexels.com/photos/37322902/pexels-photo-37322902.jpeg?auto=compress&cs=tinysrgb&w=640",
     ],
     story: [
       "A tiffin brand in Brampton, Canada needed subscribers, not surfers. We captured high-intent Google searches — tiffin, meal delivery, homemade food — with copy that converts.",
@@ -175,7 +175,7 @@ export const projects = [
   },
   {
     slug: "lucknow-fnb",
-    img: "https://images.pexels.com/photos/32552381/pexels-photo-32552381.jpeg?auto=compress&cs=tinysrgb&w=640",
+    img: "https://images.pexels.com/photos/36580800/pexels-photo-36580800.jpeg?auto=compress&cs=tinysrgb&w=640",
     brand: "Premium F&B · Lucknow",
     category: "F&B · Instagram + Hyperlocal",
     tags: ["Instagram", "Hyperlocal", "Content"],
@@ -183,9 +183,9 @@ export const projects = [
     desc: "3-month Instagram + hyperlocal engine for a premium Lucknow F&B brand.",
     tagline: "Fresh. Local. Delicious.",
     slides: [
-      "https://images.pexels.com/photos/32552381/pexels-photo-32552381.jpeg?auto=compress&cs=tinysrgb&w=640",
+      "https://images.pexels.com/photos/36580800/pexels-photo-36580800.jpeg?auto=compress&cs=tinysrgb&w=640",
+      "https://images.pexels.com/photos/9609847/pexels-photo-9609847.jpeg?auto=compress&cs=tinysrgb&w=640",
       "https://images.pexels.com/photos/37322902/pexels-photo-37322902.jpeg?auto=compress&cs=tinysrgb&w=640",
-      "https://images.pexels.com/photos/20408447/pexels-photo-20408447.jpeg?auto=compress&cs=tinysrgb&w=640",
     ],
     story: [
       "A premium F&B brand in Lucknow needed footfalls, not just likes. We built a 1–5km hyperlocal net: location ads, Google Maps, foodie influencers and WhatsApp click-to-chat.",
