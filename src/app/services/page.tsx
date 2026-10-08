@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import { expertises, process } from "@/data/site";
+import { process } from "@/data/site";
+import ServiceRows from "@/components\ServiceRows";
 
 export const metadata: Metadata = {
   title: "Services — Social, SEO, Ads, ORM & Hyperlocal",
@@ -21,20 +22,7 @@ export default function ServicesPage() {
     </div>
     <div className="px-6 sm:px-10 pb-24">
       <div className="mx-auto max-w-[1440px]">
-        {expertises.map((e, i) => (
-          <Link
-            key={e.title}
-            href="/contact"
-            className="group grid sm:grid-cols-[120px_1fr_auto] gap-2 sm:gap-8 items-center border-t border-[#121130]/15 py-7 sm:py-9 last:border-b transition-colors px-2 sm:px-4 -mx-2 sm:-mx-4 hover:bg-[#121130] rounded-[18px]"
-          >
-            <span className="font-display text-5xl sm:text-7xl text-stroke group-hover:[-webkit-text-stroke:1.5px_rgba(216,242,63,0.7)] transition-all">0{i + 1}</span>
-            <span>
-              <span className="block font-display text-4xl sm:text-6xl group-hover:text-white transition-colors">{e.title}</span>
-              <span className="block text-[13px] sm:text-[14px] text-[#121130]/60 group-hover:text-white/60 transition-colors mt-2">{e.points.slice(0, 4).join("  ·  ")}{e.points.length > 4 ? `  ·  +${e.points.length - 4} more` : ""}</span>
-            </span>
-            <span className="hidden sm:grid w-14 h-14 rounded-full border border-[#121130]/20 group-hover:border-transparent group-hover:bg-gradient-spryb place-items-center text-xl group-hover:text-[#121130] transition-all group-hover:rotate-[-45deg]">→</span>
-          </Link>
-        ))}
+        {<ServiceRows />}
       </div>
     </div>
     <div className="px-6 sm:px-10 pb-24">
