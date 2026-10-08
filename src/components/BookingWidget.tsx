@@ -37,7 +37,9 @@ export default function BookingWidget() {
   const [name, setName] = useState("");
   const [phone, setPhone] = useState("");
   const [email, setEmail] = useState("");
-  const [service, setService] = useState("");
+  const [servicesSel, setServicesSel] = useState<string[]>([]);
+  const toggleService = (s: string) =>
+    setServicesSel((prev) => (prev.includes(s) ? prev.filter((x) => x !== s) : [...prev, s]));
   const [errors, setErrors] = useState<Record<string, string>>({});
   const [sending, setSending] = useState(false);
   const [failed, setFailed] = useState(false);
@@ -81,8 +83,8 @@ export default function BookingWidget() {
           from_name: name.trim(),
           email: email.trim(),
           phone: phone.trim(),
-          service: service || "Not selected",
-          message: `Discovery call request.\nName: ${name.trim()}\nPhone: ${phone.trim()}\nEmail: ${email.trim()}\nService: ${service || "Not selected"}\nSlot: ${fmtDay(days[day])} at ${time} IST\nWe call them — please call on time.`,
+          services: servicesSel.join(", ") || "Not selected",
+          message: `Discovery call request.\nName: ${name.trim()}\nPhone: ${phone.trim()}\nEmail: ${email.trim()}\nServices: ${servicesSel.join(", ") || "Not selected"}\nSlot: ${fmtDay(days[day])} at ${time} IST\nWe call them — please call on time.`,
         }),
       });
       const data = await res.json().catch(() => ({}));
@@ -166,17 +168,16 @@ export default function BookingWidget() {
           />
           {errors.email && <p className={errCls}>{errors.email}</p>}
         </div>
-        <div>
-          <select
-            value={service}
-            onChange={(e) => setService(e.target.value)}
-            className={`bg-[#121130] border border-white/15 rounded-[10px] px-4 py-3.5 text-sm outline-none focus:border-[#D8F23F] w-full ${service ? "text-white" : "text-white/35"}`}
-          >
-            <option value="" disabled>What do you need help with?</option>
-            {["Social Media Strategy", "Content Production", "Community Management", "SEO & Search", "Performance Ads", "Web & Branding", "ORM & Reputation", "Hyperlocal Marketing", "Not sure yet"].map((s) => (
-              <option key={s} value={s} className="bg-[#1A1940] text-[#4FEA73]">{s}</option>
+        <div className="sm:col-span-2">
+          <p className="text-[12px] text-white/45 mb-2">What do you need help with? (pick any)</p>
+          <div className="flex flex-wrap gap-1.5">
+            {["Social Media", "Content", "SEO", "Ads", "Web", "ORM", "Hyperlocal"].map((s) => (
+              <label key={s} className="cursor-pointer">
+                <input type="checkbox" className="peer hidden" checked={servicesSel.includes(s)} onChange={() => toggleService(s)} />
+                <span className="inline-block px-3 py-1.5 rounded-full border border-white/15 text-white/60 text-[12px] peer-checked:bg-[#D8F23F] peer-checked:text-[#121130] peer-checked:border-transparent peer-checked:font-bold transition">{s}</span>
+              </label>
             ))}
-          </select>
+          </div>
         </div>
       </div>
       {time && (
