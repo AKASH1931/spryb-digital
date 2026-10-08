@@ -147,7 +147,7 @@ export const projects = [
   },
   {
     slug: "tiffin-brampton",
-    img: "https://images.pexels.com/photos/37182514/pexels-photo-37182514.jpeg?auto=compress&cs=tinysrgb&w=640",
+    img: "https://images.pexels.com/photos/12089285/pexels-photo-12089285.jpeg?auto=compress&cs=tinysrgb&w=640",
     brand: "Tiffin · Brampton",
     category: "F&B · Google Search",
     tags: ["Google Ads", "Search", "Lead Gen"],
