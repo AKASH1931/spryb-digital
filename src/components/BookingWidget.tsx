@@ -174,7 +174,7 @@ export default function BookingWidget() {
           >
             <option value="" disabled>What do you need help with?</option>
             {["Social Media Strategy", "Content Production", "Community Management", "SEO & Search", "Performance Ads", "Web & Branding", "ORM & Reputation", "Hyperlocal Marketing", "Not sure yet"].map((s) => (
-              <option key={s} value={s} className="text-black">{s}</option>
+              <option key={s} value={s} className="bg-[#1A1940] text-[#4FEA73]">{s}</option>
             ))}
           </select>
         </div>
