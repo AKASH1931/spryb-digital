@@ -12,11 +12,29 @@ export const metadata: Metadata = {
 
 export default function AboutPage() {
   return (
-    <div className="pt-32 sm:pt-40 px-6 sm:px-10 pb-24">
-      <div className="mx-auto max-w-[1440px]">
+    <div className="pt-28 sm:pt-32 pb-24 overflow-hidden">
+      <div className="mx-auto max-w-[1440px] px-6 sm:px-10">
         <p className="section-label">Agency</p>
-        <h1 className="font-display text-[13vw] sm:text-[100px]">WE ELECTRIFY <br /><span className="text-gradient">YOUR NETWORKS.</span></h1>
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-3 mt-8">
+      </div>
+      <div aria-hidden className="font-display text-[38vw] sm:text-[26vw] leading-[0.8] text-center select-none text-gradient-bright -mb-[5vw]">
+        SPRYB
+      </div>
+      <div className="mx-auto max-w-[1440px] px-6 sm:px-10">
+        <h1 className="font-display text-[13vw] sm:text-[100px]">
+          <span className="text-[#121130]">HUMAN</span>
+          <br />
+          <span className="text-stroke">SOCIAL CLUB</span>
+        </h1>
+        <div className="grid lg:grid-cols-2 gap-8 mt-8">
+          <p className="text-[#121130]/75 text-[17px] sm:text-[20px] leading-relaxed">
+            At Spryb, we believe digital communication isn&apos;t publishing a few posts. It&apos;s a story to tell, a strategy to build, an image to embody — turning your networks into visibility and growth.
+          </p>
+          <p className="text-[#121130]/65 text-[16px] leading-relaxed">
+            Strategists, shooters, designers, media buyers and local buzz experts on one call. Creative with the discipline of a media house — and humans, always, at the heart of every project.
+          </p>
+        </div>
+
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-3 mt-12">
           {[
             ["120+", "brands scaled"],
             ["4.9★", "avg. rating lift"],
@@ -29,30 +47,20 @@ export default function AboutPage() {
             </div>
           ))}
         </div>
-        <div className="grid lg:grid-cols-2 gap-8 mt-8 items-start">
-          <div className="card-dark p-8">
-            <Image src="/spryb-logo.png" alt="Spryb Digital" width={280} height={150} className="rounded-xl bg-white p-4" />
-            <p className="text-white/70 text-[16px] leading-relaxed mt-6">
-              At Spryb, we believe digital communication isn&apos;t publishing a few posts. It&apos;s a story to tell, a strategy to build, an image to embody — turning your networks into visibility and growth.
-            </p>
-            <p className="text-white/70 text-[16px] leading-relaxed mt-4">
-              Strategists, shooters, designers, media buyers and local buzz experts on one call. Creative with the discipline of a media house — and humans, always, at the heart of every project.
-            </p>
-          </div>
-          <div className="grid sm:grid-cols-2 gap-4">
-            {team.map((m) => (
-              <div key={m.name} className="card-dark p-6 group">
-                <div className="h-28 rounded-[14px] overflow-hidden relative">
-                  <Image src={m.img} alt={m.name} fill className="object-cover group-hover:scale-110 transition-transform duration-500" style={{ objectPosition: m.pos }} />
-                </div>
-                <p className="text-[11px] tracking-[0.25em] uppercase text-[#4FEA73] mt-4">{m.role}</p>
-                <div className="font-display text-2xl mt-1">{m.name}</div>
-                <p className="text-white/55 text-[13px] mt-2 leading-relaxed">{m.bio}</p>
+
+        <h2 className="font-display text-[11vw] sm:text-[70px] mt-20">MEET THE <span className="text-gradient">HUMANS.</span></h2>
+        <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4 mt-8">
+          {team.map((m) => (
+            <div key={m.name} className="card-dark p-6 group">
+              <div className="h-44 rounded-[14px] overflow-hidden relative">
+                <Image src={m.img} alt={m.name} fill className="object-cover group-hover:scale-110 transition-transform duration-500" style={{ objectPosition: m.pos }} />
               </div>
-            ))}
-          </div>
+              <p className="text-[11px] tracking-[0.25em] uppercase text-[#4FEA73] mt-4">{m.role}</p>
+              <div className="font-display text-2xl mt-1">{m.name}</div>
+              <p className="text-white/55 text-[13px] mt-2 leading-relaxed">{m.bio}</p>
+            </div>
+          ))}
         </div>
-        <Link href="/contact" className="btn-gradient inline-block mt-8">Work with us →</Link>
 
         <h2 className="font-display text-[11vw] sm:text-[70px] mt-20">WHAT WE <span className="text-gradient">STAND FOR.</span></h2>
         <div className="grid sm:grid-cols-3 gap-4 mt-8">
