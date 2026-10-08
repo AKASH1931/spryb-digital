@@ -89,7 +89,7 @@ export default function ServicePanel({ e, i, img, video }: { e: Expertise; i: nu
             <Image src={img} alt={e.title} fill className="object-cover" sizes="100vw" />
           </div>
         )}
-        <div className="absolute inset-0 bg-gradient-to-t from-[#0C0B22] via-[#121130]/55 to-[#121130]/25" />
+        <div className="absolute inset-0 bg-gradient-to-t from-[#0C0B22] via-[#121130]/60 to-[#121130]/45" />
       </div>
       <div className="relative p-7 sm:p-12 w-full">
         <div className={`flex items-end justify-between gap-4 ${step(0)}`} style={{ transitionDelay: "0ms" }}>
