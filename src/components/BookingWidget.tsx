@@ -95,14 +95,14 @@ export default function BookingWidget() {
   };
 
   return (
-    <form onSubmit={submit} noValidate className="card-dark p-6 sm:p-8 text-white">
-      <div className="flex flex-wrap gap-2">
+    <form onSubmit={submit} noValidate className="card-dark p-4 sm:p-8 text-white">
+      <div className="flex gap-2 overflow-x-auto carousel-row -mx-1 px-1">
         {days.map((d, i) => (
           <button
             key={d.toISOString()}
             type="button"
             onClick={() => { setDay(i); setTime(""); }}
-            className={`px-4 py-2.5 rounded-[10px] text-[13px] font-medium border transition ${
+            className={`px-4 py-2.5 rounded-[10px] text-[13px] font-medium border transition whitespace-nowrap shrink-0 ${
               day === i
                 ? "bg-gradient-spryb text-[#121130] border-transparent font-bold"
                 : "border-white/20 text-white/70 hover:border-[#D8F23F] hover:text-white"
@@ -112,8 +112,8 @@ export default function BookingWidget() {
           </button>
         ))}
       </div>
-      <p className="text-[11px] uppercase tracking-widest text-white/40 mt-6 mb-3">Pick a time (IST) — Mon to Sat, 10 AM to 7 PM</p>
-      <div className="grid grid-cols-3 sm:grid-cols-4 gap-2">
+      <p className="text-[11px] uppercase tracking-widest text-white/40 mt-5 mb-3">Pick a time (IST)</p>
+      <div className="grid grid-cols-4 gap-1.5 sm:gap-2">
         {ALL_SLOTS.map((s) => {
           const off = slotDisabled(s);
           const active = time === s;
@@ -123,7 +123,7 @@ export default function BookingWidget() {
               type="button"
               disabled={off}
               onClick={() => setTime(s)}
-              className={`py-2.5 rounded-[10px] text-[13px] font-medium border transition ${
+              className={`py-2 sm:py-2.5 rounded-[10px] text-[12px] sm:text-[13px] font-medium border transition ${
                 active
                   ? "bg-gradient-spryb text-[#121130] border-transparent font-bold"
                   : off
