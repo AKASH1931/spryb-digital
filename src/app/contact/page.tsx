@@ -36,7 +36,7 @@ export default function ContactPage() {
       </div>
 
       <div className="mx-auto max-w-[1100px] mt-16">
-        <p className="section-label">Free discovery call</p>
+        <p className="section-label">Discovery call</p>
         <h2 className="font-display text-[11vw] sm:text-[70px]">PICK A SLOT. <span className="text-gradient">WE CALL YOU.</span></h2>
         <p className="text-[#121130]/65 text-[15px] mt-3 max-w-[60ch]">Mon–Sat, 10 AM–7 PM IST. Next 7 days open — grab 30 minutes, no pitch-slapping, promise.</p>
         <div className="mt-8">

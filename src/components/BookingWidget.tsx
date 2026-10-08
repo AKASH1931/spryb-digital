@@ -36,6 +36,8 @@ export default function BookingWidget() {
   const [time, setTime] = useState("");
   const [name, setName] = useState("");
   const [phone, setPhone] = useState("");
+  const [email, setEmail] = useState("");
+  const [service, setService] = useState("");
   const [errors, setErrors] = useState<Record<string, string>>({});
   const [sending, setSending] = useState(false);
   const [failed, setFailed] = useState(false);
@@ -63,6 +65,7 @@ export default function BookingWidget() {
     const er: Record<string, string> = {};
     if (name.trim().length < 2) er.name = "Please tell us your name.";
     if (!/^[+\d][\d\s-]{7,14}$/.test(phone.trim())) er.phone = "Enter a valid phone number.";
+    if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email.trim())) er.email = "That email doesn't look right.";
     if (!time) er.time = "Pick a time slot.";
     setErrors(er);
     if (Object.keys(er).length > 0) return;
@@ -76,8 +79,10 @@ export default function BookingWidget() {
           access_key: "8d41f39f-8f5c-457c-9a96-1951513c9eda",
           subject: `Discovery call booked — ${fmtDay(days[day])}, ${time}`,
           from_name: name.trim(),
+          email: email.trim(),
           phone: phone.trim(),
-          message: `Discovery call request.\nName: ${name.trim()}\nPhone: ${phone.trim()}\nSlot: ${fmtDay(days[day])} at ${time} IST\nWe call them — please call on time.`,
+          service: service || "Not selected",
+          message: `Discovery call request.\nName: ${name.trim()}\nPhone: ${phone.trim()}\nEmail: ${email.trim()}\nService: ${service || "Not selected"}\nSlot: ${fmtDay(days[day])} at ${time} IST\nWe call them — please call on time.`,
         }),
       });
       const data = await res.json().catch(() => ({}));
@@ -151,6 +156,28 @@ export default function BookingWidget() {
           />
           {errors.phone && <p className={errCls}>{errors.phone}</p>}
         </div>
+        <div>
+          <input
+            type="email"
+            placeholder="Email *"
+            value={email}
+            onChange={(e) => { setEmail(e.target.value); setErrors((x) => ({ ...x, email: "" })); }}
+            className="bg-[#121130] border border-white/15 rounded-[10px] px-4 py-3.5 text-sm outline-none focus:border-[#D8F23F] placeholder:text-white/35 w-full"
+          />
+          {errors.email && <p className={errCls}>{errors.email}</p>}
+        </div>
+        <div>
+          <select
+            value={service}
+            onChange={(e) => setService(e.target.value)}
+            className={`bg-[#121130] border border-white/15 rounded-[10px] px-4 py-3.5 text-sm outline-none focus:border-[#D8F23F] w-full ${service ? "text-white" : "text-white/35"}`}
+          >
+            <option value="" disabled>What do you need help with?</option>
+            {["Social Media Strategy", "Content Production", "Community Management", "SEO & Search", "Performance Ads", "Web & Branding", "ORM & Reputation", "Hyperlocal Marketing", "Not sure yet"].map((s) => (
+              <option key={s} value={s} className="text-black">{s}</option>
+            ))}
+          </select>
+        </div>
       </div>
       {time && (
         <p className="text-[13px] text-[#D8F23F] mt-4">
@@ -158,7 +185,7 @@ export default function BookingWidget() {
         </p>
       )}
       <button disabled={sending} className="btn-gradient w-full py-4 text-[15px] mt-5 disabled:opacity-60">
-        {sending ? "Booking…" : "Book my free call →"}
+        {sending ? "Booking…" : "Book discovery call →"}
       </button>
       {failed && (
         <p className="text-[13px] text-[#ff8a8a] text-center mt-3">
