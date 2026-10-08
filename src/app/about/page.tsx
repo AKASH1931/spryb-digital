@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import Image from "next/image";
 import { team } from "@/data/site";
+import TeamCard from "@/components/TeamCard";
 
 export const metadata: Metadata = {
   title: "About — Humans First, Metrics Always",
@@ -49,16 +49,9 @@ export default function AboutPage() {
         </div>
 
         <h2 className="font-display text-[11vw] sm:text-[70px] mt-20">MEET THE <span className="text-gradient">HUMANS.</span></h2>
-        <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4 mt-8">
-          {team.map((m) => (
-            <div key={m.name} className="card-dark p-6 group">
-              <div className="h-44 rounded-[14px] overflow-hidden relative">
-                <Image src={m.img} alt={m.name} fill className="object-cover group-hover:scale-110 transition-transform duration-500" style={{ objectPosition: m.pos }} />
-              </div>
-              <p className="text-[11px] tracking-[0.25em] uppercase text-[#4FEA73] mt-4">{m.role}</p>
-              <div className="font-display text-2xl mt-1">{m.name}</div>
-              <p className="text-white/55 text-[13px] mt-2 leading-relaxed">{m.bio}</p>
-            </div>
+        <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4 mt-8" style={{ perspective: "1200px" }}>
+          {team.map((m, i) => (
+            <TeamCard key={m.name} m={m} i={i} />
           ))}
         </div>
 
