@@ -17,7 +17,7 @@ export default function ThankYouPage() {
         THANK <span className="text-gradient">YOU.</span>
       </h1>
       <p className="text-[#121130]/65 text-[17px] max-w-[48ch] mx-auto mt-4">
-        We got your message. Expect a reply within 24 hours with a free teardown and next steps. Bisous.
+        We got your message. Expect a reply within 24 hours with a free teardown and next steps.
       </p>
       <div className="mt-8 flex flex-wrap justify-center gap-3">
         <Link href="/work" className="btn-gradient">See our proof →</Link>
