@@ -205,7 +205,7 @@ export const projects = [
   },
   {
     slug: "urban-brew",
-    img: "https://picsum.photos/seed/spryb-coffee/640/420",
+    img: "https://images.pexels.com/photos/20884081/pexels-photo-20884081.jpeg?auto=compress&cs=tinysrgb&w=640",
     brand: "Urban Brew Co.",
     category: "D2C Coffee",
     tags: ["Content", "Social Strategy"],
@@ -213,9 +213,9 @@ export const projects = [
     desc: "Reels-first relaunch + UGC engine that turned a quiet coffee label into a cult.",
     tagline: "Coffee, but make it cult.",
     slides: [
-      "https://picsum.photos/seed/spryb-coffee/640/420",
-      "https://picsum.photos/seed/spryb-coffee2/640/420",
-      "https://picsum.photos/seed/spryb-coffee3/640/420",
+      "https://images.pexels.com/photos/20884081/pexels-photo-20884081.jpeg?auto=compress&cs=tinysrgb&w=640",
+      "https://images.pexels.com/photos/30910206/pexels-photo-30910206.jpeg?auto=compress&cs=tinysrgb&w=640",
+      "https://images.pexels.com/photos/13016654/pexels-photo-13016654.jpeg?auto=compress&cs=tinysrgb&w=640",
     ],
     story: [
       "Urban Brew had great beans and zero personality online. We gave it one: loud, honest, meme-fluent — a feed that smells like fresh coffee.",
@@ -231,7 +231,7 @@ export const projects = [
   },
   {
     slug: "solace-stays",
-    img: "https://picsum.photos/seed/spryb-hotel/640/420",
+    img: "https://images.pexels.com/photos/30835932/pexels-photo-30835932.jpeg?auto=compress&cs=tinysrgb&w=640",
     brand: "Solace Stays",
     category: "Boutique Hotels",
     tags: ["Content", "Community", "ORM"],
@@ -239,9 +239,9 @@ export const projects = [
     desc: "Shoot days, review engine and an Instagram that sells rooms before OTAs get a cut.",
     tagline: "Here, the view matters.",
     slides: [
-      "https://picsum.photos/seed/spryb-hotel/640/420",
-      "https://picsum.photos/seed/spryb-hotel2/640/420",
-      "https://picsum.photos/seed/spryb-hotel3/640/420",
+      "https://images.pexels.com/photos/30835932/pexels-photo-30835932.jpeg?auto=compress&cs=tinysrgb&w=640",
+      "https://images.pexels.com/photos/14465274/pexels-photo-14465274.jpeg?auto=compress&cs=tinysrgb&w=640",
+      "https://images.pexels.com/photos/29953197/pexels-photo-29953197.jpeg?auto=compress&cs=tinysrgb&w=640",
     ],
     story: [
       "Three beautiful properties, one tired feed. We rebuilt Solace around sea-light, slow mornings and honest guest stories.",
@@ -257,7 +257,7 @@ export const projects = [
   },
   {
     slug: "nest-realty",
-    img: "https://picsum.photos/seed/spryb-city/640/420",
+    img: "https://images.pexels.com/photos/4626268/pexels-photo-4626268.jpeg?auto=compress&cs=tinysrgb&w=640",
     brand: "Nest Realty",
     category: "Real Estate",
     tags: ["SEO", "Web", "Ads"],
@@ -265,9 +265,9 @@ export const projects = [
     desc: "Location SEO + fast site + walkthrough films that made site visits inevitable.",
     tagline: "Home, found faster.",
     slides: [
-      "https://picsum.photos/seed/spryb-city/640/420",
-      "https://picsum.photos/seed/spryb-city2/640/420",
-      "https://picsum.photos/seed/spryb-city3/640/420",
+      "https://images.pexels.com/photos/4626268/pexels-photo-4626268.jpeg?auto=compress&cs=tinysrgb&w=640",
+      "https://images.pexels.com/photos/12975922/pexels-photo-12975922.jpeg?auto=compress&cs=tinysrgb&w=640",
+      "https://images.pexels.com/photos/31737862/pexels-photo-31737862.jpeg?auto=compress&cs=tinysrgb&w=640",
     ],
     story: [
       "Nobody finds a broker on page 4. We rebuilt Nest around location pages, a fast site and walkthrough films buyers actually watch.",
