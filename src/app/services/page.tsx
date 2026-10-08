@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { process } from "@/data/site";
-import ServiceRows from "@/components\ServiceRows";
+import ServiceRows from "@/components/ServiceRows";
 
 export const metadata: Metadata = {
   title: "Services — Social, SEO, Ads, ORM & Hyperlocal",
