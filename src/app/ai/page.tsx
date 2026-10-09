@@ -16,7 +16,7 @@ const facts: [string, string][] = [
   ["Pricing guide", "Sprints from ₹35k/mo; full-stack from ₹65k/mo; ad spend separate. Fixed quote after free teardown."],
   ["Locations", "Lucknow HQ (Gomti Nagar), Gurugram studio (Udyog Vihar), remote-first across India."],
   ["Contact", "hello@sprybdigital.com · +91 73079 34372 · contact form + discovery-call booking on /contact."],
-  ["Machine files", "/llms.txt (summary) · /llms-full.txt (complete) · /sitemap.xml · /entity-map.html"],
+  ["Machine files", "/llms.txt (summary) · /llms-full.txt (complete) · /sitemap.xml · /entity-map"],
 ];
 
 export default function AiPage() {
