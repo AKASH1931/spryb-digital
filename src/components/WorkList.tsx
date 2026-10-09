@@ -67,6 +67,12 @@ export default function WorkList() {
 
         <div className="text-center mt-16">
           <p className="font-display text-3xl">YOUR BRAND <span className="text-gradient">NEXT?</span></p>
+          <p className="text-[#121130]/60 text-[15px] mt-3">
+            Built with <Link href="/services" className="tlink-dark">Social Strategy</Link> ·{" "}
+            <Link href="/services" className="tlink-dark">Performance Ads</Link> ·{" "}
+            <Link href="/services" className="tlink-dark">SEO</Link> ·{" "}
+            <Link href="/services" className="tlink-dark">ORM</Link>
+          </p>
           <Link href="/contact" className="btn-gradient inline-block mt-4">Become the next case →</Link>
         </div>
       </div>

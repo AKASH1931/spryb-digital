@@ -94,6 +94,7 @@ export default function AboutPage() {
             <p className="text-white/60 text-[15px] mt-3">One call. Zero jargon. A plan you can steal even if we never work together.</p>
           </div>
           <Link href="/contact" className="btn-gradient shrink-0 relative">Start talking →</Link>
+          <Link href="/work" className="tlink text-[14px] shrink-0 relative">See proof first →</Link>
         </div>
       </div>
     </div>

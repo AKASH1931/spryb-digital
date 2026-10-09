@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Link from "next/link";
 import ContactForm from "@/components/ContactForm";
 import BookingWidget from "@/components/BookingWidget";
 
@@ -16,7 +17,7 @@ export default function ContactPage() {
         <div>
           <p className="section-label">Contact</p>
           <h1 className="font-display text-[14vw] sm:text-[90px]">TELL US <br /><span className="text-gradient">EVERYTHING.</span></h1>
-          <p className="text-[#121130]/70 mt-5 text-[16px]">A mini form, 30 seconds. We get your answers and come back fast.</p>
+          <p className="text-[#121130]/70 mt-5 text-[16px]">A mini form, 30 seconds. We get your answers and come back fast. New here? <Link href="/services" className="tlink-dark">Browse services</Link> or <Link href="/work" className="tlink-dark">see proof</Link> first.</p>
           <div className="mt-8 text-[15px]">
             <div className="border-t border-[#121130]/12 py-4 flex items-baseline justify-between gap-4">
               <span className="text-[12px] uppercase tracking-widest text-[#121130]/45">Email</span>
