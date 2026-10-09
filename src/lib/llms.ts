@@ -4,7 +4,7 @@ const SITE = "https://sprybdigital.com";
 
 const serviceKeywords: Record<string, string> = {
   "Social Media Strategy": "Instagram growth agency, Facebook marketing, LinkedIn company pages, content pillars, social media audit India",
-  "Content Production": "reels production, product photoshoot, founder videos, YouTube video production, corporate films India",
+  "Content Creation": "reels production, product photoshoot, founder videos, YouTube video production, corporate films India",
   "Community Management": "Instagram management services, daily posting service, DM handling, comment moderation India",
   "SEO & Search": "SEO services India, local SEO, Google Business Profile optimisation, rank on Google, keyword rankings",
   "Performance Ads": "Meta ads agency, Facebook ads management, Google ads agency India, lead generation ads, ROAS optimisation",
