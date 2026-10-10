@@ -40,19 +40,6 @@ export default function KreativeKandPage() {
         </div>
       </section>
 
-      {/* TICKER */}
-      <div className="overflow-hidden whitespace-nowrap bg-[#121130] text-white py-3 -rotate-1 scale-[1.02]">
-        <div className="inline-flex gap-8 pr-8 animate-[marquee_22s_linear_infinite]">
-          {Array.from({ length: 2 }).flatMap((_, k) =>
-            ["CERTIFIED KAND", "NO BORING ALLOWED", "TRENDS DIED HERE", "MEMES LIVE HERE", "100% HUMAN DRAMA"].map((t, i) => (
-              <span key={`${k}-${i}`} className="font-display text-lg sm:text-xl">
-                {t} <span className="text-gradient ml-8">✦</span>
-              </span>
-            ))
-          )}
-        </div>
-      </div>
-
       {/* VIEWER */}
       <section className="px-6 sm:px-10 py-14">
         <div className="mx-auto max-w-[1440px]">
