@@ -20,7 +20,7 @@ export const team = [
     role: "HR",
     emoji: "💜",
     img: "/team/priyanshi.jpg",
-    pos: "50% 15%",
+    pos: "55% 25%",
     bio: "Keeps the humans happy so the humans keep brands happy. Hiring, culture and the occasional much-needed reality check.",
   },
   {
@@ -36,7 +36,7 @@ export const team = [
     role: "Assistant Manager · Social Media",
     emoji: "🎯",
     img: "/team/rishabh.jpg",
-    pos: "50% 38%",
+    pos: "50% 30%",
     bio: "Runs the social engine room. Strategy into calendars, calendars into growth - the bridge between plans and posting.",
   },
   {
