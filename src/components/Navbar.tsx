@@ -7,7 +7,6 @@ const links = [
   { href: "/about", label: "Agency" },
   { href: "/work", label: "Projects" },
   { href: "/services", label: "Expertise" },
-  { href: "/kreative-kand", label: "Kand" },
   { href: "/contact", label: "Contact" },
 ];
 
