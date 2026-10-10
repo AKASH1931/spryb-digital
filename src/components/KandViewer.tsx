@@ -86,8 +86,6 @@ export default function KandViewer() {
                 className="w-full h-full object-cover"
                 controls
                 autoPlay
-                muted
-                loop
                 playsInline
                 poster={REELS[open].poster}
               />
