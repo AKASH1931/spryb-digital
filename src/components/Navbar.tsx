@@ -7,6 +7,7 @@ const links = [
   { href: "/about", label: "Agency" },
   { href: "/work", label: "Projects" },
   { href: "/services", label: "Expertise" },
+  { href: "/kreative-kand", label: "Kand" },
   { href: "/contact", label: "Contact" },
 ];
 
@@ -20,7 +21,7 @@ export default function Navbar() {
             {open ? "✕" : "☰"}
           </button>
 
-          <nav className="hidden md:flex items-center gap-1 bg-white/85 backdrop-blur border border-[#121130]/10 rounded-full px-2 py-2 shadow-[0_8px_30px_rgba(18,17,48,0.08)]">
+          <nav className="hidden lg:flex items-center gap-1 bg-white/85 backdrop-blur border border-[#121130]/10 rounded-full px-2 py-2 shadow-[0_8px_30px_rgba(18,17,48,0.08)]">
             {links.map((l) => (
               <Link
                 key={l.label}

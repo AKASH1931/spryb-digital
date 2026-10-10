@@ -29,6 +29,7 @@ export default function Footer() {
                 ["Projects", "/work"],
                 ["Expertise", "/services"],
                 ["Kreative Kand", "/kreative-kand"],
+                ["Careers", "/careers"],
                 ["Contact", "/contact"],
               ].map(([label, href]) => (
                 <Link

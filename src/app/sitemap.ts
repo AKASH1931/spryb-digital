@@ -5,7 +5,7 @@ export const dynamic = "force-static";
 const SITE_URL = "https://sprybdigital.com";
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const routes = ["", "/services", "/work", "/about", "/contact", "/privacy", "/terms", "/sitemap", "/ai", "/kreative-kand"];
+  const routes = ["", "/services", "/work", "/about", "/contact", "/privacy", "/terms", "/sitemap", "/ai", "/kreative-kand", "/careers"];
   return routes.map((route) => ({
     url: `${SITE_URL}${route}`,
     lastModified: new Date(),
