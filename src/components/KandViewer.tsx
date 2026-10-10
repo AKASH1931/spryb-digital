@@ -1,57 +1,73 @@
 "use client";
-import { useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import Image from "next/image";
 
-const REELS = [
-  "https://images.unsplash.com/photo-1533750349088-cd871a92f312?auto=format&fit=crop&w=480&q=80",
-  "https://images.unsplash.com/photo-1511707171634-5f897ff02aa9?auto=format&fit=crop&w=480&q=80",
-  "https://images.unsplash.com/photo-1529156069898-49953e39b3ac?auto=format&fit=crop&w=480&q=80",
-];
+const REELS = [1, 2, 3, 4, 5, 6].map((n) => ({
+  src: `/kand/reel-${n}.mp4`,
+  poster: `/kand/reel-${n}.jpg`,
+}));
 
-const SHOTS = [
-  "https://images.unsplash.com/photo-1492691527719-9d1e07e534b4?auto=format&fit=crop&w=640&q=80",
-  "https://images.unsplash.com/photo-1557804506-669a67965ba0?auto=format&fit=crop&w=640&q=80",
-  "https://images.unsplash.com/photo-1449824913935-59a10b8d2000?auto=format&fit=crop&w=640&q=80",
-];
-
-type Item = { src: string; kind: "reel" | "shot"; i: number };
-const ALL: Item[] = [
-  ...REELS.map((src, i) => ({ src, kind: "reel" as const, i })),
-  ...SHOTS.map((src, i) => ({ src, kind: "shot" as const, i })),
-];
+function KandVideo({ src, poster, alt, big = false }: { src: string; poster: string; alt: string; big?: boolean }) {
+  const ref = useRef<HTMLVideoElement>(null);
+  useEffect(() => {
+    const v = ref.current;
+    if (!v) return;
+    const io = new IntersectionObserver(
+      (entries) => {
+        if (entries[0].isIntersecting) {
+          v.muted = true;
+          v.defaultMuted = true;
+          v.setAttribute("muted", "");
+          v.setAttribute("playsinline", "");
+          if (!v.src) {
+            v.src = src;
+            v.load();
+          }
+          const play = () => v.play().catch(() => {});
+          if (v.readyState >= 2) play();
+          else v.addEventListener("canplay", play, { once: true });
+        } else {
+          v.pause();
+        }
+      },
+      { threshold: 0.2 }
+    );
+    io.observe(v);
+    return () => io.disconnect();
+  }, [src]);
+  return (
+    <>
+      <Image src={poster} alt={alt} fill className="object-cover" sizes={big ? "90vw" : "(max-width:768px) 50vw, 33vw"} />
+      <video
+        ref={ref}
+        className="absolute inset-0 w-full h-full object-cover"
+        muted
+        loop
+        playsInline
+        preload="none"
+        poster={poster}
+        aria-label={alt}
+      />
+    </>
+  );
+}
 
 export default function KandViewer() {
   const [open, setOpen] = useState<number | null>(null);
   return (
     <>
-      <div className="grid grid-cols-3 gap-3 sm:gap-6 mt-8 max-w-[960px]">
-        {REELS.map((s, i) => (
-          <button
-            key={s}
-            onClick={() => setOpen(i)}
-            className={`relative rounded-[22px] overflow-hidden group aspect-[9/16] border border-[#121130]/15 bg-white shadow-[0_16px_50px_rgba(18,17,48,0.12)] transition-transform duration-500 hover:scale-[1.03] hover:-rotate-1 text-left ${i === 1 ? "sm:translate-y-8" : ""}`}
-          >
-            <Image src={s} alt={`Kreative Kand reel ${i + 1}`} fill className="object-cover" sizes="(max-width:768px) 33vw, 320px" />
-            <span className="absolute inset-0 bg-gradient-to-t from-[#0C0B22]/80 via-transparent to-transparent" />
-            <span className="absolute inset-0 grid place-items-center">
-              <span className="w-14 h-14 rounded-full bg-gradient-spryb grid place-items-center text-[#121130] text-xl font-black shadow-[0_0_40px_rgba(216,242,63,0.5)] group-hover:scale-110 transition-transform">▶</span>
-            </span>
-            <span className="absolute bottom-3 left-3 text-white text-[12px] font-bold">Reel 0{i + 1}</span>
-          </button>
-        ))}
-      </div>
-
-      <h2 className="font-display text-[12vw] sm:text-[80px] mt-16">STATIC <span className="text-gradient">HEAT.</span></h2>
       <div className="grid grid-cols-2 md:grid-cols-3 gap-3 sm:gap-5 mt-8">
-        {SHOTS.map((s, i) => (
+        {REELS.map((r, i) => (
           <button
-            key={s}
-            onClick={() => setOpen(REELS.length + i)}
-            className="relative aspect-square rounded-[22px] overflow-hidden group border border-[#121130]/12 hover:border-[#0e9f5b]/60 transition-colors text-left shadow-[0_16px_50px_rgba(18,17,48,0.12)]"
+            key={r.src}
+            onClick={() => setOpen(i)}
+            className="relative rounded-[22px] overflow-hidden group aspect-[9/16] border border-[#121130]/12 hover:border-[#0e9f5b]/60 transition-colors text-left shadow-[0_16px_50px_rgba(18,17,48,0.12)]"
           >
-            <Image src={s} alt={`Kreative Kand post ${i + 1}`} fill className="object-cover group-hover:scale-110 transition-transform duration-500" sizes="(max-width:768px) 50vw, 33vw" />
-            <span className="absolute inset-0 bg-gradient-to-t from-[#0C0B22]/70 to-transparent opacity-0 group-hover:opacity-100 transition-opacity" />
-            <span className="absolute bottom-3 left-3 text-white text-[12px] font-bold opacity-0 group-hover:opacity-100 transition-opacity">Open ⤢</span>
+            <KandVideo src={r.src} poster={r.poster} alt={`Kreative Kand reel ${i + 1}`} />
+            <span className="absolute inset-0 grid place-items-center pointer-events-none">
+              <span className="w-12 h-12 rounded-full bg-white/90 grid place-items-center text-[#121130] text-lg font-black shadow-lg">▶</span>
+            </span>
+            <span className="absolute bottom-3 left-3 text-white text-[12px] font-bold drop-shadow">Reel 0{i + 1}</span>
           </button>
         ))}
       </div>
@@ -60,11 +76,21 @@ export default function KandViewer() {
         <div className="fixed inset-0 z-[80]" role="dialog" aria-modal="true" aria-label="Viewer">
           <div className="absolute inset-0 bg-[#0C0B22]/90 backdrop-blur-sm" onClick={() => setOpen(null)} />
           <button onClick={() => setOpen(null)} aria-label="Close" className="absolute top-5 right-5 z-10 circle-btn">✕</button>
-          <button onClick={() => setOpen((open - 1 + ALL.length) % ALL.length)} aria-label="Previous" className="absolute left-3 sm:left-8 top-1/2 -translate-y-1/2 z-10 circle-btn">←</button>
-          <button onClick={() => setOpen((open + 1) % ALL.length)} aria-label="Next" className="absolute right-3 sm:right-8 top-1/2 -translate-y-1/2 z-10 circle-btn">→</button>
+          <button onClick={() => setOpen((open - 1 + REELS.length) % REELS.length)} aria-label="Previous" className="absolute left-3 sm:left-8 top-1/2 -translate-y-1/2 z-10 circle-btn">←</button>
+          <button onClick={() => setOpen((open + 1) % REELS.length)} aria-label="Next" className="absolute right-3 sm:right-8 top-1/2 -translate-y-1/2 z-10 circle-btn">→</button>
           <div className="absolute inset-0 grid place-items-center p-6 sm:p-12 pointer-events-none">
-            <div className={`relative rounded-[22px] overflow-hidden border border-white/20 shadow-[0_40px_120px_rgba(0,0,0,0.6)] ${ALL[open].kind === "reel" ? "h-[78vh] aspect-[9/16]" : "w-full max-w-[880px] aspect-[16/10]"}`}>
-              <Image src={ALL[open].src} alt="Kreative Kand full view" fill className="object-cover" sizes="90vw" />
+            <div className="relative rounded-[22px] overflow-hidden border border-white/20 shadow-[0_40px_120px_rgba(0,0,0,0.6)] h-[78vh] aspect-[9/16]">
+              <video
+                key={REELS[open].src}
+                src={REELS[open].src}
+                className="w-full h-full object-cover"
+                controls
+                autoPlay
+                muted
+                loop
+                playsInline
+                poster={REELS[open].poster}
+              />
             </div>
           </div>
           <div className="absolute bottom-6 left-0 right-0 text-center">
