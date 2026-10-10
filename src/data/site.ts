@@ -13,7 +13,7 @@ export const team = [
     emoji: "🚀",
     img: "/team/akash.jpg",
     pos: "50% 22%",
-    bio: "Owns reputation and pipeline. Reviews, rankings and revenue — if it has a number, it's growing.",
+    bio: "Owns reputation and pipeline. Reviews, rankings and revenue - if it has a number, it's growing.",
   },
   {
     name: "Priyanshi Saxena",
@@ -29,7 +29,7 @@ export const team = [
     emoji: "🛡️",
     img: "/team/archit.jpg",
     pos: "35% 42%",
-    bio: "Guardian of your ratings. Review engines, listing glow-ups and sentiment reports — nothing about your brand goes unnoticed.",
+    bio: "Guardian of your ratings. Review engines, listing glow-ups and sentiment reports - nothing about your brand goes unnoticed.",
   },
   {
     name: "Rishabh Mishra",
@@ -37,7 +37,7 @@ export const team = [
     emoji: "🎯",
     img: "/team/rishabh.jpg",
     pos: "50% 38%",
-    bio: "Runs the social engine room. Strategy into calendars, calendars into growth — the bridge between plans and posting.",
+    bio: "Runs the social engine room. Strategy into calendars, calendars into growth - the bridge between plans and posting.",
   },
   {
     name: "Chanpreet",
@@ -53,7 +53,7 @@ export const team = [
     emoji: "📸",
     img: "/team/roshni.jpg",
     pos: "50% 20%",
-    bio: "Content with a sharp eye. Shoots, edits, posts — and spots the trend three days before it peaks.",
+    bio: "Content with a sharp eye. Shoots, edits, posts - and spots the trend three days before it peaks.",
   },
   {
     name: "Sreyash Pandey",
@@ -61,7 +61,7 @@ export const team = [
     emoji: "📱",
     img: "/team/sreyash.jpg",
     pos: "50% 20%",
-    bio: "Lives in feeds and trends. Calendars, publishing, DMs and community — your accounts never sleep on his watch.",
+    bio: "Lives in feeds and trends. Calendars, publishing, DMs and community - your accounts never sleep on his watch.",
   },
   {
     name: "Shashank Bhushan",
@@ -69,7 +69,7 @@ export const team = [
     emoji: "🎨",
     img: "/team/shashank.jpg",
     pos: "50% 25%",
-    bio: "Makes brands look expensive. Grids, type, thumbs and templates — every pixel earns its place.",
+    bio: "Makes brands look expensive. Grids, type, thumbs and templates - every pixel earns its place.",
   },
   {
     name: "Muskan",
