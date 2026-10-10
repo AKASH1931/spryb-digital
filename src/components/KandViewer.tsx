@@ -29,7 +29,7 @@ export default function KandViewer() {
           <button
             key={s}
             onClick={() => setOpen(i)}
-            className={`relative rounded-[22px] overflow-hidden group aspect-[9/16] border border-white/15 bg-white/5 backdrop-blur shadow-[0_0_50px_rgba(79,234,115,0.12)] transition-transform duration-500 hover:scale-[1.03] hover:-rotate-1 text-left ${i === 1 ? "sm:translate-y-8" : ""}`}
+            className={`relative rounded-[22px] overflow-hidden group aspect-[9/16] border border-[#121130]/15 bg-white shadow-[0_16px_50px_rgba(18,17,48,0.12)] transition-transform duration-500 hover:scale-[1.03] hover:-rotate-1 text-left ${i === 1 ? "sm:translate-y-8" : ""}`}
           >
             <Image src={s} alt={`Kreative Kand reel ${i + 1}`} fill className="object-cover" sizes="(max-width:768px) 33vw, 320px" />
             <span className="absolute inset-0 bg-gradient-to-t from-[#0C0B22]/80 via-transparent to-transparent" />
@@ -47,7 +47,7 @@ export default function KandViewer() {
           <button
             key={s}
             onClick={() => setOpen(REELS.length + i)}
-            className="relative aspect-square rounded-[22px] overflow-hidden group border border-white/12 hover:border-[#D8F23F]/60 transition-colors text-left"
+            className="relative aspect-square rounded-[22px] overflow-hidden group border border-[#121130]/12 hover:border-[#0e9f5b]/60 transition-colors text-left shadow-[0_16px_50px_rgba(18,17,48,0.12)]"
           >
             <Image src={s} alt={`Kreative Kand post ${i + 1}`} fill className="object-cover group-hover:scale-110 transition-transform duration-500" sizes="(max-width:768px) 50vw, 33vw" />
             <span className="absolute inset-0 bg-gradient-to-t from-[#0C0B22]/70 to-transparent opacity-0 group-hover:opacity-100 transition-opacity" />
