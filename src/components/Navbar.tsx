@@ -30,8 +30,8 @@ export default function Navbar() {
                 {l.label}
               </Link>
             ))}
-            <Link href="/contact" className="btn-gradient !py-2 !px-5 text-[13px]">
-              Get proposal →
+            <Link href="/kreative-kand" className="btn-gradient !py-2 !px-5 text-[13px]">
+              Enter the madness →
             </Link>
           </nav>
 
