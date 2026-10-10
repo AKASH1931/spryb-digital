@@ -20,7 +20,7 @@ export const team = [
     role: "HR",
     emoji: "💜",
     img: "/team/priyanshi.jpg",
-    pos: "55% 25%",
+    pos: "62% 18%",
     bio: "Keeps the humans happy so the humans keep brands happy. Hiring, culture and the occasional much-needed reality check.",
   },
   {
