@@ -41,7 +41,7 @@ export default function KreativeKandPage() {
             Our Instagram playground. Reels, trends, memes and behind-the-scenes — where Spryb tries things before clients dare to.
           </p>
           <div className="mt-7 flex flex-wrap gap-3">
-            <a href="https://www.instagram.com/kreativ_kand/" target="_blank" rel="noreferrer" className="btn-gradient">
+            <a href="https://www.instagram.com/kreativ_kand/" target="_blank" rel="noreferrer" className="btn-madness px-8 py-4 text-[15px]">
               Follow @kreativ_kand →
             </a>
             <Link href="/contact" className="btn-ghost">Work with us</Link>

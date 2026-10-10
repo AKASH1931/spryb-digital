@@ -222,6 +222,28 @@ body {
 }
 
 /* Horizontal carousel rows (team / projects) */
+/* Bounce + glow CTA (Kreative Kand madness) */
+.btn-madness {
+  background: linear-gradient(135deg, #4fea73 0%, #d8f23f 50%, #ff8a5c 100%);
+  background-size: 200% 200%;
+  color: #121130;
+  font-weight: 700;
+  border-radius: 10px;
+  display: inline-block;
+  animation: madness-bounce 2.2s ease-in-out infinite, madness-glow 2.2s ease-in-out infinite, madness-bg 5s ease infinite;
+}
+@keyframes madness-bounce {
+  0%, 100% { transform: translateY(0) scale(1); }
+  50% { transform: translateY(-4px) scale(1.04); }
+}
+@keyframes madness-glow {
+  0%, 100% { box-shadow: 0 8px 28px rgba(79, 234, 115, 0.35); }
+  50% { box-shadow: 0 8px 44px rgba(255, 138, 92, 0.55); }
+}
+@keyframes madness-bg {
+  0%, 100% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+}
 .carousel-row {
   display: flex;
   gap: 16px;
