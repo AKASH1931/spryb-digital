@@ -119,6 +119,11 @@ const orgSchema = {
     opens: "10:00",
     closes: "19:00",
   },
+  geo: {
+    "@type": "GeoCoordinates",
+    latitude: 26.865,
+    longitude: 81.0,
+  },
   makesOffer: [
     "Social Media Strategy",
     "Content Production",
