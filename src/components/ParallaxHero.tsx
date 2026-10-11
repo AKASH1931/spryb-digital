@@ -17,8 +17,11 @@ export default function ParallaxHero() {
 
   useEffect(() => {
     let ticking = false;
+    let visible = true;
+    const section = sectionRef.current;
     const update = () => {
       ticking = false;
+      if (!visible) return;
       // progress completes within the first viewport of scrolling
       const y = Math.min(Math.max(window.scrollY / window.innerHeight, 0), 1.2);
       // giant word drifts down slow
@@ -41,13 +44,24 @@ export default function ParallaxHero() {
       }
     };
     update();
+    const io = new IntersectionObserver(
+      (entries) => {
+        visible = entries[0].isIntersecting;
+        if (visible) update();
+      },
+      { threshold: 0 }
+    );
+    if (section) io.observe(section);
     window.addEventListener("scroll", onScroll, { passive: true });
-    return () => window.removeEventListener("scroll", onScroll);
+    return () => {
+      window.removeEventListener("scroll", onScroll);
+      io.disconnect();
+    };
   }, []);
 
   return (
     <section id="hero" ref={sectionRef} className="pt-24 sm:pt-28 relative overflow-hidden min-h-[105vh]">
-      <div className="absolute top-24 -right-32 w-[480px] h-[480px] rounded-full bg-[#4FEA73]/10 blur-[120px]" />
+      <div className="absolute top-24 -right-32 w-[480px] h-[480px] rounded-full bg-[#4FEA73]/10 blur-[70px] sm:blur-[120px]" />
       {/* giant background word — drifts down slower */}
       <div ref={wordRef} aria-hidden className="font-display text-[38vw] sm:text-[30vw] leading-[0.8] text-center select-none text-gradient-bright opacity-85 -mb-[6vw] sm:-mb-[4vw] will-change-transform">
         SPRYB
@@ -57,19 +71,19 @@ export default function ParallaxHero() {
       <div className="relative mx-auto max-w-[1100px] h-[440px] sm:h-[520px] -mt-[10vw] sm:-mt-[6vw]">
         <div ref={leftRef} className="absolute left-[2%] top-10 w-[42%] sm:w-[36%] will-change-transform">
           <div className="aspect-[3/4] rounded-[20px] overflow-hidden -rotate-6 shadow-[0_24px_70px_rgba(0,0,0,0.45)] border border-white/10 hover:rotate-0 hover:scale-[1.03] transition-transform duration-300 group relative">
-            <Image src="/hero/hero-1.jpg" alt="Meta Ads" fill className="object-cover group-hover:scale-110 transition-transform duration-500" />
+            <Image src="/hero/hero-1.jpg" alt="Meta Ads" fill sizes="(max-width: 640px) 42vw, 36vw" loading="lazy" decoding="async" className="object-cover group-hover:scale-110 transition-transform duration-500" />
             <span className="absolute bottom-3 left-3 text-[11px] bg-[#121130]/85 px-3 py-1.5 rounded-full text-white/70">Meta Ads</span>
           </div>
         </div>
         <div ref={centerRef} className="absolute left-1/2 -translate-x-1/2 top-0 w-[46%] sm:w-[38%] z-10 will-change-transform">
           <div className="aspect-[3/4] rounded-[20px] overflow-hidden shadow-[0_30px_80px_rgba(0,0,0,0.5)] border border-white/10 hover:scale-[1.03] transition-transform duration-300 group relative">
-            <Image src="/hero/hero-2.jpg" alt="Influencer Marketing" fill priority className="object-cover group-hover:scale-110 transition-transform duration-500" />
+            <Image src="/hero/hero-2.jpg" alt="Influencer Marketing" fill priority sizes="(max-width: 640px) 46vw, 38vw" decoding="async" className="object-cover group-hover:scale-110 transition-transform duration-500" />
             <span className="absolute bottom-3 left-3 text-[11px] bg-[#121130]/85 px-3 py-1.5 rounded-full text-white/70">Influencer Marketing</span>
           </div>
         </div>
         <div ref={rightRef} className="absolute right-[2%] top-10 w-[42%] sm:w-[36%] will-change-transform">
           <div className="aspect-[3/4] rounded-[20px] overflow-hidden rotate-6 shadow-[0_24px_70px_rgba(0,0,0,0.45)] border border-white/10 hover:rotate-0 hover:scale-[1.03] transition-transform duration-300 group relative">
-            <Image src="/hero/hero-3.jpg" alt="Hyperlocal" fill className="object-cover group-hover:scale-110 transition-transform duration-500" />
+            <Image src="/hero/hero-3.jpg" alt="Hyperlocal" fill sizes="(max-width: 640px) 42vw, 36vw" loading="lazy" decoding="async" className="object-cover group-hover:scale-110 transition-transform duration-500" />
             <span className="absolute bottom-3 left-3 text-[11px] bg-[#121130]/85 px-3 py-1.5 rounded-full text-white/70">Hyperlocal</span>
           </div>
         </div>
@@ -94,7 +108,7 @@ export default function ParallaxHero() {
       <div className="mx-auto max-w-[1440px] px-6 sm:px-10 pb-14">
         <Link href="/work" className="card-dark overflow-hidden flex flex-col sm:flex-row items-stretch gap-0 !p-0 group">
           <div className="sm:w-[280px] min-h-[180px] relative overflow-hidden">
-            <Image src="/cases/agri-tractor.jpg" alt="Agri Investment Plan" fill className="object-cover group-hover:scale-110 transition-transform duration-500" />
+            <Image src="/cases/agri-tractor.jpg" alt="Agri Investment Plan" fill sizes="(max-width: 640px) 100vw, 280px" loading="lazy" decoding="async" className="object-cover group-hover:scale-110 transition-transform duration-500" />
           </div>
           <div className="p-6 sm:p-8 flex-1">
             <p className="text-[11px] tracking-[0.25em] uppercase text-[#4FEA73]">Case of the month</p>

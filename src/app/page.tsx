@@ -1,11 +1,19 @@
 import Link from "next/link";
 import Image from "next/image";
+import dynamic from "next/dynamic";
 import { team, expertises, process, whyUs, faqs } from "@/data/site";
 import { Marquee, CarouselShell, Faq } from "@/components/ui";
-import ContactForm from "@/components/ContactForm";
 import ParallaxHero from "@/components/ParallaxHero";
-import ParallaxTeam from "@/components/ParallaxTeam";
-import PinnedWork from "@/components/PinnedWork";
+
+const ParallaxTeam = dynamic(() => import("@/components/ParallaxTeam"), {
+  loading: () => <div className="h-[400px]" aria-hidden />,
+});
+const PinnedWork = dynamic(() => import("@/components/PinnedWork"), {
+  loading: () => <div className="h-[70vh]" aria-hidden />,
+});
+const ContactForm = dynamic(() => import("@/components/ContactForm"), {
+  loading: () => <div className="card-dark p-6 sm:p-8 h-[420px] animate-pulse" aria-hidden />,
+});
 
 export default function Home() {
   const faqSchema = {
@@ -27,7 +35,7 @@ export default function Home() {
         <div className="mx-auto max-w-[1440px]">
           <p className="section-label text-center">Brands that trust Spryb</p>
           <div className="overflow-hidden mt-8 [mask-image:linear-gradient(to_right,transparent,black_10%,black_90%,transparent)]">
-            <div className="flex items-center gap-16 pr-16 w-max animate-[marquee_32s_linear_infinite] hover:[animation-play-state:paused]">
+            <div className="flex items-center gap-16 pr-16 w-max animate-[marquee_32s_linear_infinite] motion-reduce:animate-none hover:[animation-play-state:paused]">
               {[
                 ["motherhood.webp", "Motherhood"],
                 ["muldhara.webp", "Muldhara"],
@@ -54,7 +62,7 @@ export default function Home() {
                 ["client-1x1.jpg", "Client"],
               ]).map(([f, name], i) => (
                 <span key={i} className="h-20 sm:h-24 w-44 sm:w-52 shrink-0 relative grayscale opacity-70 hover:grayscale-0 hover:opacity-100 transition">
-                  <Image src={`/clients/${f}`} alt={`${name} — Spryb Digital client`} fill className="object-contain" sizes="208px" />
+                  <Image src={`/clients/${f}`} alt={`${name} — Spryb Digital client`} fill className="object-contain" sizes="208px" loading="lazy" decoding="async" />
                 </span>
               ))}
             </div>
@@ -128,6 +136,9 @@ export default function Home() {
                       ][i % 8]}
                       alt={e.title}
                       fill
+                      sizes="(max-width: 768px) 100vw, 320px"
+                      loading="lazy"
+                      decoding="async"
                       className="object-cover"
                     />
                     <div className="absolute inset-0 bg-gradient-to-r from-[#1A1940] via-transparent to-transparent hidden md:block" />
@@ -142,7 +153,7 @@ export default function Home() {
       <Marquee slow items={["SEO", "PERFORMANCE ADS", "SOCIAL MEDIA", "CONTENT", "ORM", "HYPERLOCAL", "WEB", "BRANDING"]} />
 
       {/* ── PROCESS — "Nous préfèrerons cet ordre. Toujours." ── */}
-      <section className="px-6 sm:px-10 py-20 sm:py-[120px]">
+      <section className="px-6 sm:px-10 py-20 sm:py-[120px] cv-auto">
         <div className="mx-auto max-w-[1440px]">
           <p className="section-label">Method</p>
           <h2 className="font-display text-[12vw] sm:text-[90px] lg:text-[120px] mt-3">
@@ -165,7 +176,7 @@ export default function Home() {
       </section>
 
       {/* ── WHY — "POURQUOI CHOISIR FOUDRE" ── */}
-      <section className="px-6 sm:px-10 pb-20">
+      <section className="px-6 sm:px-10 pb-20 cv-auto">
         <div className="mx-auto max-w-[1440px]">
           <h2 className="font-display text-[12vw] sm:text-[80px]">WHY CHOOSE <span className="text-gradient">SPRYB</span></h2>
           <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-4 mt-10">
@@ -189,7 +200,7 @@ export default function Home() {
               {team.map((m) => (
                 <article key={m.name} className="card-dark w-[300px] sm:w-[340px] p-6 group">
                   <div className="h-44 rounded-[14px] overflow-hidden relative">
-                    <Image src={m.img} alt={m.name} fill className="object-cover group-hover:scale-110 transition-transform duration-500" style={{ objectPosition: m.pos }} />
+                    <Image src={m.img} alt={m.name} fill sizes="(max-width: 640px) 300px, 340px" loading="lazy" decoding="async" className="object-cover group-hover:scale-110 transition-transform duration-500" style={{ objectPosition: m.pos }} />
                   </div>
                   <p className="text-[11px] tracking-[0.25em] uppercase text-[#4FEA73] mt-5">{m.role}</p>
                   <h3 className="font-display text-3xl mt-1">{m.name}</h3>
@@ -200,7 +211,7 @@ export default function Home() {
           </div>
         </div>
       </section>
-      <section id="faq" className="px-6 sm:px-10 pb-20">
+      <section id="faq" className="px-6 sm:px-10 pb-20 cv-auto">
         <div className="mx-auto max-w-[1100px]">
           <p className="section-label">FAQ</p>
           <h2 className="font-display text-[11vw] sm:text-[70px] mt-2">SMALL QUESTIONS, <span className="text-gradient">BIG ANSWERS.</span></h2>

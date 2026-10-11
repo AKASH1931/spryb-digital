@@ -11,6 +11,7 @@ const blocks: [string, string][] = [
   ["Payments", "Retainers are billed monthly in advance. Ad spend is paid directly by you to the platforms and is never mixed with our fees. Late payments beyond 7 days may pause active work."],
   ["Timelines", "We move fast — kickoff within 48 hours of onboarding — but great work needs your inputs on time (logins, approvals, shoot access). Delays on inputs shift timelines equally."],
   ["Ownership", "Once paid in full, all deliverables created for you (designs, videos, copy) are yours. Our internal SOPs, templates and methods stay ours."],
+  ["Website content", "All text, design, images and code on sprybdigital.com belong to Spryb Digital. Unauthorized copying or reproduction is prohibited."],
   ["Confidentiality", "Both sides keep shared business information private. NDAs available on request before the first call."],
   ["Ending things", "Either side can end a retainer with 15 days' written notice. Work delivered till the last paid day stays with you."],
   ["Contact", "Questions? Mail hello@sprybdigital.com — a human replies within 24 hours."],

@@ -5,7 +5,7 @@ export function Marquee({ items, slow = false }: { items: string[]; slow?: boole
   const row = [...items, ...items];
   return (
     <div className="overflow-hidden whitespace-nowrap border-y border-[#121130]/10 bg-white py-3">
-      <div className={`inline-flex gap-8 pr-8 ${slow ? "animate-[marquee_48s_linear_infinite]" : "animate-[marquee_30s_linear_infinite]"}`}>
+      <div className={`inline-flex gap-8 pr-8 motion-reduce:animate-none ${slow ? "animate-[marquee_48s_linear_infinite]" : "animate-[marquee_30s_linear_infinite]"}`}>
         {row.map((t, i) => (
           <span key={i} className="font-display text-lg sm:text-xl text-[#121130]/80">
             {t} <span className="text-gradient ml-8">✦</span>

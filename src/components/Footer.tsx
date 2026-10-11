@@ -60,7 +60,7 @@ export default function Footer() {
         </div>
 
         <div className="mt-6 pt-6 border-t border-white/10 flex flex-col sm:flex-row justify-between gap-3 text-[12px] text-white/45">
-          <span>© 2026 Spryb Digital. All rights reserved.</span>
+          <span>© 2026 Spryb Digital. All rights reserved. Unauthorized copying or reproduction of website content is prohibited.</span>
           <span className="flex gap-4">
             <Link href="/privacy" className="hover:text-[#D8F23F]">Privacy</Link>
             <Link href="/terms" className="hover:text-[#D8F23F]">Terms</Link>

@@ -39,14 +39,14 @@
 }
 
 html {
-  scroll-behavior: smooth;
+  scroll-behavior: auto;
 }
 
 body {
   background: #ffffff;
   color: #121130;
   font-family: var(--font-sans);
-  overflow-x: hidden;
+  overflow-x: clip;
   -webkit-font-smoothing: antialiased;
 }
 
@@ -258,6 +258,20 @@ body {
 .carousel-row > * {
   scroll-snap-align: start;
   flex-shrink: 0;
+}
+
+/* Skip offscreen rendering for long sections (keeps sticky working) */
+.cv-auto {
+  content-visibility: auto;
+  contain-intrinsic-size: auto 800px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
 }
 
 ::selection {

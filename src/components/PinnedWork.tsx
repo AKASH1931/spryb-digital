@@ -26,8 +26,10 @@ export default function PinnedWork() {
     layout();
 
     let ticking = false;
+    let visible = true;
     const update = () => {
       ticking = false;
+      if (!visible) return;
       const rect = outer.getBoundingClientRect();
       const total = outer.offsetHeight - window.innerHeight;
       const p = Math.min(Math.max(-rect.top / Math.max(total, 1), 0), 1);
@@ -41,6 +43,14 @@ export default function PinnedWork() {
       }
     };
     update();
+    const io = new IntersectionObserver(
+      (entries) => {
+        visible = entries[0].isIntersecting;
+        if (visible) update();
+      },
+      { threshold: 0 }
+    );
+    io.observe(outer);
     window.addEventListener("scroll", onScroll, { passive: true });
     window.addEventListener("resize", () => {
       layout();
@@ -48,6 +58,7 @@ export default function PinnedWork() {
     });
     return () => {
       window.removeEventListener("scroll", onScroll);
+      io.disconnect();
     };
   }, []);
 
@@ -66,7 +77,7 @@ export default function PinnedWork() {
               <div className="hidden sm:flex items-center mt-6">
                 {projects.slice(0, 4).map((p, i) => (
                   <span key={p.slug} className="w-11 h-11 rounded-full overflow-hidden border-2 border-white shadow -ml-2 first:ml-0 relative" style={{ zIndex: 4 - i }}>
-                    <Image src={p.img} alt={p.brand} fill className="object-cover" />
+                    <Image src={p.img} alt={p.brand} fill sizes="44px" loading="lazy" decoding="async" className="object-cover" />
                   </span>
                 ))}
                 <Link href="/work" className="circle-btn !w-11 !h-11 !text-sm -ml-2 font-bold">+2</Link>
@@ -77,7 +88,7 @@ export default function PinnedWork() {
               <div ref={trackRef} className="flex gap-4 w-max will-change-transform">
                 {projects.map((p) => (
                   <article key={p.slug} className="w-[230px] sm:w-[320px] aspect-[3/4] rounded-[20px] overflow-hidden relative group shadow-[0_20px_60px_rgba(18,17,48,0.2)] shrink-0">
-                    <Image src={p.img} alt={p.brand} fill className="object-cover group-hover:scale-108 transition-transform duration-500" />
+                    <Image src={p.img} alt={p.brand} fill sizes="(max-width: 640px) 230px, 320px" loading="lazy" decoding="async" className="object-cover group-hover:scale-108 transition-transform duration-500" />
                     <div className="absolute inset-0 bg-gradient-to-b from-[#121130]/80 via-[#121130]/10 to-[#121130]/80" />
                     <h3 className="absolute top-5 left-0 right-0 text-center font-display text-3xl sm:text-5xl text-white drop-shadow-[0_3px_18px_rgba(0,0,0,0.9)] px-4">{p.brand}</h3>
                     <div className="absolute bottom-4 left-4 right-4">

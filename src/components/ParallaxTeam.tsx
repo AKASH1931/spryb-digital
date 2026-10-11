@@ -43,7 +43,7 @@ function AutoVideo({ src, poster, alt }: { src: string; poster: string; alt: str
   }, [src]);
   return (
     <>
-      <Image src={poster} alt={alt} fill className="object-cover" />
+      <Image src={poster} alt={alt} fill sizes="400px" loading="lazy" decoding="async" className="object-cover" />
       <video ref={ref} className="absolute inset-0 w-full h-full object-cover" muted loop playsInline preload="none" poster={poster} aria-label={alt} />
     </>
   );
@@ -62,8 +62,11 @@ export default function ParallaxTeam() {
 
   useEffect(() => {
     let ticking = false;
+    let visible = true;
+    const el0 = sectionRef.current;
     const update = () => {
       ticking = false;
+      if (!visible) return;
       const el = sectionRef.current;
       if (!el) return;
       const rect = el.getBoundingClientRect();
@@ -89,8 +92,19 @@ export default function ParallaxTeam() {
       }
     };
     update();
+    const io = new IntersectionObserver(
+      (entries) => {
+        visible = entries[0].isIntersecting;
+        if (visible) update();
+      },
+      { threshold: 0 }
+    );
+    if (el0) io.observe(el0);
     window.addEventListener("scroll", onScroll, { passive: true });
-    return () => window.removeEventListener("scroll", onScroll);
+    return () => {
+      window.removeEventListener("scroll", onScroll);
+      io.disconnect();
+    };
   }, []);
 
   const posOf = (i: number) => (i - front + CARDS.length) % CARDS.length; // 0 = front
@@ -106,10 +120,10 @@ export default function ParallaxTeam() {
       </div>
       <div className="relative mx-auto w-full max-w-[440px]">
         <div ref={leftPeekRef} className="absolute -left-8 top-10 w-[45%] aspect-[3/4] rounded-[20px] overflow-hidden opacity-90 will-change-transform">
-          <Image src="https://picsum.photos/seed/spryb-side1/400/520" alt="On shoot" fill className="object-cover" />
+          <Image src="/team/team-group.jpg" alt="On shoot" fill sizes="200px" loading="lazy" decoding="async" className="object-cover" />
         </div>
         <div ref={rightPeekRef} className="absolute -right-8 top-10 w-[45%] aspect-[3/4] rounded-[20px] overflow-hidden opacity-90 will-change-transform">
-          <Image src="https://picsum.photos/seed/spryb-side2/400/520" alt="In studio" fill className="object-cover" />
+          <Image src="/team/palash.jpg" alt="In studio" fill sizes="200px" loading="lazy" decoding="async" className="object-cover" />
         </div>
         <div ref={centerRef} className="relative z-10 aspect-[3/4] will-change-transform">
           {CARDS.map((c, i) => {
