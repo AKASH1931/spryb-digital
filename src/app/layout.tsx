@@ -88,6 +88,7 @@ export const metadata: Metadata = {
 const orgSchema = {
   "@context": "https://schema.org",
   "@type": "ProfessionalService",
+  "@id": "https://sprybdigital.com/#organization",
   name: "Spryb Digital",
   url: SITE_URL,
   email: "hello@sprybdigital.com",
@@ -104,6 +105,20 @@ const orgSchema = {
     "Full-stack digital marketing agency in India: social media strategy, content production, community management, SEO, performance ads, web & branding, ORM and hyperlocal marketing.",
   areaServed: "IN",
   priceRange: "₹₹",
+  contactPoint: {
+    "@type": "ContactPoint",
+    telephone: "+91-7307934372",
+    email: "hello@sprybdigital.com",
+    contactType: "sales",
+    areaServed: "IN",
+    availableLanguage: ["English", "Hindi"],
+  },
+  openingHoursSpecification: {
+    "@type": "OpeningHoursSpecification",
+    dayOfWeek: ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"],
+    opens: "10:00",
+    closes: "19:00",
+  },
   makesOffer: [
     "Social Media Strategy",
     "Content Production",
@@ -114,6 +129,15 @@ const orgSchema = {
     "ORM",
     "Hyperlocal Marketing",
   ].map((name) => ({ "@type": "Offer", itemOffered: { "@type": "Service", name } })),
+};
+
+const websiteSchema = {
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  "@id": "https://sprybdigital.com/#website",
+  url: SITE_URL,
+  name: "Spryb Digital",
+  publisher: { "@id": "https://sprybdigital.com/#organization" },
 };
 
 export default function RootLayout({ children }: LayoutProps<"/">) {
@@ -131,6 +155,10 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(orgSchema) }}
+        />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(websiteSchema) }}
         />
         <SmoothScroll />
         <Analytics />

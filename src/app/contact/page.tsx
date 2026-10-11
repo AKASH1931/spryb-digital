@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import ContactForm from "@/components/ContactForm";
 import BookingWidget from "@/components/BookingWidget";
+import Breadcrumb, { SITE } from "@/components/Schema";
 
 export const metadata: Metadata = {
   title: "Contact — Get a Free Teardown",
@@ -15,6 +16,12 @@ export default function ContactPage() {
     <div className="pt-32 sm:pt-40 px-6 sm:px-10 pb-24">
       <div className="mx-auto max-w-[1100px] grid lg:grid-cols-2 gap-10 items-start">
         <div>
+          <Breadcrumb
+            trail={[["Contact", "/contact"]]}
+            pageType="ContactPage"
+            pageName="Contact — Get a Free Teardown"
+            pageUrl={`${SITE}/contact`}
+          />
           <p className="section-label">Contact</p>
           <h1 className="font-display text-[14vw] sm:text-[90px]">TELL US <br /><span className="text-gradient">EVERYTHING.</span></h1>
           <p className="text-[#121130]/70 mt-5 text-[16px]">A mini form, 30 seconds. We get your answers and come back fast. New here? <Link href="/services" className="tlink-dark">Browse services</Link> or <Link href="/work" className="tlink-dark">see proof</Link> first.</p>

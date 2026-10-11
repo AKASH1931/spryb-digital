@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { team } from "@/data/site";
 import TeamCard from "@/components/TeamCard";
+import Breadcrumb, { JsonLd, SITE, ORG_ID } from "@/components/Schema";
 
 export const metadata: Metadata = {
   title: "About — Humans First, Metrics Always",
@@ -11,9 +12,26 @@ export const metadata: Metadata = {
 };
 
 export default function AboutPage() {
+  const founder = team[0];
+  const person = {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    name: founder.name,
+    jobTitle: "Founder",
+    description: founder.bio,
+    image: `${SITE}${founder.img}`,
+    worksFor: { "@id": ORG_ID },
+  };
   return (
     <div className="pt-28 sm:pt-32 pb-24 overflow-hidden">
+      <JsonLd data={person} />
       <div className="mx-auto max-w-[1440px] px-6 sm:px-10">
+        <Breadcrumb
+          trail={[["About", "/about"]]}
+          pageType="AboutPage"
+          pageName="About — Humans First, Metrics Always"
+          pageUrl={`${SITE}/about`}
+        />
         <p className="section-label">Agency</p>
       </div>
       <div aria-hidden className="font-display text-[38vw] sm:text-[26vw] leading-[0.8] text-center select-none text-gradient-bright -mb-[5vw]">

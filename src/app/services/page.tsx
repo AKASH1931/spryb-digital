@@ -1,7 +1,8 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import { process } from "@/data/site";
+import { process, expertises } from "@/data/site";
 import ServiceRows from "@/components/ServiceRows";
+import Breadcrumb, { JsonLd, SITE, ORG_ID } from "@/components/Schema";
 
 export const metadata: Metadata = {
   title: "Services — Social, SEO, Ads, ORM & Hyperlocal",
@@ -11,10 +12,46 @@ export const metadata: Metadata = {
 };
 
 export default function ServicesPage() {
+  const offerCatalog = {
+    "@context": "https://schema.org",
+    "@type": "OfferCatalog",
+    name: "Spryb Digital services",
+    url: `${SITE}/services`,
+    provider: { "@id": ORG_ID },
+    itemListElement: expertises.map((e) => ({
+      "@type": "Offer",
+      itemOffered: {
+        "@type": "Service",
+        name: e.title,
+        url: `${SITE}/services`,
+        provider: { "@id": ORG_ID },
+      },
+    })),
+  };
+  const serviceList = {
+    "@context": "https://schema.org",
+    "@type": "ItemList",
+    name: "Spryb Digital services",
+    url: `${SITE}/services`,
+    itemListElement: expertises.map((e, i) => ({
+      "@type": "ListItem",
+      position: i + 1,
+      name: e.title,
+      url: `${SITE}/services`,
+    })),
+  };
   return (
     <>
+    <JsonLd data={offerCatalog} />
+    <JsonLd data={serviceList} />
     <div className="pt-32 sm:pt-40 px-6 sm:px-10 pb-24">
       <div className="mx-auto max-w-[1440px]">
+        <Breadcrumb
+          trail={[["Services", "/services"]]}
+          pageType="WebPage"
+          pageName="Services — Social, SEO, Ads, ORM & Hyperlocal"
+          pageUrl={`${SITE}/services`}
+        />
         <p className="section-label">Expertise</p>
         <h1 className="font-display text-[13vw] sm:text-[100px]">THINK DEEP <br />TO <span className="text-gradient">RESONATE.</span></h1>
         <p className="text-[#121130]/70 text-[17px] max-w-[60ch] mt-6">Eight pillars, zero fluff. Pick one sprint or hand us the whole engine.</p>
