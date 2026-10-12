@@ -58,7 +58,7 @@ export const metadata: Metadata = {
       "Full-stack growth: social media, content, SEO, performance ads, web, ORM & hyperlocal. One team turning attention into revenue.",
     images: [
       {
-        url: "https://spryb-digital.vercel.app/opengraph-image",
+        url: "https://sprybdigital.com/opengraph-image",
         width: 1200,
         height: 630,
         alt: "Spryb Digital — We make brands impossible to ignore",
@@ -70,7 +70,7 @@ export const metadata: Metadata = {
     title: "Spryb Digital — Digital Marketing Agency India",
     description:
       "Social media, content, SEO, performance ads, web, ORM & hyperlocal. We make brands impossible to ignore.",
-    images: ["https://spryb-digital.vercel.app/opengraph-image"],
+    images: ["https://sprybdigital.com/opengraph-image"],
   },
   robots: {
     index: true,
