@@ -77,7 +77,17 @@ export default function ParallaxHero() {
         </div>
         <div ref={centerRef} className="absolute left-1/2 -translate-x-1/2 top-0 w-[46%] sm:w-[38%] z-10 will-change-transform">
           <div className="aspect-[3/4] rounded-[20px] overflow-hidden shadow-[0_30px_80px_rgba(0,0,0,0.5)] border border-white/10 hover:scale-[1.03] transition-transform duration-300 group relative">
-            <Image src="/hero/hero-2.jpg" alt="Influencer Marketing" fill priority sizes="(max-width: 640px) 46vw, 38vw" decoding="async" className="object-cover group-hover:scale-110 transition-transform duration-500" />
+            <video
+              className="absolute inset-0 w-full h-full object-cover"
+              src="/hero/hero-center.mp4"
+              muted
+              loop
+              playsInline
+              autoPlay
+              preload="metadata"
+              poster="/hero/hero-2.jpg"
+              aria-label="Influencer Marketing"
+            />
             <span className="absolute bottom-3 left-3 text-[11px] bg-[#121130]/85 px-3 py-1.5 rounded-full text-white/70">Influencer Marketing</span>
           </div>
         </div>
