@@ -5,7 +5,7 @@ export default function SmoothScroll() {
   useEffect(() => {
     if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
     if (window.matchMedia("(pointer: coarse)").matches) return;
-    let lenis: { destroy: () => void } | null = null;
+    let lenis: { raf: (time: number) => void; destroy: () => void } | null = null;
     let raf = 0;
     let alive = true;
     import("lenis").then(({ default: Lenis }) => {
