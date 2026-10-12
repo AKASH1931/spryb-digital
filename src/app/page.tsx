@@ -46,7 +46,6 @@ export default function Home() {
                 ["tmc.webp", "TMC"],
                 ["woobly.jpeg", "Woobly"],
                 ["zadcars.webp", "Zadcars"],
-                ["zeevaa.webp", "Zeevaa"],
                 ["client-1x1.jpg", "Client"],
               ].concat([
                 ["motherhood.webp", "Motherhood"],
@@ -58,7 +57,6 @@ export default function Home() {
                 ["tmc.webp", "TMC"],
                 ["woobly.jpeg", "Woobly"],
                 ["zadcars.webp", "Zadcars"],
-                ["zeevaa.webp", "Zeevaa"],
                 ["client-1x1.jpg", "Client"],
               ]).map(([f, name], i) => (
                 <span key={i} className="h-20 sm:h-24 w-44 sm:w-52 shrink-0 relative grayscale opacity-70 hover:grayscale-0 hover:opacity-100 transition">
