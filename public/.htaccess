@@ -11,6 +11,12 @@ RewriteCond %{REQUEST_FILENAME} !-f
 RewriteRule ^([^.]+?)/?$ $1.html [L]
 </IfModule>
 
+<IfModule mod_headers.c>
+  <FilesMatch "\.(html|txt|xml|json)$">
+    Header set Cache-Control "no-cache, must-revalidate"
+  </FilesMatch>
+</IfModule>
+
 <IfModule mod_expires.c>
 ExpiresActive On
 ExpiresByType image/webp "access plus 1 year"
