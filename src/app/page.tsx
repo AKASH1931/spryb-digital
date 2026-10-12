@@ -125,14 +125,14 @@ export default function Home() {
                   <div className="relative min-h-[220px] md:min-h-full overflow-hidden">
                     <Image
                       src={[
-                        "https://images.unsplash.com/photo-1553877522-43269d4ea984?auto=format&fit=crop&w=640&q=80",
-                        "https://images.unsplash.com/photo-1492691527719-9d1e07e534b4?auto=format&fit=crop&w=640&q=80",
-                        "https://images.unsplash.com/photo-1529156069898-49953e39b3ac?auto=format&fit=crop&w=640&q=80",
-                        "https://images.unsplash.com/photo-1571171637578-41bc2dd41cd2?auto=format&fit=crop&w=640&q=80",
-                        "https://images.unsplash.com/photo-1533750349088-cd871a92f312?auto=format&fit=crop&w=640&q=80",
-                        "https://images.unsplash.com/photo-1547658719-da2b51169166?auto=format&fit=crop&w=640&q=80",
-                        "https://images.unsplash.com/photo-1560250097-0b93528c311a?auto=format&fit=crop&w=640&q=80",
-                        "https://images.unsplash.com/photo-1514565131-fce0801e5785?auto=format&fit=crop&w=640&q=80",
+                        "https://images.unsplash.com/photo-1553877522-43269d4ea984?auto=format&fit=crop&w=640&q=60",
+                        "https://images.unsplash.com/photo-1492691527719-9d1e07e534b4?auto=format&fit=crop&w=640&q=60",
+                        "https://images.unsplash.com/photo-1529156069898-49953e39b3ac?auto=format&fit=crop&w=640&q=60",
+                        "https://images.unsplash.com/photo-1571171637578-41bc2dd41cd2?auto=format&fit=crop&w=640&q=60",
+                        "https://images.unsplash.com/photo-1533750349088-cd871a92f312?auto=format&fit=crop&w=640&q=60",
+                        "https://images.unsplash.com/photo-1547658719-da2b51169166?auto=format&fit=crop&w=640&q=60",
+                        "https://images.unsplash.com/photo-1560250097-0b93528c311a?auto=format&fit=crop&w=640&q=60",
+                        "https://images.unsplash.com/photo-1514565131-fce0801e5785?auto=format&fit=crop&w=640&q=60",
                       ][i % 8]}
                       alt={e.title}
                       fill
