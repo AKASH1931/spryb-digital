@@ -19,6 +19,7 @@ export default function Footer() {
               <a href="mailto:hello@sprybdigital.com" className="btn-ghost !py-3 !px-6 text-sm">hello@sprybdigital.com</a>
             </div>
             <p className="mt-4 text-[14px] text-white/70"><a href="tel:+917307934372" className="text-[#D8F23F] font-medium">+91 73079 34372</a></p>
+            <p className="mt-2 text-[14px]"><a href="https://www.linkedin.com/company/spryb-digital/" target="_blank" rel="noreferrer" className="text-white/70 hover:text-[#D8F23F] underline underline-offset-4">Follow us on LinkedIn →</a></p>
           </div>
           <div className="text-sm">
             <p className="text-white/40 uppercase tracking-widest text-[11px] mb-4">Sitemap</p>

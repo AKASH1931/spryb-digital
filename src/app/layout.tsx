@@ -105,6 +105,7 @@ const orgSchema = {
     "Full-stack digital marketing agency in India: social media strategy, content production, community management, SEO, performance ads, web & branding, ORM and hyperlocal marketing.",
   areaServed: "IN",
   priceRange: "₹₹",
+  sameAs: ["https://www.linkedin.com/company/spryb-digital/"],
   contactPoint: {
     "@type": "ContactPoint",
     telephone: "+91-7307934372",
