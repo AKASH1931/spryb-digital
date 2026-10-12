@@ -88,7 +88,6 @@ export default function ParallaxHero() {
               poster="/hero/hero-2.jpg"
               aria-label="Influencer Marketing"
             />
-            <span className="absolute bottom-3 left-3 text-[11px] bg-[#121130]/85 px-3 py-1.5 rounded-full text-white/70">Influencer Marketing</span>
           </div>
         </div>
         <div ref={rightRef} className="absolute right-[2%] top-10 w-[42%] sm:w-[36%] will-change-transform">
