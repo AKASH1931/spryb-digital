@@ -43,17 +43,14 @@ export default function Navbar() {
             ))}
           </nav>
 
-          <div className="hidden lg:flex items-center gap-3">
-            <Link href="/kreative-kand" className="btn-madness !py-2 !px-5 text-[13px]">
+          <div className="flex items-center gap-3">
+            <Link href="/kreative-kand" className="btn-madness !py-2 !px-5 text-[13px] hidden lg:inline-block">
               Enter The Madness →
             </Link>
             <Link href="/" aria-label="Spryb home" className="circle-btn font-black">
               ↑
             </Link>
           </div>
-          <Link href="/" aria-label="Spryb home" className="circle-btn font-black lg:hidden">
-            ↑
-          </Link>
         </div>
       </header>
 
