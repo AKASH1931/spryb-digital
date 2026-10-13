@@ -15,7 +15,7 @@ export default function Footer() {
               Full-stack growth: social, content, SEO, ads, web, ORM & hyperlocal. One team, one dashboard, zero fluff.
             </p>
             <div className="mt-6 flex flex-wrap gap-3">
-              <Link href="/contact" className="btn-gradient !py-3 !px-6 text-sm">Get proposal →</Link>
+              <Link href="/contact" className="btn-gradient !py-3 !px-6 text-sm">Get Proposal →</Link>
               <a href="mailto:hello@sprybdigital.com" className="btn-ghost !py-3 !px-6 text-sm">hello@sprybdigital.com</a>
             </div>
             <p className="mt-4 text-[14px] text-white/70"><a href="tel:+917307934372" className="text-[#D8F23F] font-medium">+91 73079 34372</a></p>

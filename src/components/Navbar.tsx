@@ -17,7 +17,18 @@ export default function Navbar() {
       <header className="fixed top-0 left-0 right-0 z-50">
         <div className="mx-auto max-w-[1440px] px-4 sm:px-8 pt-4 flex items-start justify-between">
           <button onClick={() => setOpen(!open)} aria-label="Menu" className="circle-btn">
-            {open ? "✕" : "☰"}
+            {open ? (
+              <span className="relative block w-5 h-5">
+                <span className="absolute left-0 top-1/2 w-5 h-[2.5px] -translate-y-1/2 rotate-45 rounded-full bg-current" />
+                <span className="absolute left-0 top-1/2 w-5 h-[2.5px] -translate-y-1/2 -rotate-45 rounded-full bg-current" />
+              </span>
+            ) : (
+              <span className="flex flex-col items-center justify-center gap-[5px]">
+                <span className="block w-5 h-[2.5px] rounded-full bg-current" />
+                <span className="block w-5 h-[2.5px] rounded-full bg-current" />
+                <span className="block w-5 h-[2.5px] rounded-full bg-current" />
+              </span>
+            )}
           </button>
 
           <nav className="hidden lg:flex items-center gap-1 bg-white/85 backdrop-blur border border-[#121130]/10 rounded-full px-2 py-2 shadow-[0_8px_30px_rgba(18,17,48,0.08)]">
