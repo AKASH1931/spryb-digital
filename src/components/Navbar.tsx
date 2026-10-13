@@ -30,9 +30,6 @@ export default function Navbar() {
                 {l.label}
               </Link>
             ))}
-            <Link href="/kreative-kand" className="btn-madness !py-2 !px-5 text-[13px]">
-              Enter the madness →
-            </Link>
           </nav>
 
           <Link href="/" aria-label="Spryb home" className="circle-btn font-black">
