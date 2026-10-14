@@ -99,7 +99,7 @@ export default function Navbar() {
               </Link>
             ))}
             <div className="mt-8 flex flex-wrap gap-3">
-              <Link href="/kreative-kand" onClick={() => setOpen(false)} className="btn-madness px-7 py-3.5 text-[15px]">Enter The Madness →</Link>
+              <Link href="/kreative-kand" onClick={() => setOpen(false)} className="btn-madness inline-block px-7 py-3.5 text-[15px]">Enter The Madness →</Link>
               <Link href="/contact" onClick={() => setOpen(false)} className="btn-ghost !border-[#121130]/25 px-7 py-3 text-sm">Start a project →</Link>
             </div>
           </div>

@@ -229,7 +229,6 @@ body {
   color: #121130;
   font-weight: 700;
   border-radius: 10px;
-  display: inline-block;
   animation: madness-bounce 2.2s ease-in-out infinite, madness-glow 2.2s ease-in-out infinite, madness-bg 5s ease infinite;
 }
 @keyframes madness-bounce {

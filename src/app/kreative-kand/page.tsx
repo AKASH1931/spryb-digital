@@ -32,7 +32,7 @@ export default function KreativeKandPage() {
             Kreative Kand is Spryb&apos;s Instagram lab — reels, trends, memes and beautiful chaos. Enter at your own risk.
           </p>
           <div className="mt-7 flex flex-wrap items-center gap-4">
-            <a href="https://www.instagram.com/kreativ_kand/" target="_blank" rel="noreferrer" className="btn-madness px-8 py-4 text-[15px] rotate-[-1deg]">
+            <a href="https://www.instagram.com/kreativ_kand/" target="_blank" rel="noreferrer" className="btn-madness inline-block px-8 py-4 text-[15px] rotate-[-1deg]">
               Follow @kreativ_kand →
             </a>
             <span className="text-[13px] text-[#121130]/55 italic rotate-[1deg]">← 2,418 people already inside</span>
