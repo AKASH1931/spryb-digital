@@ -1,5 +1,5 @@
 "use client";
-import { useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import Link from "next/link";
 
 const links = [
@@ -12,9 +12,38 @@ const links = [
 
 export default function Navbar() {
   const [open, setOpen] = useState(false);
+  const headerRef = useRef<HTMLElement>(null);
+
+  useEffect(() => {
+    if (open && headerRef.current) headerRef.current.style.transform = "";
+    let last = window.scrollY;
+    let ticking = false;
+    const update = () => {
+      ticking = false;
+      if (!headerRef.current) return;
+      if (window.innerWidth >= 1024 || open) {
+        headerRef.current.style.transform = "";
+        last = window.scrollY;
+        return;
+      }
+      const y = window.scrollY;
+      headerRef.current.style.transform =
+        y > 120 && y > last ? "translateY(-110%)" : "translateY(0)";
+      last = y;
+    };
+    const onScroll = () => {
+      if (!ticking) {
+        ticking = true;
+        requestAnimationFrame(update);
+      }
+    };
+    window.addEventListener("scroll", onScroll, { passive: true });
+    return () => window.removeEventListener("scroll", onScroll);
+  }, [open ]);
+
   return (
     <>
-      <header className="fixed top-0 left-0 right-0 z-50">
+      <header ref={headerRef} className="fixed top-0 left-0 right-0 z-50 transition-transform duration-300 will-change-transform">
         <div className="mx-auto max-w-[1440px] px-4 sm:px-8 pt-4 flex items-start justify-between">
           <button onClick={() => setOpen(!open)} aria-label="Menu" className="circle-btn">
             {open ? (
@@ -70,7 +99,7 @@ export default function Navbar() {
               </Link>
             ))}
             <div className="mt-8 flex flex-wrap gap-3">
-              <Link href="/kreative-kand" onClick={() => setOpen(false)} className="btn-madness px-7 py-3.5 text-[15px]">Enter the madness →</Link>
+              <Link href="/kreative-kand" onClick={() => setOpen(false)} className="btn-madness px-7 py-3.5 text-[15px]">Enter The Madness →</Link>
               <Link href="/contact" onClick={() => setOpen(false)} className="btn-ghost !border-[#121130]/25 px-7 py-3 text-sm">Start a project →</Link>
             </div>
           </div>
