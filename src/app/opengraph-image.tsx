@@ -39,7 +39,7 @@ export default function OgImage() {
           IMPOSSIBLE TO IGNORE.
         </div>
         <div style={{ fontSize: 30, marginTop: 30, color: "rgba(255,255,255,0.7)" }}>
-          Social · SEO · Ads · ORM · Hyperlocal — sprybdigital.com
+          Content · SEO · Ads · ORM · Hyperlocal
         </div>
       </div>
     ),
