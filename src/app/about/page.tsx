@@ -91,7 +91,7 @@ export default function AboutPage() {
           <div className="border-t border-[#121130]/15 pt-4">
             <p className="text-[11px] font-bold tracking-[0.25em] text-[#0e9f5b]">HQ</p>
             <p className="font-bold mt-1">Lucknow</p>
-            <p className="text-[#121130]/60 text-[14px]">Gomti Nagar — strategy, content, shoots</p>
+            <p className="text-[#121130]/60 text-[14px]">Vibhuti Khand, Gomti Nagar — strategy, content, shoots</p>
           </div>
           <div className="border-t border-[#121130]/15 pt-4">
             <p className="text-[11px] font-bold tracking-[0.25em] text-[#0e9f5b]">STUDIO</p>

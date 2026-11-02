@@ -14,7 +14,7 @@ const facts: [string, string][] = [
   ["Proof", "2,747 leads @ ₹6.15 CPL (agri); 819 subscriptions @ C$2.10 (tiffin); 12,480+ engagements + 3.4x store visits (Lucknow F&B)."],
   ["Process", "01 Strategy → 02 Art Direction → 03 Content → 04 Community → 05 Reporting."],
   ["Pricing guide", "Sprints from ₹35k/mo; full-stack from ₹65k/mo; ad spend separate. Fixed quote after free teardown."],
-  ["Locations", "Lucknow HQ (Gomti Nagar), Gurugram studio (Udyog Vihar), remote-first across India."],
+  ["Locations", "Lucknow HQ (Vibhuti Khand, Gomti Nagar), Gurugram studio (Udyog Vihar), remote-first across India."],
   ["Contact", "hello@sprybdigital.com · +91 73079 34372 · contact form + discovery-call booking on /contact."],
   ["Machine files", "/llms.txt (summary) · /llms-full.txt (complete) · /sitemap.xml · /entity-map"],
 ];

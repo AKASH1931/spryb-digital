@@ -59,7 +59,7 @@ export default function ContactPage() {
         </div>
         <div>
           <p className="text-[12px] uppercase tracking-widest text-[#0e9f5b] font-medium">Lucknow Office · Current</p>
-          <p className="text-[#121130]/70 text-[15px] mt-2">C 401, Sahara Plaza, Patrakarpuram Crossing Rd, Vikas Khand 1, Gomti Nagar, Lucknow, UP — 226010</p>
+          <p className="text-[#121130]/70 text-[15px] mt-2">Sikarwar Tower, C-69, Ground Floor, Vibhuti Khand, Gomti Nagar, Lucknow, UP — 226010</p>
         </div>
       </div>
 
@@ -67,7 +67,7 @@ export default function ContactPage() {
         <div className="rounded-[21px] overflow-hidden bg-white">
           <iframe
             title="Spryb Digital on map"
-            src="https://maps.google.com/maps?q=C%20401%2C%20Sahara%20Plaza%2C%20Patrakarpuram%2C%20Gomti%20Nagar%2C%20Lucknow%20226010&t=&z=15&ie=UTF8&iwloc=&output=embed"
+            src="https://maps.google.com/maps?q=Sikarwar%20Tower%20C-69%20Vibhuti%20Khand%20Gomti%20Nagar%20Lucknow%20226010&t=&z=15&ie=UTF8&iwloc=&output=embed"
             className="w-full h-[340px] sm:h-[400px]"
             loading="lazy"
           />

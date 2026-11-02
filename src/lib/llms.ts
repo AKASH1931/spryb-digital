@@ -24,7 +24,7 @@ const industries = [
 ];
 
 const locations = [
-  "Lucknow (head office: Gomti Nagar)",
+  "Lucknow (head office: Vibhuti Khand, Gomti Nagar)",
   "Gurugram / Delhi NCR (Udyog Vihar office)",
   "Remote-first across all of India",
 ];

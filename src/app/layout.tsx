@@ -95,7 +95,7 @@ const orgSchema = {
   telephone: "+91-7307934372",
   address: {
     "@type": "PostalAddress",
-    streetAddress: "C 401, Sahara Plaza, Patrakarpuram Crossing Rd, Vikas Khand 1",
+    streetAddress: "Sikarwar Tower, C-69, Ground Floor, Vibhuti Khand",
     addressLocality: "Lucknow",
     addressRegion: "Uttar Pradesh",
     postalCode: "226010",
