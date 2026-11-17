@@ -8,14 +8,6 @@ export const team = [
     bio: "Started Spryb from a simple frustration: brands buying posts when they needed pipelines. Sets the strategy, still jumps behind the camera.",
   },
   {
-    name: "Pratik Kumar Singh",
-    role: "Mentor & Advisor",
-    emoji: "🎙️",
-    img: "/team/pratik.jpg",
-    pos: "50% 25%",
-    bio: "Shapes how the world sees Spryb. Press, partnerships and public image — every story placed with intent.",
-  },
-  {
     name: "Akash Awasthi",
     role: "Manager · ORM + Marketing",
     emoji: "🚀",
@@ -30,6 +22,14 @@ export const team = [
     img: "/team/priyanshi.jpg",
     pos: "62% 18%",
     bio: "Keeps the humans happy so the humans keep brands happy. Hiring, culture and the occasional much-needed reality check.",
+  },
+  {
+    name: "Pratik Kumar Singh",
+    role: "Mentor & Advisor",
+    emoji: "🎙️",
+    img: "/team/pratik.jpg",
+    pos: "50% 25%",
+    bio: "Shapes how the world sees Spryb. Press, partnerships and public image — every story placed with intent.",
   },
   {
     name: "Archit Tripathi",
