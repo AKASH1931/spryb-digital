@@ -9,7 +9,7 @@ export const team = [
   },
   {
     name: "Pratik Kumar Singh",
-    role: "Corporate Communications & PR",
+    role: "Mentor & Advisor",
     emoji: "🎙️",
     img: "/team/pratik.jpg",
     pos: "50% 25%",
