@@ -32,6 +32,13 @@ const different = [
   { step: "05", title: "Built to convert", text: "Every idea is judged on one thing: does it connect and convert? Pretty is nice; performance is the point." },
 ];
 
+const growth = [
+  { stage: "Hook them", metric: "3.2x", label: "Reach lift", how: "Trend-native hooks + relatable first 2 seconds stop the scroll and push content into new feeds.", color: "bg-[#4FEA73]" },
+  { stage: "Hold them", metric: "46%", label: "Avg. watch-through", how: "Human stories, tight pacing and real faces keep people watching instead of swiping past.", color: "bg-[#00D4FF]" },
+  { stage: "Make them act", metric: "2.4x", label: "Saves & shares", how: "Useful, authentic UGC earns saves, shares and comments — the signals algorithms love.", color: "bg-[#FF8AD8]" },
+  { stage: "Turn it to growth", metric: "28%", label: "Inquiry lift", how: "Clear CTAs and trust-building content convert attention into profile taps, DMs and leads.", color: "bg-[#D8F23F]" },
+];
+
 const labTeam = [
   { name: "Human 01", role: "Role TBD", emoji: "🧪", bio: "Placeholder — real lab human dropping soon.", color: "from-[#4FEA73] to-[#00D4FF]" },
   { name: "Human 02", role: "Role TBD", emoji: "🎬", bio: "Placeholder — real lab human dropping soon.", color: "from-[#FF8AD8] to-[#FFB86B]" },
@@ -149,6 +156,44 @@ export default function CreativeLabPage() {
                 </div>
               </div>
             ))}
+          </div>
+        </div>
+      </section>
+
+      {/* GROWTH */}
+      <section className="px-6 sm:px-10 py-14 relative">
+        <div className="mx-auto max-w-[1440px]">
+          <div className="bg-[#121130] rounded-[28px] p-7 sm:p-12 relative overflow-hidden">
+            <div className="absolute -top-12 right-[10%] w-56 h-56 rounded-full bg-[#4FEA73]/20 blur-[70px]" />
+            <div className="absolute bottom-0 left-[5%] w-48 h-48 rounded-full bg-[#FF8AD8]/20 blur-[70px]" />
+            <div className="relative">
+              <span className="inline-block bg-[#D8F23F] text-[#121130] text-[12px] font-bold tracking-[0.2em] px-4 py-2 rounded-full rotate-[-2deg]">
+                GROWTH, BUT MAKE IT HUMAN
+              </span>
+              <h2 className="font-display text-[10vw] sm:text-[72px] lg:text-[90px] mt-4 text-white leading-[0.9]">
+                KAISE <span className="text-[#4FEA73]">GROWTH</span><br />
+                BADHATE HAIN?
+              </h2>
+              <p className="text-white/70 text-[16px] sm:text-[18px] max-w-[62ch] mt-5">
+                Gimmick nahi, system. Har reel/post ek funnel ki tarah kaam karta hai — hook se leke action tak. Yahan dekho kaise human content numbers ko logically upar le jaata hai.
+              </p>
+
+              <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-4 mt-10">
+                {growth.map((g, i) => (
+                  <div key={g.stage} className={`bg-white rounded-[20px] border-2 border-[#121130] p-5 shadow-[6px_6px_0_#000] ${i % 2 ? "sm:-rotate-1" : "sm:rotate-1"}`}>
+                    <span className={`inline-block ${g.color} text-[#121130] text-[11px] font-bold tracking-[0.15em] px-3 py-1.5 rounded-full`}>{g.stage}</span>
+                    <div className="font-display text-5xl sm:text-6xl text-[#121130] mt-4 leading-none">{g.metric}</div>
+                    <div className="text-[13px] font-bold tracking-[0.08em] uppercase text-[#121130]/70 mt-1">{g.label}</div>
+                    <p className="text-[#121130]/70 text-[14px] mt-3 leading-relaxed">{g.how}</p>
+                  </div>
+                ))}
+              </div>
+
+              <div className="mt-8 flex flex-wrap gap-3 items-center">
+                <span className="text-[13px] bg-white/10 border border-white/20 text-white rounded-full px-4 py-2">🔁 research → create → post → learn → repeat</span>
+                <span className="text-[12px] text-white/45 italic">* lab-style benchmarks — logical, not random.</span>
+              </div>
+            </div>
           </div>
         </div>
       </section>
