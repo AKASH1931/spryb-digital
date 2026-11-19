@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import Link from "next/link";
 import CreativeLabVideos from "@/components/CreativeLabVideos";
 
@@ -40,12 +41,12 @@ const growth = [
 ];
 
 const labTeam = [
-  { name: "Human 01", role: "Role TBD", emoji: "🧪", bio: "Placeholder — real lab human dropping soon.", color: "from-[#4FEA73] to-[#00D4FF]" },
-  { name: "Human 02", role: "Role TBD", emoji: "🎬", bio: "Placeholder — real lab human dropping soon.", color: "from-[#FF8AD8] to-[#FFB86B]" },
-  { name: "Human 03", role: "Role TBD", emoji: "⚡", bio: "Placeholder — real lab human dropping soon.", color: "from-[#D8F23F] to-[#4FEA73]" },
-  { name: "Human 04", role: "Role TBD", emoji: "🎨", bio: "Placeholder — real lab human dropping soon.", color: "from-[#00D4FF] to-[#7C6BFF]" },
-  { name: "Human 05", role: "Role TBD", emoji: "📣", bio: "Placeholder — real lab human dropping soon.", color: "from-[#FFB86B] to-[#FF8AD8]" },
-  { name: "Human 06", role: "Role TBD", emoji: "🚀", bio: "Placeholder — real lab human dropping soon.", color: "from-[#4FEA73] to-[#D8F23F]" },
+  { name: "Hook Rani", role: "Hook Architect", emoji: "🎣", img: "/creator-lab-team/member-01.jpg", pos: "50% 25%", bio: "Lives for the first 2 seconds. If it doesn’t stop the scroll, it doesn’t ship." },
+  { name: "Trend Bhaiya", role: "Culture Scout", emoji: "📡", img: "/creator-lab-team/member-02.jpg", pos: "50% 25%", bio: "Spots trends before they peak and turns them into brand-ready content." },
+  { name: "Cut-Cut Ninja", role: "Chaos Editor", emoji: "✂️", img: "/creator-lab-team/member-03.jpg", pos: "50% 25%", bio: "Slices messy footage into crisp, bingeable stories at dangerous speed." },
+  { name: "Vibe Daaku", role: "Mood Director", emoji: "🌈", img: "/creator-lab-team/member-04.jpg", pos: "50% 25%", bio: "Steals the right vibe every time — colour, pace, energy, all on point." },
+  { name: "Script Pundit", role: "Word Alchemist", emoji: "🪄", img: "/creator-lab-team/member-05.jpg", pos: "50% 25%", bio: "Turns rough briefs into lines people actually remember and repeat." },
+  { name: "Pixel Paaji", role: "Frame Tamer", emoji: "🎯", img: "/creator-lab-team/member-06.jpg", pos: "50% 25%", bio: "Obsessed with clean frames, sharp cuts and details nobody asked for (but everyone feels)." },
 ];
 
 export default function CreativeLabPage() {
@@ -256,9 +257,8 @@ export default function CreativeLabPage() {
                 >
                   <span className={`absolute -top-3 left-1/2 -translate-x-1/2 ${tapes[i % tapes.length]} w-16 h-6 rounded-sm rotate-[-4deg] border border-[#121130]/30 opacity-90`} />
                   <span className="absolute -top-4 -right-2 text-3xl drop-shadow-sm rotate-[12deg]">{m.emoji}</span>
-                  <div className={`relative h-48 rounded-[14px] overflow-hidden border border-[#121130]/10 mt-2 bg-gradient-to-br ${m.color} grid place-items-center`}>
-                    <span className="font-display text-5xl text-[#121130]/25 select-none">?</span>
-                    <span className="absolute bottom-3 right-3 bg-[#121130] text-white text-[10px] font-bold tracking-[0.15em] px-2.5 py-1 rounded-full rotate-[-6deg]">DUMMY</span>
+                  <div className="relative h-48 rounded-[14px] overflow-hidden border border-[#121130]/10 mt-2">
+                    <Image src={m.img} alt={m.name} fill sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 25vw" className="object-cover" style={{ objectPosition: m.pos }} />
                   </div>
                   <div className="mt-4">
                     <span className={`inline-block ${stickers[i % stickers.length]} text-[#121130] text-[10px] font-bold tracking-[0.12em] uppercase px-2.5 py-1 rounded-full border border-[#121130]/20 rotate-[-1deg]`}>
@@ -273,9 +273,9 @@ export default function CreativeLabPage() {
           </div>
 
           <div className="mt-10 flex flex-wrap items-center justify-center gap-3">
-            <span className="text-[14px] font-bold bg-[#121130] text-white px-5 py-2.5 rounded-full rotate-[-1deg]">team loading…</span>
-            <span className="text-[14px] font-bold bg-[#4FEA73] text-[#121130] px-5 py-2.5 rounded-full rotate-[1deg] border-2 border-[#121130] shadow-[3px_3px_0_#121130]">real humans coming soon</span>
-            <span className="text-[14px] font-bold bg-[#FF8AD8] text-[#121130] px-5 py-2.5 rounded-full rotate-[-2deg] border-2 border-[#121130] shadow-[3px_3px_0_#121130]">placeholders for now</span>
+            <span className="text-[14px] font-bold bg-[#121130] text-white px-5 py-2.5 rounded-full rotate-[-1deg]">6 lab humans</span>
+            <span className="text-[14px] font-bold bg-[#4FEA73] text-[#121130] px-5 py-2.5 rounded-full rotate-[1deg] border-2 border-[#121130] shadow-[3px_3px_0_#121130]">quirky names, real energy</span>
+            <span className="text-[14px] font-bold bg-[#FF8AD8] text-[#121130] px-5 py-2.5 rounded-full rotate-[-2deg] border-2 border-[#121130] shadow-[3px_3px_0_#121130]">0% original names</span>
           </div>
         </div>
       </section>
