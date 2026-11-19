@@ -1,10 +1,51 @@
 "use client";
-import { useState } from "react";
+import { useEffect, useRef, useState } from "react";
 
 const CLIPS = Array.from({ length: 12 }, (_, i) => {
   const n = String(i + 1).padStart(2, "0");
   return { src: `/creator-lab/clip-${n}.mp4`, label: `Clip ${n}` };
 });
+
+function ClipThumb({ src, label }: { src: string; label: string }) {
+  const ref = useRef<HTMLVideoElement>(null);
+  useEffect(() => {
+    const v = ref.current;
+    if (!v) return;
+    const io = new IntersectionObserver(
+      (entries) => {
+        if (entries[0].isIntersecting) {
+          v.muted = true;
+          v.defaultMuted = true;
+          v.setAttribute("muted", "");
+          v.setAttribute("playsinline", "");
+          if (!v.src) {
+            v.src = `${src}#t=0.1`;
+            v.load();
+          }
+          const play = () => v.play().catch(() => {});
+          if (v.readyState >= 2) play();
+          else v.addEventListener("loadeddata", play, { once: true });
+        } else {
+          v.pause();
+        }
+      },
+      { threshold: 0.2 }
+    );
+    io.observe(v);
+    return () => io.disconnect();
+  }, [src]);
+  return (
+    <video
+      ref={ref}
+      className="absolute inset-0 w-full h-full object-cover"
+      muted
+      loop
+      playsInline
+      preload="none"
+      aria-label={label}
+    />
+  );
+}
 
 export default function CreativeLabVideos() {
   const [open, setOpen] = useState<number | null>(null);
@@ -15,12 +56,11 @@ export default function CreativeLabVideos() {
           <button
             key={c.src}
             onClick={() => setOpen(i)}
-            className="relative rounded-[22px] overflow-hidden group aspect-[9/16] border border-[#121130]/12 hover:border-[#0e9f5b]/60 transition-colors text-left shadow-[0_16px_50px_rgba(18,17,48,0.12)] bg-gradient-to-br from-[#121130] via-[#1b1942] to-[#0f3d2a]"
-            aria-label={`Play ${c.label}`}
+            className="relative rounded-[22px] overflow-hidden group aspect-[9/16] border border-[#121130]/12 hover:border-[#0e9f5b]/60 transition-colors text-left shadow-[0_16px_50px_rgba(18,17,48,0.12)] bg-[#121130]"
           >
-            <span className="absolute inset-0 opacity-30 bg-[radial-gradient(circle_at_30%_20%,#4FEA73,transparent_45%),radial-gradient(circle_at_70%_80%,#FF8AD8,transparent_40%)]" />
+            <ClipThumb src={c.src} label={c.label} />
             <span className="absolute inset-0 grid place-items-center pointer-events-none">
-              <span className="w-12 h-12 rounded-full bg-white/90 grid place-items-center text-[#121130] text-lg font-black shadow-lg group-hover:scale-110 transition-transform">▶</span>
+              <span className="w-12 h-12 rounded-full bg-white/90 grid place-items-center text-[#121130] text-lg font-black shadow-lg">▶</span>
             </span>
             <span className="absolute bottom-3 left-3 text-white text-[12px] font-bold drop-shadow">{c.label}</span>
           </button>
@@ -42,7 +82,6 @@ export default function CreativeLabVideos() {
                 controls
                 autoPlay
                 playsInline
-                preload="metadata"
               />
             </div>
           </div>

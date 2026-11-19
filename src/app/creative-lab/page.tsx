@@ -25,14 +25,6 @@ const whyUgc = [
   { title: "Algorithms love it", text: "Platforms reward content that sparks saves, shares and comments — and nothing sparks conversation like authentic human moments." },
 ];
 
-const different = [
-  { step: "01", title: "Research first", text: "We dig into your audience, category and what’s already working — so every piece has a reason to exist." },
-  { step: "02", title: "Human voices", text: "Real creators, real customers, real scripts. 100% human content that sounds like people, not prompts." },
-  { step: "03", title: "Trend-native craft", text: "We ride culture, not clichés — formats, hooks and pacing tuned to how people actually scroll today." },
-  { step: "04", title: "Fast, tight loops", text: "Quick turnarounds, sharp feedback, constant iteration — without cutting corners on quality." },
-  { step: "05", title: "Built to convert", text: "Every idea is judged on one thing: does it connect and convert? Pretty is nice; performance is the point." },
-];
-
 const growth = [
   { stage: "Hook them", metric: "3.2x", label: "Reach lift", how: "Trend-native hooks + relatable first 2 seconds stop the scroll and push content into new feeds.", color: "bg-[#4FEA73]" },
   { stage: "Hold them", metric: "46%", label: "Avg. watch-through", how: "Human stories, tight pacing and real faces keep people watching instead of swiping past.", color: "bg-[#00D4FF]" },
@@ -133,30 +125,6 @@ export default function CreativeLabPage() {
                 ))}
               </div>
             </div>
-          </div>
-        </div>
-      </section>
-
-      {/* HOW WE DO IT DIFFERENTLY */}
-      <section className="px-6 sm:px-10 py-14">
-        <div className="mx-auto max-w-[1440px]">
-          <p className="section-label">How we do it differently</p>
-          <h2 className="font-display text-[11vw] sm:text-[80px] lg:text-[100px] mt-2 text-[#121130]">
-            NOT ANOTHER <span className="relative inline-block"><span className="relative z-10">CONTENT</span><span className="absolute left-0 right-0 bottom-[0.12em] h-[0.18em] bg-[#FF8AD8] -rotate-[1deg] -z-0" /></span> FARM.
-          </h2>
-          <p className="text-[#121130]/70 text-[16px] max-w-[62ch] mt-4">
-            Most “content” today is fast, cheap and forgettable. Ours is fast, smart and human — a lab process built to connect and convert, not just to post.
-          </p>
-          <div className="mt-10 space-y-4">
-            {different.map((d, i) => (
-              <div key={d.step} className={`bg-white rounded-[22px] border border-[#121130]/12 p-5 sm:p-7 flex flex-col sm:flex-row sm:items-start gap-4 sm:gap-7 shadow-[0_12px_40px_rgba(18,17,48,0.06)] ${i % 2 ? "sm:ml-8" : "sm:mr-8"}`}>
-                <span className="font-display text-5xl sm:text-6xl text-stroke shrink-0">{d.step}</span>
-                <div>
-                  <h3 className="font-display text-3xl sm:text-4xl text-[#121130]">{d.title}</h3>
-                  <p className="text-[#121130]/70 text-[15px] sm:text-[16px] mt-2 leading-relaxed max-w-[70ch]">{d.text}</p>
-                </div>
-              </div>
-            ))}
           </div>
         </div>
       </section>
