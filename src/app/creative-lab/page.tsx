@@ -171,11 +171,10 @@ export default function CreativeLabPage() {
                 GROWTH, BUT MAKE IT HUMAN
               </span>
               <h2 className="font-display text-[10vw] sm:text-[72px] lg:text-[90px] mt-4 text-white leading-[0.9]">
-                KAISE <span className="text-[#4FEA73]">GROWTH</span><br />
-                BADHATE HAIN?
+                HOW WE DRIVE <span className="text-[#4FEA73]">GROWTH.</span>
               </h2>
               <p className="text-white/70 text-[16px] sm:text-[18px] max-w-[62ch] mt-5">
-                Gimmick nahi, system. Har reel/post ek funnel ki tarah kaam karta hai — hook se leke action tak. Yahan dekho kaise human content numbers ko logically upar le jaata hai.
+                Not gimmicks — a system. Every reel and post works like a mini funnel, from hook to action. Here’s how human content moves the numbers, logically.
               </p>
 
               <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-4 mt-10">
