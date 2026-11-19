@@ -29,6 +29,7 @@ export default function Footer() {
                 ["Agency", "/about"],
                 ["Projects", "/work"],
                 ["Expertise", "/services"],
+                ["Creative Lab", "/creative-lab"],
                 ["Kreative Kand", "/kreative-kand"],
                 ["Careers", "/careers"],
                 ["Contact", "/contact"],
