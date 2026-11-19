@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import KandViewer from "@/components/KandViewer";
+import CreativeLabVideos from "@/components/CreativeLabVideos";
 
 export const metadata: Metadata = {
   title: "Creative Lab — 100% Human Content That Converts",
@@ -173,7 +173,7 @@ export default function CreativeLabPage() {
             <span className="text-[13px] bg-[#D8F23F] border border-[#121130] rounded-full px-4 py-2 rotate-[1deg] font-bold shadow-[3px_3px_0_#121130]">UGC that converts</span>
             <span className="text-[13px] bg-white border border-[#121130]/15 rounded-full px-4 py-2 rotate-[-0.5deg] shadow-[3px_3px_0_#121130]">trend-native hooks</span>
           </div>
-          <KandViewer />
+          <CreativeLabVideos />
         </div>
       </section>
 
