@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
 import KandViewer from "@/components/KandViewer";
-import { projects, team } from "@/data/site";
+import { team } from "@/data/site";
 
 export const metadata: Metadata = {
   title: "Creative Lab — 100% Human Content That Converts",
@@ -10,11 +10,6 @@ export const metadata: Metadata = {
     "Spryb Digital's Creative Lab: 100% human, research-backed UGC and content — fast, trend-driven, cost-effective. In a world of AI slop, we make content that connects and converts.",
   alternates: { canonical: "/creative-lab" },
 };
-
-const showcaseSlugs = ["urban-brew", "lucknow-fnb", "agri-brand"];
-const showcase = showcaseSlugs
-  .map((s) => projects.find((p) => p.slug === s))
-  .filter(Boolean) as typeof projects;
 
 const usps = [
   { title: "100% Human", text: "Authentic, relatable, engaging content — made by real people, not prompt machines.", sticker: "NO AI SLOP", color: "bg-[#4FEA73]" },
@@ -67,7 +62,7 @@ export default function CreativeLabPage() {
             <Link href="/contact" className="btn-gradient px-8 py-4 text-[15px] rotate-[-1deg]">
               Book the Lab →
             </Link>
-            <a href="#work" className="btn-ghost px-8 py-4 text-[15px] rotate-[0.5deg]">
+            <a href="#videos" className="btn-ghost px-8 py-4 text-[15px] rotate-[0.5deg]">
               See the work
             </a>
             <span className="text-[13px] text-[#121130]/55 italic rotate-[1deg]">real humans. real results.</span>
@@ -152,7 +147,7 @@ export default function CreativeLabPage() {
       </section>
 
       {/* VIDEOS / UGC */}
-      <section className="px-6 sm:px-10 py-14 relative">
+      <section id="videos" className="px-6 sm:px-10 py-14 relative">
         <div className="absolute top-10 left-[10%] w-40 h-40 rounded-full bg-[#FF8AD8]/25 blur-[70px]" />
         <div className="absolute bottom-10 right-[8%] w-48 h-48 rounded-full bg-[#00D4FF]/25 blur-[80px]" />
         <div className="mx-auto max-w-[1440px] relative">
@@ -172,40 +167,6 @@ export default function CreativeLabPage() {
             <span className="text-[13px] bg-white border border-[#121130]/15 rounded-full px-4 py-2 rotate-[-0.5deg] shadow-[3px_3px_0_#121130]">trend-native hooks</span>
           </div>
           <KandViewer />
-        </div>
-      </section>
-
-      {/* WORK SHOWCASE */}
-      <section id="work" className="px-6 sm:px-10 py-14">
-        <div className="mx-auto max-w-[1440px]">
-          <div className="flex flex-wrap items-end justify-between gap-4">
-            <div>
-              <p className="section-label">Work from the lab</p>
-              <h2 className="font-display text-[11vw] sm:text-[80px] mt-2 text-[#121130]">
-                PROOF, NOT <span className="text-gradient">PROMISES.</span>
-              </h2>
-            </div>
-            <Link href="/work" className="btn-ghost px-6 py-3 text-sm mb-2">All projects →</Link>
-          </div>
-          <p className="text-[#121130]/70 text-[16px] max-w-[60ch] mt-4">
-            A peek at content and UGC-led growth we’ve shipped — human stories, real numbers.
-          </p>
-          <div className="grid md:grid-cols-3 gap-5 mt-10">
-            {showcase.map((p, i) => (
-              <article key={p.slug} className={`card-dark overflow-hidden group ${i === 1 ? "md:-translate-y-4" : ""}`}>
-                <div className="relative h-56 overflow-hidden">
-                  <Image src={p.img} alt={p.brand} fill sizes="(max-width: 768px) 100vw, 33vw" className="object-cover group-hover:scale-110 transition-transform duration-500" />
-                  <div className="absolute inset-0 bg-gradient-to-t from-[#1A1940] via-transparent to-transparent" />
-                </div>
-                <div className="p-6">
-                  <p className="text-[11px] tracking-[0.25em] uppercase text-[#4FEA73]">{p.category}</p>
-                  <h3 className="font-display text-3xl mt-2 text-white">{p.brand}</h3>
-                  <p className="text-[#D8F23F] font-bold text-[15px] mt-2">{p.result}</p>
-                  <p className="text-white/65 text-[14px] mt-3 leading-relaxed">{p.desc}</p>
-                </div>
-              </article>
-            ))}
-          </div>
         </div>
       </section>
 
