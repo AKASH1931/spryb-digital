@@ -1,7 +1,8 @@
 import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
-import { projects } from "@/data/site";
+import KandViewer from "@/components/KandViewer";
+import { projects, team } from "@/data/site";
 
 export const metadata: Metadata = {
   title: "Creative Lab — 100% Human Content That Converts",
@@ -150,6 +151,30 @@ export default function CreativeLabPage() {
         </div>
       </section>
 
+      {/* VIDEOS / UGC */}
+      <section className="px-6 sm:px-10 py-14 relative">
+        <div className="absolute top-10 left-[10%] w-40 h-40 rounded-full bg-[#FF8AD8]/25 blur-[70px]" />
+        <div className="absolute bottom-10 right-[8%] w-48 h-48 rounded-full bg-[#00D4FF]/25 blur-[80px]" />
+        <div className="mx-auto max-w-[1440px] relative">
+          <span className="inline-block bg-[#FF8AD8] text-[#121130] text-[12px] font-bold tracking-[0.2em] px-4 py-2 rounded-full rotate-[2deg]">
+            STRAIGHT FROM THE LAB
+          </span>
+          <h2 className="font-display text-[11vw] sm:text-[80px] lg:text-[100px] mt-4 text-[#121130]">
+            VIDEOS & <span className="relative inline-block px-2 bg-[#4FEA73] -rotate-[1deg]">UGC</span><br />
+            WE <span className="text-gradient">CREATED.</span>
+          </h2>
+          <p className="text-[#121130]/70 text-[16px] sm:text-[18px] max-w-[62ch] mt-4">
+            Reels, trends and human-first content — shot, edited and shipped by us. No stock faces, no AI slop. Tap to watch with sound.
+          </p>
+          <div className="mt-4 flex flex-wrap gap-3">
+            <span className="text-[13px] bg-white border border-[#121130]/15 rounded-full px-4 py-2 rotate-[-1deg] shadow-[3px_3px_0_#121130]">🎬 100% human-made</span>
+            <span className="text-[13px] bg-[#D8F23F] border border-[#121130] rounded-full px-4 py-2 rotate-[1deg] font-bold shadow-[3px_3px_0_#121130]">UGC that converts</span>
+            <span className="text-[13px] bg-white border border-[#121130]/15 rounded-full px-4 py-2 rotate-[-0.5deg] shadow-[3px_3px_0_#121130]">trend-native hooks</span>
+          </div>
+          <KandViewer />
+        </div>
+      </section>
+
       {/* WORK SHOWCASE */}
       <section id="work" className="px-6 sm:px-10 py-14">
         <div className="mx-auto max-w-[1440px]">
@@ -180,6 +205,64 @@ export default function CreativeLabPage() {
                 </div>
               </article>
             ))}
+          </div>
+        </div>
+      </section>
+
+      {/* FUNKY TEAM */}
+      <section className="px-6 sm:px-10 py-16 relative overflow-hidden">
+        <div className="absolute -top-6 left-[20%] w-52 h-52 rounded-full bg-[#D8F23F]/30 blur-[80px]" />
+        <div className="absolute top-1/2 -right-10 w-60 h-60 rounded-full bg-[#FF8AD8]/25 blur-[90px]" />
+        <div className="absolute bottom-0 left-[5%] w-44 h-44 rounded-full bg-[#00D4FF]/25 blur-[70px]" />
+        <div className="mx-auto max-w-[1440px] relative">
+          <span className="inline-block bg-[#00D4FF] text-[#121130] text-[12px] font-bold tracking-[0.2em] px-4 py-2 rounded-full rotate-[-3deg] shadow-[4px_4px_0_#121130]">
+            CERTIFIED HUMANS • ZERO BOTS
+          </span>
+          <h2 className="font-display text-[11vw] sm:text-[80px] lg:text-[100px] mt-4 text-[#121130] leading-[0.9]">
+            THE <span className="relative inline-block"><span className="bg-[#FF8AD8] px-2 rotate-[1.5deg] inline-block">HUMANS</span></span><br />
+            IN THE <span className="text-gradient">LAB.</span>
+          </h2>
+          <p className="text-[#121130]/70 text-[16px] sm:text-[18px] max-w-[60ch] mt-4">
+            Real people, weird ideas, sharp instincts. Meet the crew that turns briefs into content your audience actually feels.
+          </p>
+          <div className="flex flex-wrap gap-3 mt-5">
+            <span className="text-[13px] bg-white border-2 border-[#121130] rounded-full px-4 py-2 rotate-[-2deg] font-bold shadow-[3px_3px_0_#121130]">🧠 big brains</span>
+            <span className="text-[13px] bg-[#4FEA73] border-2 border-[#121130] rounded-full px-4 py-2 rotate-[1.5deg] font-bold shadow-[3px_3px_0_#121130]">⚡ fast hands</span>
+            <span className="text-[13px] bg-[#D8F23F] border-2 border-[#121130] rounded-full px-4 py-2 rotate-[-1deg] font-bold shadow-[3px_3px_0_#121130]">🎯 zero AI slop</span>
+          </div>
+
+          <div className="grid sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-x-6 gap-y-10 mt-12">
+            {team.map((m, i) => {
+              const tilts = ["-rotate-2", "rotate-1", "-rotate-1", "rotate-2", "-rotate-3", "rotate-1", "-rotate-2", "rotate-3", "-rotate-1", "rotate-2", "-rotate-2"];
+              const tapes = ["bg-[#D8F23F]", "bg-[#FF8AD8]", "bg-[#00D4FF]", "bg-[#4FEA73]", "bg-[#FFB86B]"];
+              const stickers = ["bg-[#4FEA73]", "bg-[#00D4FF]", "bg-[#FF8AD8]", "bg-[#D8F23F]", "bg-[#FFB86B]"];
+              const yOff = ["", "sm:mt-8", "", "sm:mt-6", "sm:mt-4", "", "sm:mt-8", "", "sm:mt-6", "sm:mt-4", ""];
+              return (
+                <article
+                  key={m.name}
+                  className={`relative bg-white rounded-[20px] border-2 border-[#121130] p-4 pb-5 shadow-[8px_8px_0_#121130] hover:shadow-[12px_12px_0_#121130] hover:-translate-y-1 transition-all duration-300 ${tilts[i % tilts.length]} ${yOff[i % yOff.length]}`}
+                >
+                  <span className={`absolute -top-3 left-1/2 -translate-x-1/2 ${tapes[i % tapes.length]} w-16 h-6 rounded-sm rotate-[-4deg] border border-[#121130]/30 opacity-90`} />
+                  <span className="absolute -top-4 -right-2 text-3xl drop-shadow-sm rotate-[12deg]">{m.emoji}</span>
+                  <div className="relative h-48 rounded-[14px] overflow-hidden border border-[#121130]/10 mt-2">
+                    <Image src={m.img} alt={m.name} fill sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 25vw" className="object-cover" style={{ objectPosition: m.pos || "50% 30%" }} />
+                  </div>
+                  <div className="mt-4">
+                    <span className={`inline-block ${stickers[i % stickers.length]} text-[#121130] text-[10px] font-bold tracking-[0.12em] uppercase px-2.5 py-1 rounded-full border border-[#121130]/20 rotate-[-1deg]`}>
+                      {m.role}
+                    </span>
+                    <h3 className="font-display text-2xl sm:text-[26px] text-[#121130] mt-2 leading-[0.95]">{m.name}</h3>
+                    <p className="text-[#121130]/65 text-[13px] mt-2 leading-relaxed line-clamp-3">{m.bio}</p>
+                  </div>
+                </article>
+              );
+            })}
+          </div>
+
+          <div className="mt-10 flex flex-wrap items-center justify-center gap-3">
+            <span className="text-[14px] font-bold bg-[#121130] text-white px-5 py-2.5 rounded-full rotate-[-1deg]">11 humans</span>
+            <span className="text-[14px] font-bold bg-[#4FEA73] text-[#121130] px-5 py-2.5 rounded-full rotate-[1deg] border-2 border-[#121130] shadow-[3px_3px_0_#121130]">1 mission: make it human</span>
+            <span className="text-[14px] font-bold bg-[#FF8AD8] text-[#121130] px-5 py-2.5 rounded-full rotate-[-2deg] border-2 border-[#121130] shadow-[3px_3px_0_#121130]">∞ ideas</span>
           </div>
         </div>
       </section>
