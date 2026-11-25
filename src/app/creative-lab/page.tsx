@@ -3,11 +3,28 @@ import Image from "next/image";
 import Link from "next/link";
 import CreativeLabVideos from "@/components/CreativeLabVideos";
 
+const OG_TITLE = "Creative Lab — In a world of AI slop, humans win";
+const OG_DESCRIPTION =
+  "100% human, research-backed UGC and content — fast, trend-driven, built to convert. Real faces. Real voices. No prompts, no filler.";
+
 export const metadata: Metadata = {
   title: "Creative Lab — 100% Human Content That Converts",
   description:
     "Spryb Digital's Creative Lab: 100% human, research-backed UGC and content — fast, trend-driven, cost-effective. In a world of AI slop, we make content that connects and converts.",
   alternates: { canonical: "/creative-lab" },
+  openGraph: {
+    type: "website",
+    locale: "en_IN",
+    url: "/creative-lab",
+    siteName: "Spryb Digital",
+    title: OG_TITLE,
+    description: OG_DESCRIPTION,
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: OG_TITLE,
+    description: OG_DESCRIPTION,
+  },
 };
 
 const usps = [
