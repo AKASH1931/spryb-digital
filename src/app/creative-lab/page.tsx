@@ -280,7 +280,6 @@ export default function CreativeLabPage() {
             <div className="mt-7 flex flex-wrap gap-3">
               <Link href="/contact" className="btn-gradient px-8 py-4 text-[15px]">Book a discovery call →</Link>
               <Link href="/contact" className="btn-ghost px-8 py-4 text-[15px]">Send a brief</Link>
-              <a href="https://www.instagram.com/kreativ_kand/" target="_blank" rel="noreferrer" className="text-[14px] text-[#121130]/60 hover:text-[#0e9f5b] underline underline-offset-4 self-center">or peek our vibe first</a>
             </div>
             <p className="text-[13px] italic text-[#121130]/50 mt-5">* 100% human-made. 0% AI slop. Results may cause conversions.</p>
           </div>
