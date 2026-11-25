@@ -1,8 +1,9 @@
 "use client";
 import { useEffect, useRef, useState } from "react";
 
-const CLIPS = Array.from({ length: 12 }, (_, i) => {
-  const n = String(i + 1).padStart(2, "0");
+const CLIP_ORDER = [6, 7, 8, 10, 11, 12, 1, 2, 3, 4, 5, 9];
+const CLIPS = CLIP_ORDER.map((i) => {
+  const n = String(i).padStart(2, "0");
   return { src: `/creator-lab/clip-${n}.mp4`, label: `Clip ${n}` };
 });
 
