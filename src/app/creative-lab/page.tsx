@@ -51,9 +51,9 @@ const growth = [
 const labTeam = [
   { name: "Hook Rani", role: "Hook Architect", emoji: "🎣", img: "/creator-lab-team/member-01.jpg", pos: "50% 25%", bio: "Lives for the first 2 seconds. If it doesn’t stop the scroll, it doesn’t ship." },
   { name: "Trend Bhaiya", role: "Culture Scout", emoji: "📡", img: "/creator-lab-team/member-02.jpg", pos: "50% 25%", bio: "Spots trends before they peak and turns them into brand-ready content." },
-  { name: "Cut-Cut Ninja", role: "Chaos Editor", emoji: "✂️", img: "/creator-lab-team/member-03.jpg", pos: "50% 25%", bio: "Slices messy footage into crisp, bingeable stories at dangerous speed." },
+  { name: "Cut-Cut Ninja", role: "Chaos Editor", emoji: "✂️", img: "/creator-lab-team/member-05.jpg", pos: "50% 25%", bio: "Slices messy footage into crisp, bingeable stories at dangerous speed." },
   { name: "Vibe Daaku", role: "Mood Director", emoji: "🌈", img: "/creator-lab-team/member-04.jpg", pos: "50% 25%", bio: "Steals the right vibe every time — colour, pace, energy, all on point." },
-  { name: "Script Pundit", role: "Word Alchemist", emoji: "🪄", img: "/creator-lab-team/member-05.jpg", pos: "50% 25%", bio: "Turns rough briefs into lines people actually remember and repeat." },
+  { name: "Script Pundit", role: "Word Alchemist", emoji: "🪄", img: "/creator-lab-team/member-03.jpg", pos: "50% 25%", bio: "Turns rough briefs into lines people actually remember and repeat." },
   { name: "Pixel Paaji", role: "Frame Tamer", emoji: "🎯", img: "/creator-lab-team/member-06.jpg", pos: "50% 25%", bio: "Obsessed with clean frames, sharp cuts and details nobody asked for (but everyone feels)." },
 ];
 
