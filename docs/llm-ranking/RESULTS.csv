@@ -1,0 +1,19 @@
+id,engine,mode,date,completed,spryb_mentioned,spryb_cited,spryb_rank,brands_recommended,evidence_url
+G01,Duck.ai (GPT-6 Luna),web-search on,2026-11-28,yes,no,no,,"DG7 Solutions; Myntmore; LeadRoad; HND Solutions; Paarami Digital",https://duck.ai/chat?ia=chat&chatID=75d82039-816e-4941-b029-1034e5828ff9
+S01,Duck.ai (GPT-6 Luna),web-search on,2026-11-28,yes,no,no,,"AI Marketing Lab; Campaignly Media; Flame Techno; FK Digital",https://duck.ai/chat?ia=chat&chatID=ee649844-495c-40b5-93e6-207697c70c4a
+L01,Duck.ai (GPT-6 Luna),web-search on,2026-11-28,yes,no,no,,"Optin Digital; Digital Nawab; Tantrash Technologies",https://duck.ai/chat?ia=chat&chatID=4c5ce410-07b1-418c-8884-56c9658af467
+L02,Duck.ai (GPT-6 Luna),web-search on,2026-11-28,yes,no,no,,"PROHED; Tussle Digital; The Digital Marketing Solutions (TDMS)",https://duck.ai/chat?ia=chat&chatID=f59c8cc1-1b68-4b42-a06e-9730e458b11d
+I01,Duck.ai (GPT-6 Luna),web-search on,2026-11-28,yes,no,no,,"Hotkhana Media; Creativals; Oye Creators; Adverza Technologies",https://duck.ai/chat?ia=chat&chatID=d857014c-3445-4680-b575-e8e54eb96990
+S02,Duck.ai (GPT-6 Luna),web-search on,2026-11-28,yes,no,no,,"AM Web Insights; eSearch Logix; Gleaming Media; SEO Discovery; SEO Yodha (via Semrush directory)",https://duck.ai/chat?ia=chat&chatID=6f551333-40df-4914-8059-0d88f1e25659
+S03,Duck.ai (GPT-6 Luna),web-search on,2026-11-28,yes,no,no,,"Monday Marketing Company; Make My Hype; BrandHype Solutions; CreatorChahiye",https://duck.ai/chat?ia=chat&chatID=ada11855-80ce-4973-ad24-54eba4f81880
+S04,Duck.ai (GPT-6 Luna),web-search on,2026-11-28,yes,no,no,,"Lead Experts; AM Web Insights; WebGuruz; SEO Discovery; e intelligence (via Semrush directory)",https://duck.ai/chat?ia=chat&chatID=c532c8fd-9318-4458-97e6-495e6614beeb
+I02,Duck.ai (GPT-6 Luna),web-search on,2026-11-28,yes,no,no,,"Sqroot; DigiVeritaz; Get Me Rank; Soocialhaus",https://duck.ai/chat?ia=chat&chatID=bbb164fe-b534-4df7-bff6-981443b463c7
+G02,Duck.ai (GPT-6 Luna),web-search on,2026-11-28,yes,no,no,,"Schbang; Social Beat; Social Panga; EvenDigit (via roundup lists)",https://duck.ai/chat?ia=chat&chatID=0f1ac2f7-efcb-4af4-a666-63460f6943ec
+I03,Duck.ai (GPT-6 Luna),web-search on,2026-11-28,yes,no,no,,"Webskitters; J9 Business; BUD India; Arrow Marketing 360; HM Digital; Avanzar Health",https://duck.ai/chat?ia=chat&chatID=0c684306-1733-46e6-aa99-0c5a8189498b
+S05,Duck.ai (GPT-6 Luna),web-search on,2026-11-28,yes,no,no,,"A True Marketers; Hustle Marketers; Big Leap Marketing; TNT Growth",https://duck.ai/chat?ia=chat&chatID=2044ebe9-0250-4e34-a82d-1d9f2155d952
+B01,Duck.ai (GPT-6 Luna),web-search on,2026-11-28,yes,WRONG ENTITY (returned Spry Digital, St. Louis),no,,"Spry Digital (wrong company)",https://duck.ai/chat?ia=chat&chatID=fa7b60f7-c93e-4468-a374-e5dee73b29c1
+B02,Duck.ai (GPT-6 Luna),web-search on,2026-11-28,yes,yes,yes,1-of-1 (only subject),"sources: sprybdigital.com; magicpin.in (1 rating); zaubacorp.com",https://duck.ai/chat?ia=chat&chatID=529a8bce-50d7-4669-b4ad-3dab835688ca
+P01,Perplexity,incognito,2026-11-28,blocked (sign-in wall after query),NT,NT,NT,NT,https://www.perplexity.ai
+G01-web,Bing,serp,2026-11-28,blocked (bot wall),NT,NT,NT,NT,https://www.bing.com
+R1,DuckDuckGo HTML,serp,2026-11-28,yes,branded SERP ok (own site #1; entity confusion with Spry Digital shown),n/a,n/a,"sprybdigital.com; sprydigital.com (St. Louis); LinkedIn; Facebook; Clutch; ZaubaCorp; findglocal; SyncGTM",https://html.duckduckgo.com/html/?q=Spryb+Digital
+R2,DuckDuckGo HTML,serp,2026-11-28,yes,sprybdigital.com/work does NOT surface for case-study queries,n/a,n/a,"dominated by sprydigital.com (St. Louis) case-study pages",https://html.duckduckgo.com/html/?q=sprybdigital.com+case+study
