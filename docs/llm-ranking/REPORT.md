@@ -2,6 +2,8 @@
 
 **Date:** 2026-11-28 · **Engine tested:** Duck.ai (GPT-6-class model, web-search ON) · **Raw data:** `RESULTS.csv` · **Prompts:** `prompts.csv`
 
+**UPDATE (same day, post-deploy):** P0–P3 shipped (commit `9cd27bf`): 6 dedicated case-study pages (`/work/[slug]`), Lucknow + Gurugram location pages, entity disambiguation (footer + llms.txt + schema sameAs), sitemap expanded. First re-test signal: a fresh Duck.ai query about the Agri case now finds and **cites sprybdigital.com** with an accurate summary ("real page published by Spryb Digital", agency-reported caveat) — up from zero citations. Full non-branded re-run pending (quarterly).
+
 ## Objective
 Measure Spryb's visibility in AI answers for lead-intent agency searches (India + Lucknow/Gurugram, 8 service verticals) and prioritise fixes that generate qualified enquiries.
 
