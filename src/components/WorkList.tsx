@@ -3,7 +3,6 @@ import { useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { projects } from "@/data/site";
-import CaseModal from "@/components/CaseModal";
 
 function RowSlider({ images, brand }: { images: string[]; brand: string }) {
   const [i, setI] = useState(0);
@@ -34,7 +33,6 @@ function RowSlider({ images, brand }: { images: string[]; brand: string }) {
 }
 
 export default function WorkList() {
-  const [open, setOpen] = useState<number | null>(null);
   return (
     <>
       <div className="mx-auto max-w-[1440px]">
@@ -57,9 +55,9 @@ export default function WorkList() {
                 <p className="font-bold text-[16px] mt-4">{p.result}</p>
                 <p className="text-[#121130]/65 text-[15.5px] leading-relaxed mt-2">{p.desc}</p>
                 <p className="text-[#121130]/60 text-[14.5px] leading-relaxed mt-2 line-clamp-2">{p.story[0]}</p>
-                <button onClick={() => setOpen(idx)} className="btn-gradient mt-6 !py-3 !px-6 text-sm">
+                <Link href={`/work/${p.slug}`} className="btn-gradient mt-6 !py-3 !px-6 text-sm inline-block">
                   View the case →
-                </button>
+                </Link>
               </div>
             </article>
           ))}
@@ -76,15 +74,6 @@ export default function WorkList() {
           <Link href="/contact" className="btn-gradient inline-block mt-4">Become the next case →</Link>
         </div>
       </div>
-
-      {open !== null && (
-        <CaseModal
-          project={projects[open]}
-          onClose={() => setOpen(null)}
-          onPrev={() => setOpen((open - 1 + projects.length) % projects.length)}
-          onNext={() => setOpen((open + 1) % projects.length)}
-        />
-      )}
     </>
   );
 }

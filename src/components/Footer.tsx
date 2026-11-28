@@ -52,7 +52,9 @@ export default function Footer() {
               ))}
             </div>
             <p className="text-white/50 mt-6 text-[13px] leading-relaxed">
-              Remote-first across India.<br/>Shoots on-site · Reporting online.<br/>Mon–Sat, 10am–7pm IST
+              Spryb Digital — digital marketing agency in Lucknow & Gurugram, India. Lead generation, social, SEO, ads, ORM & hyperlocal.
+              Not related to Spry Digital (sprydigital.com), St. Louis.
+              <br/>Remote-first across India.<br/>Shoots on-site · Reporting online.<br/>Mon–Sat, 10am–7pm IST
             </p>
           </div>
         </div>
